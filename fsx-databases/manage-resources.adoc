@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/manage-resources.html 
+keywords: instance, instance management, FSx for ONTAP, instance, manage host, view host, database host, database instance, manage 
+summary: NetApp Workload Factory for Databases에서 인스턴스 및 데이터베이스 관리에 대해 알아보십시오. 
+---
+= NetApp Workload Factory for Databases의 리소스 관리
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory for Databases에서 리소스를 관리하면 데이터베이스 및 클론 생성, 리소스 활용률 및 모니터링 등 고급 기능을 활용할 수 있습니다. 또한 데이터베이스 구성의 Well-Architected 상태를 분석하고 구성 모범 사례를 구현하여 성능을 향상시키고 운영 비용을 절감할 수 있습니다. 리소스 관리는 FSx for ONTAP 파일 시스템 스토리지에서 실행되는 Microsoft SQL Server 및 Oracle 환경에서만 사용할 수 있습니다.
+
+다음 관리 작업 중 하나를 수행하려면 link:register-instance.html["리소스 등록"] 해야 합니다.
+
+관리 작업에는 다음이 포함됩니다:
+
+* 인벤토리에서 데이터베이스 보기
+* link:create-sql-database.html["데이터베이스 생성"]
+* link:create-sandbox-clone.html["데이터베이스 복제본(샌드박스) 생성"]
+* link:optimize-configurations.html["잘 설계된 데이터베이스 구성 구현"]
+

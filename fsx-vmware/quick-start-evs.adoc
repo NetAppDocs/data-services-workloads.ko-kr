@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/quick-start-evs.html 
+keywords: quick start 
+summary: VMware 마이그레이션 어드바이저를 사용하여 Amazon FSx for ONTAP을 외부 NFS 데이터스토어로 활용해 현재 인프라를 Amazon EVS로 마이그레이션하는 작업을 시작하십시오. 
+---
+= VMware 워크로드 마이그레이션 어드바이저를 사용하여 Amazon EVS로 마이그레이션하는 빠른 시작 가이드
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware 마이그레이션 어드바이저를 사용하여 Amazon FSx for ONTAP을 외부 NFS 데이터스토어로 활용해 현재 인프라를 Amazon EVS로 마이그레이션하는 작업을 시작하십시오.
+
+시작하기 전에 link:../fsx-storage/permissions-reference-fsx.html["NetApp Workload Factory에 대한 권한"^]에 대해 이해해야 합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["하나"] Workload Factory에 로그인하십시오
+[role="quick-margin-para"]
+link:../setup/sign-up-and-log-in.html["Workload Factory에서 계정을 설정하십시오"^]하고 NetApp Console에 로그인해야 합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"] 자격 증명 및 권한 추가
+[role="quick-margin-para"]
+필요에 맞는 link:../fsx-storage/permissions-reference-fsx.html["권한 정책"]을(를) 선택하십시오.
+
+[role="quick-margin-para"]
+권한을 부여하지 않기로 선택하면 link:../fsx-storage/permissions-reference-fsx.html["권한 정책"^]에서 부분적으로 완성된 코드 샘플을 복사하여 Workload Factory for Databases 사용을 시작할 수 있습니다.
+
+[role="quick-margin-para"]
+권한을 부여하기로 선택한 경우, Databases 및 VMware 등 워크로드 기능을 선택하고 필요한 권한에 대한 IAM 정책을 생성하는 작업을 포함하여 link:../fsx-storage/add-credentials.html["계정에 자격 증명을 수동으로 추가"] 해야 합니다.
+
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["자격 증명 및 권한을 추가하는 방법을 알아보세요"^].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3"] VM 인벤토리 데이터 업로드
+[role="quick-margin-para"]
+계획 센터를 사용하여 현재 VM 환경에 대한 인벤토리 세부 정보를 업로드할 수 있습니다. 데이터 수집 스크립트, RVTools 또는 NetApp Data Infrastructure Insights를 사용하여 현재 VM 구성을 캡처하고 데이터를 계획 센터에 업로드하십시오.
+
+[role="quick-margin-para"]
+link:upload-vm-inventory.html["VM 인벤토리 데이터를 업로드하는 방법을 알아보세요"^].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"] VMware 마이그레이션 어드바이저를 사용하여 배포 계획을 생성합니다
+[role="quick-margin-para"]
+VMware 마이그레이션 어드바이저를 실행하고 Amazon FSx for ONTAP 파일 시스템을 외부 NFS 데이터스토어로 사용하여 Amazon Elastic VMWare Service 인프라에 생성할 VM 환경을 수동으로 구성하십시오.
+
+[role="quick-margin-para"]
+link:launch-migration-advisor-evs.html["VMware 마이그레이션 어드바이저를 사용하여 배포 계획을 수립하는 방법을 알아보세요"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["다섯"] 권장되는 FSx for ONTAP 파일 시스템을 배포하십시오.
+[role="quick-margin-para"]
+Amazon EC2 인프라의 VM에 데이터 저장소를 제공할 새로운 FSx for ONTAP 파일 시스템을 배포하십시오.
+
+[role="quick-margin-para"]
+link:deploy-fsx-file-system-evs.html["새로운 FSx for ONTAP 파일 시스템을 배포하는 방법을 알아보십시오."].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["6"] EVS 환경에 대한 잘 설계된 인사이트 검토
+[role="quick-margin-para"]
+EVS 환경이 검색되면 Workload Factory는 자동으로 매일 well-architected 스캔을 수행하여 구성 문제를 식별하고 해결 권장 사항을 제공합니다.
+
+[role="quick-margin-para"]
+link:view-evs-well-architected.html["잘 설계된 구성을 구현하는 방법을 알아보세요"^].

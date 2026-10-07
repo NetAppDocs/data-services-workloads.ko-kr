@@ -1,0 +1,231 @@
+---
+sidebar: sidebar 
+permalink: admin/use-cloudshell.html 
+keywords: cloudshell, command line, aws cli, ontap cli, NetApp Workload Factory, Workload Factory 
+summary: NetApp Workload Factory 사용자 인터페이스의 어느 위치에서나 CloudShell을 사용하여 AWS 또는 ONTAP CLI 명령을 실행할 수 있습니다. 
+---
+= NetApp Workload Factory에서 CloudShell 사용
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory 콘솔 어디에서나 AWS 또는 ONTAP CLI 명령을 실행하려면 CloudShell을 여십시오.
+
+
+
+[[about-this-task]]
+== 이 작업 정보
+
+CloudShell을 사용하면 Workload Factory 콘솔 내의 셸과 유사한 환경에서 AWS CLI 명령 또는 ONTAP CLI 명령을 실행할 수 있습니다. 브라우저에서 터미널 세션을 시뮬레이션하여 터미널 기능을 제공하고 Workload Factory의 백엔드를 통해 메시지를 프록시합니다. NetApp 계정에 제공한 AWS 자격 증명 및 ONTAP 자격 증명을 사용할 수 있습니다.
+
+CloudShell 기능은 다음과 같습니다.
+
+* 여러 CloudShell 세션: 여러 CloudShell 세션을 한 번에 배포하여 여러 명령 시퀀스를 병렬로 실행,
+* 다중 보기: CloudShell 탭 세션을 분할하여 두 개 이상의 탭을 가로 또는 세로로 동시에 볼 수 있습니다.
+* 세션 이름 변경: 필요에 따라 세션 이름을 변경합니다
+* 마지막 세션 콘텐츠 유지: 실수로 세션을 닫은 경우 마지막 세션을 다시 엽니다.
+* 설정 환경설정: 글꼴 크기 및 출력 유형 변경
+* ONTAP CLI 명령에 대한 AI 생성 오류 응답
+* 자동 완성 기능 지원: 명령어를 입력하기 시작하고 *Tab* 키를 누르면 사용 가능한 옵션을 볼 수 있습니다
+
+
+
+NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 AI가 생성한 오류 응답을 사용할 수 없습니다. link:manage-genai-features.html["AI 기능 관리에 대해 알아보기"].
+
+
+
+[[cloudshell-commands]]
+== CloudShell 명령어
+
+CloudShell GUI 인터페이스에서  `help`을(를) 입력하여 사용 가능한 CloudShell 명령어를 확인할 수 있습니다.  `help` 명령어를 실행하면 다음 참조가 나타납니다.
+
+.설명
+NetApp CloudShell은 NetApp Workload Factory에 내장된 GUI 인터페이스로, AWS CLI 명령 또는 ONTAP CLI 명령을 셸과 유사한 환경에서 실행할 수 있도록 해줍니다. 브라우저에서 터미널 세션을 시뮬레이션하여 터미널 기능을 제공하고 Workload Factory의 백엔드를 통해 메시지를 프록시합니다. NetApp 계정에 제공한 AWS 자격 증명 및 ONTAP 자격 증명을 사용할 수 있습니다.
+
+.사용 가능한 명령
+* `clear`
+* `help`
+* `[--fsx <fsxId>] <ontap-command> [parameters]`
+* `aws <aws-command> <aws-sub-command> [parameters]`
+
+
+.컨텍스트
+각 터미널 세션은 자격 증명, 리전, 그리고 선택적으로 FSx for ONTAP 파일 시스템과 같은 특정 컨텍스트에서 실행됩니다.
+
++ 모든 AWS 명령은 제공된 컨텍스트에서 실행됩니다. AWS 명령은 제공된 자격 증명에 지정된 리전에 대한 권한이 있는 경우에만 성공적으로 실행됩니다.
+
++ 선택적 `fsxId`과 함께 ONTAP 명령을 지정할 수 있습니다. 개별 ONTAP 명령과 함께  `fsxId`을(를) 제공하면 이 ID가 컨텍스트의 ID를 재정의합니다. 터미널 세션에 FSx for ONTAP 파일 시스템 ID 컨텍스트가 없는 경우 각 ONTAP 명령과 함께  `fsxId`을(를) 제공해야 합니다.
+
++ 다양한 컨텍스트별 설정을 업데이트하려면 다음을 수행하십시오. * 자격 증명 변경: "자격 증명 사용 <credentialId>" * 지역 변경: "지역 사용 <regionCode>" * FSx for ONTAP 파일 시스템 변경: "fsx 사용 <fileSystemId>"
+
+.항목 표시
+* 사용 가능한 자격 증명을 표시하려면: "show credentials"
+* 사용 가능한 지역을 표시하려면: "show regions"
+* 명령어 기록을 보려면: "show history"
+
+
+.변수
+다음은 변수를 설정하고 사용하는 예입니다. 변수 값에 공백이 포함된 경우 따옴표로 묶어 설정해야 합니다.
+
++ * 변수 설정: $<variable> = <value> * 변수 사용: $<variable> * 변수 설정 예시: $svm1 = svm123 * 변수 사용 예시: --fsx FileSystem-1 volumes show --vserver $svm1 * 문자열 값으로 변수 설정 예시: $comment1 = "공백이 포함된 주석"
+
+.운영자
+파이프 `|`, 백그라운드 실행 `&` 및 리디렉션 `>` 등 셸 연산자는 지원되지 않습니다. 이러한 연산자를 포함하면 명령 실행이 실패합니다.
+
+
+
+[[before-you-begin]]
+== 시작하기 전에
+
+CloudShell은 AWS 자격 증명 컨텍스트에서 작동합니다. CloudShell을 사용하려면 하나 이상의 AWS 자격 증명을 제공해야 합니다.
+
+
+NOTE: CloudShell을 사용하여 모든 AWS 또는 ONTAP CLI 명령을 실행할 수 있습니다. 하지만 FSx for ONTAP 파일 시스템의 컨텍스트 내에서 작업하려면 다음 명령을 실행해야 합니다: `using fsx <file-system-name>`.
+
+
+
+[[deploy-cloudshell]]
+== CloudShell 배포
+
+NetApp Workload Factory 콘솔의 어디서나 CloudShell을 배포할 수 있습니다. NetApp Console에서도 CloudShell을 배포할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.Workload Factory 콘솔에서 배포
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드* > *관리* > *CloudShell*을 선택합니다.
+. CloudShell 창에서 CloudShell 세션에 사용할 자격 증명과 지역을 선택한 다음 화살표를 선택하여 계속 진행합니다.
++
+image:screenshot-deploy-cloudshell-session.png["새로운 CloudShell 세션을 보여주는 스크린샷입니다."]
+
+.  `help`을(를) 입력하여 사용 가능한 <<CloudShell 명령어,CloudShell 명령어>> 및 지침을 보거나, 사용 가능한 명령에 대해서는 다음 CLI 참조 문서를 참조하십시오:
++
+** link:https://docs.aws.amazon.com/cli/latest/reference/["AWS CLI 참조"^]: FSx for ONTAP과 관련된 명령의 경우 *fsx*를 선택하십시오.
+** link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP CLI 참조"^]
+
+
+. CloudShell 세션 내에서 명령을 실행합니다.
++
+ONTAP CLI 명령을 실행한 후 오류가 발생하면 전구 아이콘을 선택하여 오류에 대한 설명, 오류 원인 및 자세한 해결 방법이 포함된 AI가 생성한 간략한 오류 응답을 확인하십시오. 더 자세한 내용을 보려면 *자세히 보기*를 선택하십시오.
+
+
+
+--
+.NetApp Console에서 배포
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드* > *관리* > *CloudShell*을 선택합니다.
+. CloudShell 창에서 CloudShell 세션에 사용할 자격 증명과 지역을 선택한 다음 화살표를 선택하여 계속 진행합니다.
++
+image:screenshot-deploy-cloudshell-session.png["새로운 CloudShell 세션을 보여주는 스크린샷입니다."]
+
+.  `help`을(를) 입력하여 사용 가능한 CloudShell 명령 및 지침을 확인하거나 다음 CLI 참조 문서에서 사용 가능한 명령을 참조하십시오:
++
+** link:https://docs.aws.amazon.com/cli/latest/reference/["AWS CLI 참조"^]: FSx for ONTAP과 관련된 명령의 경우 *fsx*를 선택하십시오.
+** link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP CLI 참조"^]
+
+
+. CloudShell 세션 내에서 명령을 실행합니다.
++
+ONTAP CLI 명령을 실행한 후 오류가 발생하면 전구 아이콘을 선택하여 오류에 대한 설명, 오류 원인 및 자세한 해결 방법이 포함된 AI가 생성한 간략한 오류 응답을 확인하십시오. 더 자세한 내용을 보려면 *자세히 보기*를 선택하십시오.
+
+
+
+--
+====
+이 스크린샷에 표시된 CloudShell 작업은 열려 있는 CloudShell 세션 탭의 작업 메뉴를 선택하여 완료할 수 있습니다. 각 작업에 대한 지침은 다음과 같습니다.
+
+image:screenshot-cloudshell-tab-menu.png["이름 바꾸기, 복제, 다른 탭 닫기, 모두 닫기 등의 옵션이 있는 CloudShell 탭 작업 메뉴를 보여주는 스크린샷입니다."]
+
+
+
+[[rename-a-cloudshell-session-tab]]
+== CloudShell 세션 탭 이름 변경
+
+CloudShell 세션 탭의 이름을 변경하여 세션을 쉽게 식별할 수 있습니다.
+
+.단계
+. CloudShell 세션 탭의 작업 메뉴를 선택합니다.
+. *이름 바꾸기*를 선택합니다.
+. 세션 탭에 새 이름을 입력한 다음 탭 이름 바깥쪽을 클릭하여 새 이름을 설정하십시오.
+
+
+.결과
+새 이름이 CloudShell 세션 탭에 나타납니다.
+
+
+
+[[duplicate-cloudshell-session-tab]]
+== CloudShell 세션 탭 복제
+
+CloudShell 세션 탭을 복제하여 동일한 이름, 자격 증명 및 리전을 가진 새 세션을 만들 수 있습니다. 원본 탭의 코드는 복제된 탭에 복제되지 않습니다.
+
+.단계
+. CloudShell 세션 탭의 작업 메뉴를 선택합니다.
+. *복제*를 선택합니다.
+
+
+.결과
+새 탭은 원래 탭과 동일한 이름으로 나타납니다.
+
+
+
+[[close-cloudshell-session-tabs]]
+== CloudShell 세션 탭을 닫습니다.
+
+CloudShell 탭은 하나씩 닫거나, 작업하지 않는 다른 탭을 닫거나, 모든 탭을 한 번에 닫을 수 있습니다.
+
+.단계
+. CloudShell 세션 탭의 작업 메뉴를 선택합니다.
+. 다음 중 하나를 선택하십시오.
++
+** CloudShell 탭 창에서 "X"를 선택하여 탭을 하나씩 닫습니다.
+** *다른 탭 닫기*를 선택하여 현재 작업 중인 탭을 제외한 열려 있는 다른 모든 탭을 닫습니다.
+** 모든 탭을 닫으려면 *모든 탭 닫기*를 선택하세요.
+
+
+
+
+.결과
+선택한 CloudShell 세션 탭이 닫힙니다.
+
+
+
+[[split-cloudshell-session-tabs]]
+== CloudShell 세션 탭 분할
+
+CloudShell 세션 탭을 분할하여 두 개 이상의 탭을 동시에 볼 수 있습니다.
+
+.단계
+CloudShell 세션 탭을 CloudShell 창의 위쪽, 아래쪽, 왼쪽 또는 오른쪽으로 드래그 앤 드롭하여 화면을 분할할 수 있습니다.
+
+image:screenshot-cloudshell-split-view.png["두 개의 CloudShell 탭이 가로로 분할된 것을 보여주는 스크린샷입니다. 이 탭들은 나란히 표시됩니다."]
+
+
+
+[[update-settings-for-a-cloudshell-session]]
+== CloudShell 세션에 대한 설정 업데이트
+
+CloudShell 세션의 글꼴 및 출력 유형 설정을 업데이트할 수 있습니다.
+
+.단계
+. CloudShell 세션을 배포합니다.
+. CloudShell 탭에서 설정 아이콘을 선택합니다.
++
+설정 대화 상자가 나타납니다.
+
+. 필요에 따라 글꼴 크기와 출력 유형을 업데이트하세요.
++
+
+NOTE: 향상된 출력은 JSON 객체 및 표 형식에 적용됩니다. 그 외의 모든 출력은 일반 텍스트로 표시됩니다.
+
+. *적용*을 선택합니다.
+
+
+.결과
+CloudShell 설정이 업데이트되었습니다.

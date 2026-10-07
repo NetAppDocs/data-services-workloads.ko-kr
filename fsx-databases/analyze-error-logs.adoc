@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/analyze-error-logs.html 
+keywords: analyze error logs, errors, error severity, Microsoft SQL Server error logs, Oracle database error logs, smart analysis, Agentic AI 
+summary: Workload Factory for Databases 내의 오류 로그를 분석합니다. 
+---
+= NetApp Workload Factory for Databases의 오류 로그 분석
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스마트 오류 로그 분석기를 사용하여 Microsoft SQL Server 및 Oracle 데이터베이스 오류 로그를 자동으로 해석하여 문제를 신속하게 식별하고 해결하십시오. Agentic AI 기반 분석에는 Amazon Bedrock 통합이 필요합니다.
+
+
+
+[[about-this-task]]
+== 이 작업 정보
+
+오류 로그 분석 및 해결은 SQL Server 인스턴스와 Oracle 데이터베이스의 상태 및 성능을 유지하는 데 도움이 됩니다. 오류 로그를 효과적으로 해석하려면 세심한 분석과 전문 지식이 필요합니다. 수동 모니터링, 오류 감지 및 근본 원인 분석은 시간이 많이 소요되고 오류 발생 가능성이 높습니다. 이러한 어려움으로 인해 문제 해결이 지연되고 가동 중지 시간이 증가하며 운영 효율성이 저하될 수 있습니다. 스마트 오류 로그 분석기는 다음과 같은 주요 이점을 통해 이러한 문제를 해결합니다.
+
+* 스마트 그룹화: 오류를 고유성, 심각도 및 범주별로 지능적으로 통합하여 문제 해결 프로세스를 간소화하고 더 빠르고 효과적인 해결을 지원합니다.
+* AI 기반 조사: AI를 활용하여 오류를 사전에 분석하고, 심도 있는 전문 지식 없이도 문제 식별을 가속화하는 명확하고 실행 가능한 인사이트를 제공합니다.
+* 오류 보강: 외부 참조를 추가하여 오류 로그를 보강하고, 상황적 명확성을 제공하여 이해도와 의사결정 능력을 향상시킵니다.
+* 최적의 문제 해결 방법: FSx for ONTAP에서 실행되는 SQL Server 워크로드에 대한 맞춤형 문제 해결 권장 사항을 제공하여 모든 수준의 사용자가 자신 있게 문제를 해결할 수 있도록 지원합니다.
+
+
+오류 로그 분석기를 사용할 때마다 고급 AI 분석의 이점을 누리면서 환경을 완벽하게 제어할 수 있습니다.
+
+오류 로그 분석기를 사용하려면 Amazon Bedrock을 활성화하고 Workload Factory에서 사용하는 모델을 선택하고 Amazon Bedrock에 연결하기 위한 프라이빗 엔드포인트를 생성하고 권한을 추가하고 엔터프라이즈 라이선스를 생성해야 합니다.
+
+link:https://aws.amazon.com/bedrock/pricing/["Amazon Bedrock 가격"^]
+
+
+NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 메시지가 표시되며 AI 분석을 사용할 수 없습니다. 관리자 또는 link:../admin/manage-genai-features.html["AI 관리에 대해 알아보기"^]에 문의하십시오.
+
+
+
+[[data-privacy-and-security]]
+=== 데이터 개인정보 보호 및 보안
+
+이 기능은 다음과 같은 조치를 통해 데이터 개인 정보 보호 및 보안을 보장합니다:
+
+.데이터 주권
+로그 데이터 및 집계는 AWS 계정 내에 유지되며, 프라이빗 VPC 엔드포인트(Amazon Bedrock)를 통해 통신되므로 공용 인터넷에 노출되지 않습니다.
+
+.AI 학습 없음
+고객 데이터는 모델 학습이나 개선에 사용되지 않습니다. Amazon Bedrock은 로그를 실시간으로 처리하지만 고객 데이터를 기반으로 학습하지는 않습니다. 결과는 참조용으로만 고객 환경에 저장됩니다. 자세한 내용은 link:https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html["Amazon Bedrock 데이터 보호 문서"^]을(를) 참조하십시오.
+
+
+
+[[before-you-begin]]
+== 시작하기 전에
+
+오류 로그 분석기를 사용하려면 다음 전제 조건을 충족해야 합니다:
+
+* Workload Factory에서 새 데이터베이스 호스트를 생성하려면 AWS 계정에서 link:../fsx-storage/add-credentials.html["_보기, 계획 및 분석_ 권한을 부여합니다"^]해야 합니다.
+* link:../fsx-databases/register-instance.html["리소스 등록"^] Workload Factory에서.
+* 다음과 같은 필수 조건도 충족해야 합니다. 로그 오류 분석 단계의 일부로 이러한 필수 조건을 완료하라는 메시지가 표시됩니다.
++
+** *Amazon Bedrock 활성화*
++
+Workload Factory의 SQL Server 또는 Oracle 호스트에서 실행되는 AI 에이전트가 Bedrock에 원활하게 연결하고 식별된 오류 로그에 대한 AI 기반 인사이트를 가져오려면 Amazon Bedrock이 필요합니다.
+
+** *네트워킹*
++
+Amazon Bedrock VPC 엔드포인트는 SQL Server 또는 Oracle 호스트와 Amazon Bedrock API 간의 비공개 통신을 보장하고 공용 인터넷 노출을 차단합니다. Amazon Bedrock VPC 엔드포인트가 SQL Server 또는 Oracle 호스트의 서브넷과 연결되어 있는지 확인하십시오(예: vpce-050cb2f33a1380ffd).
+
+** *AWS IAM 권한*
++
+SQL Server 또는 Oracle 호스트와 연결된 EC2 인스턴스 프로필 역할과 Workload Factory와 연결된 AWS 자격 증명에는 다음과 같은 권한이 필요합니다.
+
++
+*** "bedrock:InvokeModel" 권한이 있는 EC2 인스턴스 프로필 역할
++
+이 권한을 통해 해당 SQL Server 또는 Oracle 호스트의 EC2 인스턴스는 Bedrock 모델을 호출하여 오류를 사전에 조사하고 해결 방법을 안내받을 수 있습니다. 또한 이 프로필은 맞춤형 인사이트를 위한 안전한 AI 액세스를 보장합니다.
+
+*** Workload Factory와 연결된 AWS 자격 증명: "bedrock:GetFoundationModelAvailability" 및 "bedrock:ListInferenceProfiles" 권한
++
+이러한 권한은 SQL Server 또는 Oracle 호스트가 위치한 지역에서 모델의 가용성과 구성을 확인하고, 지역별로 안정적인 성능을 보장합니다.
+
+
+
+** *Oracle 사용자 권한*
++
+다음 권한은 확장 진단 알림에 대한 읽기 액세스 권한을 부여하여 AI 기반 패턴 감지 및 해결을 위해 로그에서 오류/추적 세부 정보를 추출할 수 있도록 합니다: `V$DIAG_ALERT_EXT`. 이 권한은 Oracle 데이터베이스에만 필요합니다.
+
+
+
+
+
+
+
+[[analyze-error-logs]]
+== 오류 로그 분석
+
+Workload Factory 콘솔을 사용하여 SQL Server 오류 로그를 분석하십시오.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *데이터베이스*를 선택합니다.
+. 데이터베이스 메뉴에서 *인벤토리*를 선택하십시오.
+. 인벤토리에서 데이터베이스 엔진 유형으로 *Microsoft SQL Server* 또는 *Oracle*을 선택하십시오.
+. 인스턴스 탭에서 분석하려는 특정 SQL Server 인스턴스 또는 Oracle 데이터베이스를 찾은 다음 메뉴에서 *오류 조사*를 선택합니다.
+. *오류 조사* 탭에서 콘솔에 설명된 대로 다음 필수 조건을 완료하십시오:
++
+** Amazon Bedrock
+** 네트워킹: Amazon Bedrock용 프라이빗 엔드포인트
+** EC2 인스턴스 프로필 역할에 대한 권한
+** Workload Database Management(wlmdb) 관련 자격 증명
+
+
+. 필수 조건을 충족하면 *지금 조사*를 선택하여 오류 로그 분석기를 사용하여 SQL Server 오류 로그에 대한 통찰력을 얻으십시오.
++
+스캔이 완료되면 콘솔에 오류가 표시되어 스마트 오류 로그 분석기가 감지한 문제를 종합적으로 확인할 수 있습니다.
+
+. 필터를 사용하여 심각도, 시간 범위, 오류 코드 등의 기준이나 컴퓨팅, 스토리지, 네트워크, 보안 등의 인프라 관련 태그를 기반으로 표시되는 오류를 세분화할 수 있습니다.
+. 원본 오류 메시지, AI 기반 설명, 오류 해결을 위한 권장 조치 단계를 포함한 자세한 오류 정보를 검토하십시오.
+

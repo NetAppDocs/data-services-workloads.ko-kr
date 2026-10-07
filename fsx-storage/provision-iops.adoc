@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/provision-iops.html 
+keywords: iops, SSD, provision, allocate 
+summary: FSx for ONTAP 파일 시스템에 대한 SSD IOPS를 자동으로 또는 수동으로 프로비저닝합니다. 
+---
+= FSx for ONTAP 파일 시스템에 SSD IOPS를 프로비저닝합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory에서 FSx for ONTAP 파일 시스템에 대한 SSD IOPS를 자동으로 또는 수동으로 프로비저닝합니다.
+
+.이 작업 정보
+FSx 파일 시스템에 대해 자동 SSD IOPS 프로비저닝을 활성화하거나 수동으로 IOPS를 프로비저닝할 수 있습니다.
+
+자동으로 프로비저닝되는 IOPS는 GiB당 3 IOPS로 계산됩니다.
+
+수동으로 IOPS를 프로비저닝하는 경우, link:adjust-file-system-capacity.html["파일 시스템 용량 증가"] 전에 IOPS를 늘려야 할 수도 있습니다.
+
+IOPS 제한에 대한 자세한 내용은 AWS FSx for NetApp ONTAP 설명서에서 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/limits.html["할당량"^]을(를) 참조하십시오.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 IOPS를 프로비저닝할 파일 시스템의 작업 메뉴를 선택한 다음 *관리*를 선택합니다.
+. 정보에서 마우스 커서를 *IOPS 할당* 행 위로 가져갔을 때 드롭다운 화살표 옆에 나타나는 연필 아이콘을 선택합니다.
+. 프로비저닝된 IOPS 대화 상자에서 *자동* 또는 *사용자 프로비저닝*을 선택합니다.
+. *사용자 프로비저닝*을 선택한 경우 원하는 *IOPS 값*을 입력하십시오.
+. *적용*을 선택합니다.
+

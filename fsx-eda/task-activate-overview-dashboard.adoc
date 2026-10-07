@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: fsx-eda/task-activate-overview-dashboard.html 
+keywords: activate dashboard, CloudWatch metrics, AWS credentials, view permissions, FSx for ONTAP, cluster overview, enable dashboard 
+summary: 개요 대시보드를 활성화하여 FSx for ONTAP 파일 시스템에 대한 CloudWatch 메트릭 수집을 시작하세요. 
+---
+= EDA용 Workload Factory에서 개요 대시보드 활성화
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+개요 대시보드를 활성화하여 FSx for ONTAP 파일 시스템에 대한 CloudWatch 메트릭 수집을 시작하십시오. 이 대시보드를 통해 클러스터 상태, 용량 및 처리량을 한눈에 확인할 수 있습니다.
+
+
+
+[[before-you-begin]]
+== 시작하기 전에
+
+대시보드를 활성화하기 전에 다음 요구 사항을 충족하는지 확인하십시오.
+
+
+
+[[aws-credentials-with-view-permissions]]
+=== 보기 권한이 있는 AWS 자격 증명
+
+Workload Factory에서 일반 스토리지에 대해 최소한 읽기(보기) 권한을 가진 AWS 자격 증명을 구성해야 합니다. _보기, 계획 및 분석_ 자격 증명은 CloudWatch 메트릭에 필요한 읽기 권한이 포함되어 있지 않으므로 지원되지 않습니다.
+
+보기 권한이 있는 자격 증명을 구성하지 않은 경우 개요 탭을 열면 AWS 자격 증명 설정 페이지로 리디렉션됩니다.
+
+AWS 자격 증명을 구성하지 않은 경우 link:../fsx-storage/add-credentials.html["AWS 자격 증명 추가"^]을 참조하십시오.
+
+
+
+[[activate-the-dashboard]]
+== 대시보드 활성화
+
+Workload Factory에서 보기 권한이 있는 자격 증명을 확인한 후 대시보드를 활성화하여 FSx for ONTAP 파일 시스템에 대한 CloudWatch 메트릭 수집을 시작하십시오.
+
+
+NOTE: 동의하신 후 측정항목 수집에는 다소 시간이 소요될 수 있습니다. 첫 번째 수집이 진행되는 동안 대시보드에서 알림을 받으실 수 있습니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *EDA*를 선택합니다.
+. *개요* 탭을 선택합니다.
+. 보기 권한이 있는 자격 증명이 감지되지 않으면 *자격 증명 추가*를 선택하고 안내에 따라 보기 권한이 있는 AWS 자격 증명을 구성하십시오. 그런 다음 *개요* 탭으로 돌아가십시오.
+. FSx for ONTAP 파일 시스템에 대해 수집될 CloudWatch 메트릭을 설명하는 동의 프롬프트를 검토하십시오.
+. 대시보드를 활성화하고 지표 수집을 시작하려면 *활성화*를 선택하세요.
+
+
+.결과
+Workload Factory는 AWS 자격 증명에 연결된 모든 FSx for ONTAP 파일 시스템에 대한 CloudWatch 메트릭 수집을 시작합니다. 메트릭이 수집되는 대로 대시보드가 업데이트됩니다. 데이터 수집이 진행 중인 동안에는 알림이 표시됩니다.
+
+
+
+[[next-steps]]
+== 다음 단계
+
+대시보드를 활성화한 후 다음을 수행할 수 있습니다.
+
+* link:task-use-overview-dashboard.html["개요 대시보드 사용"] 클러스터 상태 및 용량 모니터링
+* link:task-use-overview-dashboard.html#change-ssd-management-mode["SSD 용량 관리 모드 활성화 및 구성"] (권장, 자동화 또는 없음)
+* link:task-use-overview-dashboard.html#change-throughput-management-mode["처리량 관리 모드 활성화 및 구성"] (권장, 자동화 또는 없음)
+* 특정 리전 또는 AWS 계정에 초점을 맞추도록 필터를 설정하세요.
+

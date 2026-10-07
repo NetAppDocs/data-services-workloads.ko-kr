@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/quick-start-fsx.html 
+keywords: Amazon FSx for NetApp ONTAP, fsx, netapp, quick, get started, install, deploy, setup, launch, requirements, prerequisites, credentials, permissions, policy 
+summary: NetApp Workload Factory에서 몇 단계만 거치면 FSx for ONTAP을 시작할 수 있습니다. 
+---
+= NetApp Workload Factory에서의 Amazon FSx for NetApp ONTAP 빠른 시작
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+자격 증명 및 권한을 추가하고, 필요한 경우 링크를 생성하고, 스토리지 시스템을 생성하거나 검색하여 Amazon FSx for NetApp ONTAP을 시작하십시오.
+
+시작하려면 다음 단계를 따르세요.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["하나"] 자격 증명 및 권한 추가
+[role="quick-margin-para"]
+link:add-credentials.html["계정에 자격 증명을 수동으로 추가"^] 여기에는 데이터베이스 및 EDA 등 워크로드 기능을 선택하고 필요한 권한에 대한 IAM 정책을 생성하는 작업이 포함됩니다.
+
+[role="quick-margin-para"]
+필요에 맞는 link:permissions-reference-fsx.html["권한 정책"^]을(를) 선택하십시오.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"] 선택 사항: Console 에이전트 또는 링크 생성
+[role="quick-margin-para"]
+NetApp Console에서 일부 관리 작업을 수행하려면 Console 에이전트 또는 NetApp Workload Factory 링크가 필요합니다. _Console 에이전트_는 VPC에 배포하여 FSx for ONTAP 파일 시스템을 관리하는 가상 머신입니다. _링크_는 AWS Lambda를 활용하여 FSx for ONTAP 파일 시스템과의 신뢰 관계 및 연결을 설정합니다.
+
+[role="quick-margin-list"]
+* link:../setup/links-overview.html["FSx for ONTAP 관리에 콘솔 에이전트 또는 링크가 필요한 시점을 알아보십시오"]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-install-options-aws.html["AWS에서 콘솔 에이전트를 생성하는 방법을 알아보십시오"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["온프레미스에서 Console 에이전트를 생성하는 방법을 알아보십시오"^]
+* link:create-link.html["링크를 만드는 방법을 알아보세요"^]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3"] 파일 시스템 생성
+[role="quick-margin-para"]
+NetApp Console에서 직접 FSx for ONTAP 파일 시스템을 생성하거나 AWS 환경에 이미 생성한 파일 시스템을 검색할 수 있습니다. link:create-discover-systems.html["파일 시스템을 생성하거나 기존 파일 시스템을 검색하는 방법을 알아보세요."]
+
+[role="quick-margin-para"]
+또한 스토리지 절감액 계산기를 시작하여 Amazon Elastic Block Store, Elastic File System 및 FSx for Windows File Server 스토리지 환경의 비용을 FSx for ONTAP의 비용과 비교할 수 있습니다. link:explore-savings.html["스토리지 절약 계산기를 통해 절약 효과를 확인해 보십시오."]
+
+.다음 단계
+스토리지 인벤토리에 파일 시스템이 있으면 link:create-volume.html["볼륨을 생성합니다"], FSx for ONTAP 파일 시스템을 관리하고 리소스에 대한 데이터 보호를 설정할 수 있습니다.

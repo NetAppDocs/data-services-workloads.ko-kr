@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: admin/codebox-automation.html 
+keywords: codebox, automation 
+summary: 'Codebox는 개발자와 DevOps가 NetApp Workload Factory에서 지원하는 모든 작업을 실행하는 데 필요한 코드를 생성할 수 있도록 도와주는 IaC(Infrastructure as Code) 보조 도구입니다.' 
+---
+= NetApp Workload Factory에서 Codebox 자동화에 대해 알아보세요.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Codebox는 개발자와 DevOps가 NetApp Workload Factory에서 지원하는 모든 작업을 실행하는 데 필요한 코드를 생성할 수 있도록 돕는 IaC(Infrastructure as Code) 보조 도구입니다. Codebox는 Workload Factory 권한 정책에 부합하며, 실행 준비를 위한 명확한 경로를 설정할 뿐만 아니라 향후 빠른 재사용을 위한 자동화 카탈로그를 제공합니다.
+
+
+
+[[codebox-capabilities]]
+== Codebox 기능
+
+Codebox는 두 가지 핵심 IaC 기능을 제공합니다:
+
+* _Codebox Viewer_는 그래픽 마법사 또는 대화형 채팅 인터페이스의 항목 및 선택 사항을 일치시켜 특정 작업 흐름 작업에서 생성된 IaC를 보여줍니다. Codebox Viewer는 간편한 탐색 및 분석을 위해 색상 코딩을 지원하지만, 편집은 허용하지 않으며 코드를 복사하거나 Automation 카탈로그에 저장하는 것만 가능합니다.
+* _Codebox Automation Catalog_에는 저장된 모든 IaC 작업이 표시되어 향후 사용을 위해 쉽게 참조할 수 있습니다. 자동화 카탈로그 작업은 템플릿으로 저장되며 해당 작업에 적용되는 리소스와 함께 표시됩니다.
+
+
+또한, Workload Factory 자격 증명을 설정할 때 Codebox는 IAM 정책을 생성하는 데 필요한 AWS 권한을 동적으로 표시합니다. 이러한 권한은 사용하려는 각 Workload Factory 기능(데이터베이스, AI, FSx for ONTAP 등)에 대해 제공되며 사용자 지정이 가능합니다. Codebox에서 권한을 복사한 다음 AWS Management Console에 붙여넣기만 하면 Workload Factory가 워크로드를 관리하는 데 필요한 올바른 권한을 갖게 됩니다.
+
+
+
+[[supported-code-formats]]
+== 지원되는 코드 형식
+
+지원되는 코드 형식은 다음과 같습니다:
+
+* Workload Factory REST API
+* AWS CLI
+* AWS CloudFormation
+* Terraform
+
+
+
+
+[[related-information]]
+== 관련 정보
+
+link:use-codebox.html["Codebox 사용법을 알아보세요"].
+
+link:https://console.workloads.netapp.com/api-doc["Workload Factory REST API 문서"^].

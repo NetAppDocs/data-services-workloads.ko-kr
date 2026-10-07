@@ -1,0 +1,372 @@
+---
+settings:
+  name: Workload Factory for NetApp Console
+  internal:
+    pdf_enabled: true
+    termcheck_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  release_notes_autogen:
+    release_notes_repo: console-relnotes
+  langs: ko-kr,us-en,de-de,es-es,fr-fr,it-it,pt-br,ja-jp,zh-cn,zh-tw
+sidebar:
+  entries:
+  - title: NetApp Console용 Workload Factory
+    url: "/index.html"
+  - title: 릴리스 노트
+    entries:
+    - title: 새로운 소식
+      url: "/whats-new.html"
+    - title: Workload Factory의 FSx for ONTAP에 대한 알려진 제한 사항
+      url: "/known-limitations.html"
+  - title: 시작하기
+    entries:
+    - title: NetApp Console에서 Workload Factory에 대해 알아보십시오.
+      url: "/setup/learn-about-workload-factory.html"
+    - title: 빠른 시작
+      url: "/setup/quick-start.html"
+    - title: Workload Factory에 가입하고 로그인합니다.
+      url: "/setup/sign-up-and-log-in.html"
+    - title: 링크에 대해 알아보기
+      url: "/setup/links-overview.html"
+    - title: 권한에 대해 알아보십시오
+      url: "/setup/learn-about-permissions.html"
+  - title: Amazon FSx for NetApp ONTAP
+    entries:
+    - title: 스토리지 워크로드에 FSx for ONTAP을 사용하십시오.
+      entries:
+      - title: FSx for ONTAP에 대해 알아보기
+        url: "/fsx-storage/learn-fsx-ontap.html"
+      - title: 할인 혜택을 살펴보세요
+        url: "/fsx-storage/explore-savings.html"
+      - title: 스토리지 리소스 생성
+        entries:
+        - title: FSx for ONTAP 파일 시스템을 생성하거나 검색합니다.
+          url: "/fsx-storage/create-discover-systems.html"
+        - title: 스토리지 VM 생성
+          url: "/fsx-storage/create-storage-vm.html"
+        - title: 볼륨 생성
+          url: "/fsx-storage/create-volume.html"
+        - title: igroup 생성
+          url: "/fsx-storage/create-igroup.html"
+        - title: 블록 장치를 생성하십시오
+          url: "/fsx-storage/create-block-device.html"
+      - title: 링크를 사용하여 파일 시스템에 연결
+        url: "/fsx-storage/create-link.html"
+      - title: 캐시 볼륨 검색 및 보기
+        url: "/fsx-storage/discover-cache-volumes.html"
+      - title: 데이터에 액세스하세요
+        url: "/fsx-storage/access-data.html"
+    - title: 데이터 보호
+      entries:
+      - title: 데이터 보호 개요
+        url: "/fsx-storage/data-protection-overview.html"
+      - title: 스냅샷을 사용하여 데이터를 보호합니다
+        entries:
+        - title: 스냅샷을 사용하여 데이터를 보호합니다
+          url: "/fsx-storage/use-snapshots.html"
+        - title: 스냅샷 정책 관리
+          url: "/fsx-storage/manage-snapshot-policy.html"
+        - title: 스냅샷 관리
+          url: "/fsx-storage/manage-snapshots.html"
+      - title: 오브젝트 스토리지에 백업 사용
+        url: "/fsx-storage/use-backups.html"
+      - title: 복제를 사용하여 데이터 보호
+        entries:
+        - title: 데이터 복제
+          url: "/fsx-storage/create-replication.html"
+        - title: 온프레미스 ONTAP 데이터를 FSx for ONTAP에 복제
+          url: "/fsx-storage/use-onprem-data.html"
+        - title: 스토리지 VM을 다른 파일 시스템으로 복제
+          url: "/fsx-storage/replicate-svm-to-file-system.html"
+        - title: 복제 지연 추적
+          url: "/fsx-storage/track-replication-delays.html"
+        - title: 복제 관계 관리
+          url: "/fsx-storage/manage-replication.html"
+      - title: 자율형 랜섬웨어 보호 기능으로 데이터를 보호하십시오
+        url: "/fsx-storage/ransomware-protection.html"
+      - title: 볼륨 복제
+        url: "/fsx-storage/clone-volume.html"
+      - title: 데이터를 보호하기 위한 사이버 볼트 생성
+        url: "/fsx-storage/create-cyber-vault.html"
+    - title: Workload Factory에서 FSx for ONTAP 관리
+      entries:
+      - title: FSx for ONTAP EMS 이벤트 분석
+        url: "/fsx-storage/analyze-events.html"
+      - title: 파일 시스템 모범 사례를 구현하십시오
+        entries:
+        - title: FSx for ONTAP 구성 분석
+          url: "/fsx-storage/configuration-analysis.html"
+        - title: 잘 설계된 파일 시스템 구성을 구현하십시오
+          url: "/fsx-storage/improve-configurations.html"
+        - title: 사용자 지정 규칙
+          entries:
+          - title: 사용자 지정 규칙에 대해 알아보기
+            url: "/fsx-storage/learn-custom-rules.html"
+          - title: 사용자 지정 규칙 만들기
+            url: "/fsx-storage/create-custom-rule.html"
+          - title: 사용자 지정 규칙 관리
+            url: "/fsx-storage/manage-custom-rules.html"
+      - title: FSx for ONTAP 비용을 추적하고 분석합니다.
+        url: "/fsx-storage/track-costs.html"
+      - title: 볼륨 관리
+        entries:
+        - title: 볼륨 용량 관리
+          url: "/fsx-storage/manage-volume-capacity.html"
+        - title: 볼륨 지연 시간 임계값 설정
+          url: "/fsx-storage/set-volume-latency-thresholds.html"
+        - title: 볼륨 설정 관리
+          url: "/fsx-storage/manage-volume-settings.html"
+        - title: 캐시 볼륨 관리
+          url: "/fsx-storage/manage-cache-volumes.html"
+        - title: 티어링 정책 변경
+          url: "/fsx-storage/change-tiering-policy.html"
+        - title: NFS 엑스포트 정책 관리
+          url: "/fsx-storage/manage-nfs-export-policy.html"
+        - title: SMB/CIFS 공유 관리
+          url: "/fsx-storage/manage-cifs-share.html"
+        - title: S3 액세스 포인트 관리
+          entries:
+          - title: S3 액세스 포인트 생성 및 연결
+            url: "/fsx-storage/create-s3-access-points.html"
+          - title: S3 액세스 포인트 관리
+            url: "/fsx-storage/manage-s3-access-points.html"
+          - title: 저널 테이블 인프라를 설정합니다
+            url: "/fsx-storage/setup-journal-table.html"
+        - title: 복제된 볼륨 분할
+          url: "/fsx-storage/split-cloned-volume.html"
+        - title: 볼륨 삭제
+          url: "/fsx-storage/delete-volume.html"
+      - title: 블록 스토리지 관리
+        entries:
+        - title: 블록 스토리지 관리
+          url: "/fsx-storage/manage-block-storage.html"
+        - title: 블록 디바이스에 태그 적용
+          url: "/fsx-storage/apply-block-device-tags.html"
+      - title: 파일 시스템 관리
+        entries:
+        - title: 파일 시스템 용량 조정
+          url: "/fsx-storage/adjust-file-system-capacity.html"
+        - title: 파일 시스템 설정 관리
+          url: "/fsx-storage/manage-file-system-settings.html"
+        - title: 파일 시스템에 대한 IOPS 프로비저닝
+          url: "/fsx-storage/provision-iops.html"
+        - title: 파일 시스템을 삭제합니다
+          url: "/fsx-storage/delete-file-system.html"
+      - title: 스토리지 VM 관리
+        entries:
+        - title: 스토리지 VM 설정 관리
+          url: "/fsx-storage/manage-svm-settings.html"
+        - title: 스토리지 VM 삭제
+          url: "/fsx-storage/delete-svm.html"
+    - title: 데이터베이스 워크로드에 FSx for ONTAP을 사용하십시오.
+      entries:
+      - title: 데이터베이스용 Workload Factory에 대해 알아보십시오
+        url: "/fsx-databases/learn-about-databases.html"
+      - title: 데이터베이스용 Workload Factory 빠른 시작
+        url: "/fsx-databases/quick-start-databases.html"
+      - title: 할인 혜택을 살펴보세요
+        url: "/fsx-databases/explore-savings-databases.html"
+      - title: 데이터베이스 리소스 생성
+        entries:
+        - title: Microsoft SQL Server 생성
+          url: "/fsx-databases/create-sql-database-server.html"
+        - title: PostgreSQL 서버 생성
+          url: "/fsx-databases/create-postgresql-server.html"
+        - title: 데이터베이스를 생성하십시오
+          url: "/fsx-databases/create-sql-database.html"
+        - title: 샌드박스 복제본을 생성합니다
+          url: "/fsx-databases/create-sandbox-clone.html"
+      - title: 리소스 관리
+        entries:
+        - title: 리소스 관리
+          url: "/fsx-databases/manage-resources.html"
+        - title: 리소스 등록
+          url: "/fsx-databases/register-instance.html"
+        - title: 데이터베이스 복제본 관리
+          url: "/fsx-databases/manage-clones.html"
+        - title: 리소스 등록 해제
+          url: "/fsx-databases/deregister-instance.html"
+      - title: 데이터베이스 리소스를 보호, 모니터링 및 최적화합니다.
+        entries:
+        - title: 오류 로그 분석
+          url: "/fsx-databases/analyze-error-logs.html"
+        - title: 구성 모범 사례를 구현하십시오
+          entries:
+          - title: 데이터베이스 구성 분석
+            url: "/fsx-databases/optimize-overview.html"
+          - title: 잘 설계된 데이터베이스 구성을 구현하십시오
+            url: "/fsx-databases/optimize-configurations.html"
+        - title: SQL Server 데이터베이스 리소스 보호
+          url: "/fsx-databases/protect-sql-server.html"
+    - title: EDA 워크로드에 FSx for ONTAP을 사용하십시오.
+      entries:
+      - title: NetApp Workload Factory for EDA에 대해 알아보세요.
+        url: "/fsx-eda/learn-eda.html"
+      - title: 빠른 시작
+        url: "/fsx-eda/quick-start-eda.html"
+      - title: 요구 사항
+        url: "/fsx-eda/requirements.html"
+      - title: EDA 스토리지 개요
+        entries:
+        - title: 개요 대시보드에 대해 알아보십시오
+          url: "/fsx-eda/learn-overview-dashboard.html"
+        - title: 개요 대시보드 활성화
+          url: "/fsx-eda/task-activate-overview-dashboard.html"
+        - title: 개요 대시보드 사용
+          url: "/fsx-eda/task-use-overview-dashboard.html"
+      - title: 프로젝트 사용 분석
+        entries:
+        - title: 프로젝트 대시보드에 대해 알아보십시오
+          url: "/fsx-eda/learn-project-dashboard.html"
+        - title: 프로젝트 대시보드 구성
+          url: "/fsx-eda/task-configure-project-dashboard.html"
+        - title: 프로젝트 대시보드 사용
+          url: "/fsx-eda/task-use-project-dashboard.html"
+      - title: Perforce 통합 기능을 사용하세요
+        entries:
+        - title: Perforce 통합에 대해 알아보세요
+          url: "/fsx-eda/learn-eda-workloads.html"
+        - title: 프로젝트 관리
+          url: "/fsx-eda/manage-projects.html"
+        - title: 프로젝트 버전 관리
+          url: "/fsx-eda/version-projects.html"
+        - title: 워크스페이스 만들기
+          url: "/fsx-eda/create-workspaces.html"
+        - title: Perforce와 통합
+          url: "/fsx-eda/integrate-perforce.html"
+    - title: VMware 워크로드에 FSx for ONTAP을 사용하십시오.
+      entries:
+      - title: VMware용 NetApp Workload Factory에 대해 알아보십시오.
+        url: "/fsx-vmware/learn-about-vmware-workloads.html"
+      - title: Amazon EVS로 마이그레이션하기 위한 빠른 시작 가이드
+        url: "/fsx-vmware/quick-start-evs.html"
+      - title: Amazon EC2로 마이그레이션하기 위한 빠른 시작
+        url: "/fsx-vmware/quick-start-native.html"
+      - title: VMware Cloud on AWS로 마이그레이션하기 위한 빠른 시작
+        url: "/fsx-vmware/quick-start-vmware.html"
+      - title: Google Cloud VMware Engine으로 마이그레이션을 위한 빠른 시작
+        url: "/fsx-vmware/quick-start-gcve.html"
+      - title: VMware 계획 센터를 살펴보세요
+        url: "/fsx-vmware/explore-planning-center.html"
+      - title: VMware 계획 센터를 사용하십시오
+        entries:
+        - title: VM 인벤토리 데이터 업로드
+          url: "/fsx-vmware/upload-vm-inventory.html"
+        - title: Amazon Elastic VMware Service로 마이그레이션
+          entries:
+          - title: 할인 혜택을 살펴보세요
+            url: "/fsx-vmware/calculate-evs-savings.html"
+          - title: 배포 계획을 수동으로 생성합니다
+            url: "/fsx-vmware/launch-migration-advisor-evs-manual.html"
+          - title: 마이그레이션 어드바이저를 사용하여 배포 계획을 생성하십시오
+            url: "/fsx-vmware/launch-migration-advisor-evs.html"
+          - title: 권장되는 FSx for ONTAP 파일 시스템을 배포하십시오.
+            url: "/fsx-vmware/deploy-fsx-file-system-evs.html"
+        - title: Google Cloud VMware Engine으로 마이그레이션
+          entries:
+          - title: 마이그레이션 어드바이저를 사용하여 배포 계획을 생성하십시오
+            url: "/fsx-vmware/launch-migration-advisor-gcve.html"
+        - title: Amazon EC2로 마이그레이션
+          entries:
+          - title: 마이그레이션 어드바이저를 사용하여 배포 계획을 생성하십시오
+            url: "/fsx-vmware/launch-onboarding-advisor-native.html"
+          - title: 권장되는 FSx for ONTAP 파일 시스템을 배포하십시오.
+            url: "/fsx-vmware/deploy-fsx-file-system-native.html"
+        - title: VMware Cloud on AWS로 마이그레이션
+          entries:
+          - title: 마이그레이션 어드바이저를 사용하여 배포 계획을 생성하십시오
+            url: "/fsx-vmware/launch-onboarding-advisor.html"
+          - title: 권장되는 FSx for ONTAP 파일 시스템을 배포하십시오.
+            url: "/fsx-vmware/deploy-fsx-file-system.html"
+          - title: FSx for ONTAP을 VMware Cloud on AWS에 연결합니다
+            url: "/fsx-vmware/connect-sddc-to-fsx.html"
+          - title: 데이터를 새로운 인프라로 마이그레이션하십시오
+            url: "/fsx-vmware/migrate-data.html"
+        - title: FSx for ONTAP에서 VMware 워크로드 최적화
+          entries:
+          - title: EVS 구성에 대한 구성 분석
+            url: "/fsx-vmware/configuration-analysis.html"
+          - title: 잘 설계된 EVS 구성 구현
+            url: "/fsx-vmware/view-evs-well-architected.html"
+    - title: 참조
+      entries:
+      - title: FSx for ONTAP 성능
+        url: "/fsx-storage/performance-reference.html"
+      - title: FSx for ONTAP 보안
+        url: "/fsx-storage/security-reference.html"
+  - title: Google Cloud NetApp Volumes
+    entries:
+    - title: Google Cloud NetApp Volumes에 대해 알아보십시오.
+      url: "/gcnv/learn-netapp-volumes.html"
+    - title: Google Cloud NetApp Volumes 빠른 시작
+      url: "/gcnv/quick-start-gcnv.html"
+    - title: Google Cloud NetApp Volumes 설정
+      url: "/gcnv/set-up.html"
+    - title: Google Cloud NetApp Volumes 역할 할당
+      url: "/gcnv/add-roles.html"
+    - title: Google Cloud NetApp Volumes 자격 증명을 추가합니다
+      url: "/gcnv/add-credentials.html"
+    - title: Google Cloud NetApp Volumes에 대한 구성 분석
+      url: "/gcnv/configuration-analysis.html"
+    - title: 스토리지 풀 구성 개선
+      url: "/gcnv/improve-configurations.html"
+  - title: OCI NetApp 스토리지 서비스
+    entries:
+    - title: OCI NetApp 스토리지 서비스에 대해 알아보십시오
+      url: "/oci/learn-about-oci.html"
+    - title: OCI NetApp 스토리지 서비스 빠른 시작
+      url: "/oci/quick-start-oci.html"
+    - title: OCI 자격 증명 추가
+      url: "/oci/add-credentials.html"
+    - title: OCI 스토리지 시스템 검색
+      url: "/oci/create-discover-systems.html"
+    - title: OCI 스토리지 시스템에 연결합니다
+      url: "/oci/create-link.html"
+    - title: OCI NetApp 스토리지 서비스에 대한 권한 참조
+      url: "/oci/permissions-oci.html"
+  - title: Workload Factory 관리
+    entries:
+    - title: 잘 설계된 워크로드를 구축하고 운영합니다
+      url: "/admin/well-architected-workloads.html"
+    - title: 알림 설정
+      url: "/admin/configure-notifications.html"
+    - title: Tracker를 사용하여 운영 상황을 모니터링하세요
+      url: "/admin/monitor-operations.html"
+    - title: 링크 관리
+      url: "/admin/manage-links.html"
+    - title: FSx for ONTAP용 AI 기능 관리
+      url: "/admin/manage-genai-features.html"
+    - title: FSx for ONTAP용 사용자 지정 대시보드
+      entries:
+      - title: FSx for ONTAP용 사용자 지정 대시보드에 대해 알아보기
+        url: "/admin/learn-custom-dashboards-fsx.html"
+      - title: FSx for ONTAP용 사용자 지정 대시보드 생성
+        url: "/admin/create-custom-dashboard-fsx.html"
+      - title: FSx for ONTAP용 사용자 지정 대시보드 관리
+        url: "/admin/manage-custom-dashboards-fsx.html"
+      - title: FSx for ONTAP용 사용자 지정 대시보드 문제 해결
+        url: "/admin/troubleshoot-custom-dashboards-fsx.html"
+    - title: Codebox를 사용하여 작업을 자동화하세요
+      entries:
+      - title: Codebox에 대해 알아보세요
+        url: "/admin/codebox-automation.html"
+      - title: Codebox를 사용하여 코드를 생성하세요
+        url: "/admin/use-codebox.html"
+    - title: CloudShell 사용
+      url: "/admin/use-cloudshell.html"
+    - title: 자격 증명 제거
+      url: "/admin/manage-credentials.html"
+  - title: 지식 및 지원
+    entries:
+    - title: 지원 등록
+      url: "/register-support.html"
+    - title: 도움말 보기
+      url: "/get-help.html"
+  - title: 법적 고지
+    url: "/legal-notices.html"
+product-family:
+  name: NetApp Data Services
+  repo: data-services-family

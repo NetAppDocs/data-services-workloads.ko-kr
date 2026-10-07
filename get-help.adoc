@@ -1,0 +1,157 @@
+---
+sidebar: sidebar 
+permalink: get-help.html 
+keywords: help, ticket, open support case, support, netapp support, technical support, call support, phone number, open ticket, web ticket, open an issue, NetApp Console 
+summary: 'NetApp은 다양한 방식으로 NetApp Console을 지원합니다. 기술 자료(KB) 문서와 커뮤니티 포럼 등 광범위한 무료 자가 지원 옵션을 연중무휴 24시간 이용할 수 있습니다. 지원 등록에는 웹 티켓팅을 통한 원격 기술 지원이 포함됩니다.' 
+---
+= NetApp Console 클라우드 서비스 관련 도움말 보기
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp은 NetApp Console 및 클라우드 서비스에 대한 지원을 다양한 방식으로 제공합니다. 기술 자료(KB) 문서 및 커뮤니티 포럼 등 광범위한 무료 자체 지원 옵션을 연중무휴 24시간 이용할 수 있습니다. 지원 등록에는 웹 티켓팅을 통한 원격 기술 지원이 포함됩니다.
+
+
+
+[[get-support-for-a-cloud-provider-file-service]]
+== 클라우드 공급자 파일 서비스에 대한 지원 받기
+
+클라우드 공급자 파일 서비스, 해당 인프라 또는 해당 서비스를 사용하는 솔루션과 관련된 기술 지원은 해당 제품의 설명서를 참조하십시오.
+
+* link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/start/concept-fsx-aws.html#getting-help["Amazon FSx for ONTAP"^]
+* link:https://docs.netapp.com/us-en/storage-management-azure-netapp-files/concept-azure-netapp-files.html#getting-help["Azure NetApp Files"^]
+* link:https://docs.netapp.com/us-en/storage-management-google-cloud-netapp-volumes/concept-gcnv.html#getting-help["Google Cloud NetApp Volumes"^]
+
+
+NetApp 및 NetApp 스토리지 솔루션과 데이터 서비스에 대한 기술 지원을 받으려면 아래에 설명된 지원 옵션을 사용하십시오.
+
+
+
+[[use-self-support-options]]
+== 셀프 지원 옵션 사용
+
+이러한 옵션은 연중무휴 24시간 무료로 이용할 수 있습니다.
+
+* 설명서
++
+현재 보고 계신 NetApp Console 설명서입니다.
+
+* https://kb.netapp.com/Cloud/BlueXP["지식 기반"^]
++
+NetApp 기술 자료에서 문제 해결에 도움이 되는 문서를 검색해 보세요.
+
+* http://community.netapp.com/["커뮤니티"^]
++
+NetApp Console 커뮤니티에 참여하여 진행 중인 토론을 확인하거나 새로운 토론을 시작해 보세요.
+
+
+
+
+
+[[create-a-case-with-netapp-support]]
+== NetApp 지원팀에 케이스 생성
+
+위의 자가 지원 옵션 외에도 지원을 활성화한 후 NetApp 지원 전문가와 협력하여 문제를 해결할 수 있습니다.
+
+.시작하기 전에
+* *케이스 생성* 기능을 사용하려면 먼저 NetApp Support Site 자격 증명을 Console 로그인과 연결해야 합니다 https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-user-credentials.html["NetApp Console 로그인과 관련된 자격 증명을 관리하는 방법을 알아보세요."^].
+* 시리얼 번호가 있는 ONTAP 시스템에 대한 지원 사례를 개설하는 경우, NSS 계정이 해당 시스템의 시리얼 번호와 연결되어 있어야 합니다.
+
+
+.단계
+. NetApp Console에서 *도움말 > 지원*을 선택하십시오.
+. *리소스* 페이지에서 기술 지원 항목 아래에 있는 옵션 중 하나를 선택합니다.
++
+.. 전화 상담을 원하시면 *전화하기*를 선택하세요. netapp.com의 전화번호 목록 페이지로 이동합니다.
+.. NetApp 지원 전문가에게 티켓을 열려면 *케이스 생성*을 선택하세요:
++
+*** *서비스*: 문제가 관련된 서비스를 선택하십시오. 예를 들어, 콘솔 내 워크플로 또는 기능과 관련된 기술 지원 문제인 경우 *NetApp Console*을 선택하십시오.
+*** *시스템*: 스토리지에 적용되는 경우 *Cloud Volumes ONTAP* 또는 *온프레미스*를 선택한 다음 관련 작업 환경을 선택하십시오.
++
+시스템 목록은 상단 배너에서 선택한 NetApp Console 조직 및 NetApp Console 에이전트의 범위 내에 있습니다.
+
+*** *Case Priority*: 케이스의 우선순위를 낮음, 중간, 높음 또는 긴급 중에서 선택하십시오.
++
+이러한 우선순위에 대한 자세한 내용을 보려면 필드 이름 옆에 있는 정보 아이콘 위에 마우스를 올려놓으십시오.
+
+*** *문제 설명*: 발생한 문제에 대한 자세한 설명을 제공해 주십시오. 관련 오류 메시지 또는 수행한 문제 해결 단계를 포함해 주시기 바랍니다.
+*** *추가 이메일 주소*: 이 문제를 다른 사람에게 알리고 싶다면 추가 이메일 주소를 입력하십시오.
+*** *첨부파일(선택 사항)*: 최대 5개의 첨부파일을 한 번에 하나씩 업로드할 수 있습니다.
++
+첨부 파일 크기는 파일당 25MB로 제한됩니다. 지원되는 파일 확장자는 txt, log, pdf, jpg/jpeg, rtf, doc/docx, xls/xlsx, csv입니다.
+
+
+
+
+
++
+image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/screenshot-create-case.png["NetApp 기술 지원에 케이스를 생성할 수 있는 Create a Case 양식의 스크린샷입니다."]
+
+
+
+.완료한 후
+지원 사례 번호가 포함된 팝업 창이 나타납니다. NetApp 지원 전문가가 귀하의 사례를 검토한 후 곧 연락드리겠습니다.
+
+지원 사례 기록을 보려면 *설정 > 타임라인*을 선택하고 "지원 사례 생성"이라는 이름의 작업을 찾으세요. 맨 오른쪽에 있는 버튼을 클릭하면 해당 작업을 확장하여 세부 정보를 볼 수 있습니다.
+
+케이스를 생성하려고 할 때 다음과 같은 오류 메시지가 나타날 수 있습니다.
+
+"선택한 서비스에 대한 케이스를 생성할 권한이 없습니다."
+
+이 오류는 NSS 계정과 해당 계정이 연결된 등록 회사가 NetApp Console 계정 일련 번호(예: 960xxxx) 또는 작업 환경 일련 번호에 대한 등록 회사와 일치하지 않음을 의미할 수 있습니다. 다음 옵션 중 하나를 사용하여 지원을 요청할 수 있습니다.
+
+* 비기술적인 케이스를 제출하려면 https://mysupport.netapp.com/site/help[]
+
+
+
+
+[[manage-your-support-cases]]
+== 지원 사례 관리
+
+Console에서 활성 및 해결된 지원 사례를 직접 확인하고 관리할 수 있습니다. NSS 계정 및 회사와 관련된 사례를 관리할 수 있습니다.
+
+다음 사항에 유의하십시오.
+
+* 페이지 상단의 사례 관리 대시보드는 두 가지 보기 방식을 제공합니다.
++
+** 왼쪽 화면에는 사용자께서 제공하신 NSS 계정으로 지난 3개월 동안 접수된 총 사건 수가 표시됩니다.
+** 오른쪽 화면에는 사용자 NSS 계정을 기준으로 회사 차원에서 지난 3개월 동안 접수된 총 사례 수가 표시됩니다.
+
+
++
+표에 표시된 결과는 사용자가 선택한 보기와 관련된 사례를 반영합니다.
+
+* 원하는 열을 추가하거나 제거할 수 있으며, 우선순위 및 상태와 같은 열의 내용을 필터링할 수도 있습니다. 다른 열은 정렬 기능만 제공합니다.
++
+자세한 내용은 아래 단계를 참조하십시오.
+
+* 개별 케이스별로 케이스 노트를 업데이트하거나, 이미 '종료됨' 또는 '종료 예정' 상태가 아닌 케이스를 종료할 수 있는 기능을 제공합니다.
+
+
+.단계
+. NetApp Console에서 *도움말 > 지원*을 선택하십시오.
+. *사례 관리*를 선택하고, 메시지가 표시되면 NSS 계정을 Console에 추가하세요.
++
+*케이스 관리* 페이지에는 Console 사용자 계정과 연결된 NSS 계정과 관련된 미결 케이스가 표시됩니다. 이 NSS 계정은 *NSS 관리* 페이지 상단에 표시되는 계정과 동일합니다.
+
+. 표에 표시되는 정보를 선택적으로 수정할 수 있습니다.
++
+** *조직의 사례*에서 *보기*를 선택하면 회사와 관련된 모든 사례를 볼 수 있습니다.
+** 정확한 날짜 범위를 선택하거나 다른 기간을 선택하여 날짜 범위를 수정하십시오.
+** 열의 내용을 필터링합니다.
+** image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-columns.png["표에 나타나는 더하기 아이콘"]를 선택한 다음 표시할 열을 선택하여 표에 표시되는 열을 변경합니다.
+
+
+. image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-action.png["표의 마지막 열에 나타나는 점 세 개로 된 아이콘"]를 선택하고 사용 가능한 옵션 중 하나를 선택하여 기존 케이스를 관리합니다.
++
+** *케이스 보기*: 특정 케이스에 대한 전체 세부 정보를 봅니다.
+** *사례 기록 업데이트*: 문제에 대한 추가 정보를 입력하거나 *파일 업로드*를 선택하여 최대 5개의 파일을 첨부할 수 있습니다.
++
+첨부 파일 크기는 파일당 25MB로 제한됩니다. 지원되는 파일 확장자는 txt, log, pdf, jpg/jpeg, rtf, doc/docx, xls/xlsx, csv입니다.
+
+** *케이스 종결*: 케이스를 종결하는 이유에 대한 세부 정보를 입력하고 *케이스 종결*을 선택하십시오.
+
+
+

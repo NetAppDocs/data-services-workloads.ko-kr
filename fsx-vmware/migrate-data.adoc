@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/migrate-data.html 
+keywords: vm workloads, fsx for ontap, migration, data migration, vmware hcx 
+summary: VMware Hybrid Cloud Extension 등 툴을 사용하여 기존 가상 머신 스토리지에서 새 가상 머신에 연결된 FSx for NetApp ONTAP 볼륨으로 데이터를 이동하십시오. VMware HCX의 핵심 기능을 통해 온프레미스 데이터 센터에서 SDDC로 워크로드를 투명하게 마이그레이션할 수 있습니다. 
+---
+= NetApp Workload Factory for VMware를 사용하여 데이터를 새로운 인프라로 마이그레이션하십시오.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware Hybrid Cloud Extension(HCX) 등 툴을 사용하여 기존 가상 머신 스토리지에서 새 가상 머신에 연결된 FSx for NetApp ONTAP 볼륨으로 데이터를 이동하십시오. VMware HCX 핵심 기능을 통해 온프레미스 데이터 센터에서 소프트웨어 정의 데이터 센터(SDDC)로 워크로드를 투명하게 마이그레이션할 수 있습니다.
+
+자세한 내용은 link:https://docs.vmware.com/en/VMware-Cloud-on-AWS/services/com.vmware.vmc-aws-operations/GUID-E8671FC6-F64B-4D41-8F01-B6120B0E3675.html["VMware HCX 설명서를 검토하십시오"^]을(를) 참조하십시오.
+
+.다음 단계
+이제 데이터를 VMware Cloud on AWS 및 Amazon FSx for NetApp ONTAP 외부 데이터스토어로 마이그레이션했으므로, FSx for ONTAP 파일 시스템의 중요 데이터를 백업하고 보호하여 데이터를 항상 사용할 수 있도록 할 수 있습니다.
+
+FSx for ONTAP 파일 시스템 관리에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["Amazon FSx for NetApp ONTAP 설명서"]로 이동하여 사용 가능한 백업 및 보호 기능을 확인하십시오.

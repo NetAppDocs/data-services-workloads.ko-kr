@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/quick-start-databases.html 
+keywords: requirements, setup, quick start, getting started, getting started with databases, getting started with workload factory for databases 
+summary: NetApp Workload Factory for Databases를 사용하여 Infrastructure-as-Code 스니펫을 활용하고, 호스트를 검색하고, 리소스를 관리하는 등의 작업을 시작해 보십시오. 
+---
+= NetApp Workload Factory for Databases 빠른 시작
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory for Databases를 사용하면 _보기, 계획 및 분석_ 권한으로 즉시 시작할 수 있습니다. Workload Factory를 사용하여 호스트를 검색하고 리소스를 관리하는 등의 작업을 수행하려면 몇 단계만 거치면 시작할 수 있습니다.
+
+데이터베이스를 사용하려면 AWS 계정이 있어야 합니다.
+
+시작하려면 다음 단계를 따르세요.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["하나"] NetApp Workload Factory에 로그인하십시오
+[role="quick-margin-para"]
+link:../setup/sign-up-and-log-in.html["가입하기"^]하고 NetApp Console에 로그인해야 합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["둘"] 데이터베이스 워크로드에 대한 자격 증명 및 권한을 추가합니다
+[role="quick-margin-para"]
+link:../fsx-storage/add-credentials.html["계정에 자격 증명을 수동으로 추가"^] 여기에는 데이터베이스 워크로드 기능을 선택하고 필요에 맞는 link:../fsx-storage/permissions-reference-fsx.html["권한 정책"^]를 선택하는 것이 포함됩니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["3"] 리소스를 검색하거나 배포하십시오
+[role="quick-margin-para"]
+자격 증명과 IAM 정책을 사용하면 인벤토리, link:create-sql-database-server.html["Microsoft SQL Server 배포"] 또는 link:create-postgresql-server.html["PostgreSQL 서버를 배포합니다"]에서 기존 데이터베이스 리소스를 검색할 수 있습니다. 인벤토리는 리소스를 관리하기 위한 통합 인터페이스를 제공합니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"] 비용 절감 기회를 살펴보세요
+[role="quick-margin-para"]
+온프레미스 또는 AWS에서 실행되고 Amazon Elastic Block Store(EBS) 또는 FSx for Windows File Server를 스토리지로 사용하는 데이터베이스가 있는 경우, link:explore-savings-databases.html["Explore 절약 계산기를 사용하십시오"] 비용을 분석하고 마이그레이션을 효과적으로 계획할 수 있습니다.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["다섯"] 잘 설계된 데이터베이스 구성을 구현하십시오
+[role="quick-margin-para"]
+Workload Factory for Databases는 Well-architected 대시보드에서 Amazon FSx for NetApp ONTAP 스토리지의 Microsoft SQL Server 및 Oracle 구축을 정기적으로 분석합니다. 데이터베이스 리소스에 대한 well-architected 대시보드에서 문제를 해결하려면 먼저 link:register-instance.html["인스턴스 등록"]해야 합니다.
+
+[role="quick-margin-para"]
+인스턴스를 등록한 후에는 Workload Factory에서 well-architected 상태를 확인하고 link:optimize-configurations.html["잘 설계된 데이터베이스 구성을 구현합니다"] 조치를 취할 수 있습니다.
+
+.다음 단계
+데이터베이스 인벤토리에서 FSx for ONTAP 파일 시스템 스토리지에 리소스를 등록한 경우 link:create-sql-database.html["사용자 데이터베이스를 생성하세요"] 또는 link:create-sandbox-clone.html["호스트를 복제하여 샌드박스를 생성하세요"] 할 수 있습니다.

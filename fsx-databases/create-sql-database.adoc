@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/create-sql-database.html 
+keywords: create, database, creation, Microsoft SQL 
+summary: NetApp Workload Factory for Databases를 사용하여 Microsoft SQL 데이터베이스를 생성합니다. 
+---
+= NetApp Workload Factory for Databases에서 Microsoft SQL 데이터베이스를 생성합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+새로운 Microsoft SQL 데이터베이스를 생성하면 NetApp Workload Factory for Databases 내에서 해당 리소스를 관리할 수 있습니다.
+
+.이 작업 정보
+데이터베이스 생성 시, FSx for ONTAP 파일 시스템에 두 개의 새로운 볼륨이 생성되며, 이 볼륨들은 각각 독립적인 LUN으로 구성되어 데이터베이스의 데이터 및 로그 파일을 저장합니다. 새 데이터베이스의 데이터베이스 파일은 씬 프로비저닝되며, 새 데이터베이스에 할당된 전체 크기 중 몇 MB만 사용합니다.
+
+데이터베이스용 스토리지를 분리하려면 _가상 마운트 포인트_를 사용하면 됩니다. 가상 마운트 포인트를 통해 데이터베이스를 호스트의 몇 개의 공통 드라이브로 통합할 수 있습니다.
+
+workload factory에서 데이터베이스를 생성하려면 _보기, 계획 및 분석_ 권한이 필요합니다. 또는 부분적으로 완성된 코드 템플릿을 복사하거나 다운로드하여 workload factory 외부에서 작업을 완료할 수 있습니다. link:../fsx-storage/permissions-reference-fsx.html["Workload Factory 권한에 대해 알아보십시오."^] 어떤 모드를 사용할지 결정하십시오.
+
+
+NOTE: SMB 프로토콜을 사용하는 Microsoft SQL Server는 데이터베이스 생성을 지원하지 않습니다.
+
+.시작하기 전에
+새 데이터베이스를 생성하기 전에 다음 필수 조건을 완료하십시오.
+
+* *자격 증명 및 권한*: Workload Factory에서 새 데이터베이스를 생성하려면 link:../fsx-storage/add-credentials.html["AWS 계정 자격 증명 및 _작업 및 복구_ 권한"^]이(가) 있어야 합니다.
++
+또는 Codebox를 사용하여 템플릿을 복사하면 REST API를 사용하여 workload factory 외부에서 데이터베이스를 배포할 수 있습니다. link:../admin/codebox-automation.html["Codebox 자동화에 대해 자세히 알아보세요"^].
+
+* *Windows 호스트*: _빠른 생성_ 모드를 사용하는 경우 새 데이터베이스를 위한 새 드라이브를 생성하려면 Microsoft SQL Server에 사용 가능한 드라이브 문자가 충분히 있어야 합니다.
+* *Microsoft SQL Server*: 새 데이터베이스를 호스팅하려면 데이터베이스용 워크로드 팩토리에 관리형 Microsoft SQL Server가 있어야 합니다.
+* *AWS Systems Manager*: AWS Systems Manager를 통해 Microsoft SQL 호스트에서  `NT Authority\SYSTEM` 사용자 권한이 활성화되어 있는지 확인하십시오.
+
+
+
+
+[[create-a-database]]
+== 데이터베이스를 생성하십시오
+
+Workload Factory에서 이 작업을 완료하려면 _빠른 생성_ 또는 _고급 생성_ 배포 모드를 사용할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.빠른 생성
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *데이터베이스*를 선택합니다.
+. 데이터베이스 메뉴에서 *인벤토리*를 선택하십시오.
+. 인벤토리에서 데이터베이스 엔진 유형으로 *Microsoft SQL Server*를 선택하십시오.
+. 데이터베이스를 생성할 관리형 SQL server 인스턴스가 있는 데이터베이스 서버를 선택하십시오.
+. 관리형 인스턴스의 작업 메뉴를 클릭한 다음 *사용자 데이터베이스 생성*을 선택합니다.
+. 사용자 데이터베이스 생성 페이지의 데이터베이스 정보란에 다음 정보를 입력하십시오.
++
+.. *데이터베이스 이름*: 데이터베이스 이름을 입력하세요.
+.. *정렬 방식*: 데이터베이스에 사용할 정렬 방식을 선택합니다. Microsoft SQL Server의 기본 정렬 방식인 SQL_Latin1_General_CP1_CI_AS"가 선택되어 있습니다.
+
+
+. 파일 설정에서 다음을 제공하십시오:
++
+.. *파일 설정 모드*: *빠른 생성*을 선택하세요.
+.. *파일 이름 및 경로*:
++
+*** *데이터 파일 이름*: 데이터 파일 이름을 입력하십시오.
+*** *로그 파일 이름*: 로그 파일 이름을 입력하십시오.
+
+
+.. *파일 크기*: 데이터베이스의 데이터 크기와 로그 크기를 입력하십시오.
+
+
+. *Create*를 클릭합니다.
++
+또는 지금 이러한 기본 설정을 변경하려면 *파일 설정 모드*를 *고급 생성*으로 변경하십시오.
+
+
+
+--
+.고급 생성
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *데이터베이스*를 선택합니다.
+. 데이터베이스 메뉴에서 *인벤토리*를 선택하십시오.
+. 인벤토리에서 데이터베이스 엔진 유형으로 *Microsoft SQL Server*를 선택하십시오.
+. 데이터베이스를 생성할 관리형 SQL server 인스턴스가 있는 데이터베이스 서버를 선택하십시오.
+. 관리형 인스턴스의 작업 메뉴를 클릭한 다음 *사용자 데이터베이스 생성*을 선택합니다.
+. *사용자 데이터베이스 생성*을 선택하세요.
+. 사용자 데이터베이스 생성 페이지의 데이터베이스 정보란에 다음 정보를 입력하십시오.
++
+.. *데이터베이스 이름*: 데이터베이스 이름을 입력하세요.
+.. *정렬 방식*: 데이터베이스에 사용할 정렬 방식을 선택합니다. Microsoft SQL Server의 기본 정렬 방식인 SQL_Latin1_General_CP1_CI_AS"가 선택되어 있습니다.
+
+
+. 파일 설정에서 다음을 제공하십시오:
++
+.. *파일 설정 모드*: *고급 생성*을 선택하세요.
+.. *파일 이름 및 경로*:
++
+... *데이터 파일*: 드라이브 문자를 선택하고 데이터 파일 이름을 입력하십시오.
++
+필요에 따라 *가상 마운트 지점* 확인란을 클릭하세요.
+
+... *로그 파일*: 드라이브 문자를 선택하고 로그 파일 이름을 입력하십시오.
++
+필요에 따라 *가상 마운트 지점* 확인란을 클릭하세요.
+
+
+
+.. *파일 크기*: 데이터베이스의 데이터 크기와 로그 크기를 입력하십시오.
+
+
+. *Create*를 클릭합니다.
+
+
+--
+====
+데이터베이스 호스트를 생성한 경우 *작업 모니터링* 탭에서 작업 진행 상황을 확인할 수 있습니다.

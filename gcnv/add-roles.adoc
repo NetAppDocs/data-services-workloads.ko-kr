@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: gcnv/add-roles.html 
+keywords: setup, set up, add role, requirements, permissions, google cloud netapp volumes, gcnv, bluexp. netapp console,assign 
+summary: NetApp Console은 멤버에게 올바른 역할이 할당되어야 합니다. 
+---
+= Google Cloud NetApp Volumes 역할 할당
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloud NetApp Volumes로 작업을 시작하려면 NetApp Console의 멤버에게 올바른 역할을 할당해야 합니다. 자세한 내용은 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["모든 서비스에 대한 NetApp Console 액세스 역할에 대해 알아보십시오."^]를 참조하십시오.
+
+
+
+[[assign-roles-to-the-service-account-member]]
+== 서비스 계정 구성원에게 역할을 할당합니다
+
+.  https://docs.netapp.com/us-en/console-setup-admin/task-logging-in.html["NetApp Console"^]에 로그인하십시오.
+. *관리*를 선택한 다음 *ID 및 액세스*를 선택합니다.
+. 역할을 부여하려는 구성원 옆에 있는 작업 메뉴 image:screenshot_gallery_options.gif["점 세 개가 있는 아이콘입니다."]를 선택하고 *역할 추가*를 선택합니다.
+. 역할을 추가하려면 대화 상자의 단계를 완료하십시오.
++
+.. 폴더 또는 프로젝트 선택: 구성원에게 권한을 부여할 리소스 계층 구조의 수준을 선택하십시오.
++
+폴더를 선택하면 해당 구성원은 폴더 안에 있는 모든 항목에 대한 권한을 갖게 됩니다.
+
+.. *범주* 드롭다운 메뉴에서 *애플리케이션* 역할 범주를 선택하십시오. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["액세스 역할에 대해 알아보기"^].
+.. *역할* 드롭다운 메뉴에서 선택한 폴더 또는 프로젝트와 연결된 리소스에 대한 권한을 멤버에게 부여하는 역할을 선택하십시오.
++
+*Important:* 다음 역할 중 하나 또는 둘 다를 추가해야 합니다:
+
++
+*** _Google Cloud NetApp Volumes 관리자_ 또는
+*** _Google Cloud NetApp Volumes 뷰어_
+
+
+.. 역할 추가: 조직 내의 다른 폴더 또는 프로젝트에 대한 액세스 권한을 부여하려면 *역할 추가*를 선택하고 다른 폴더, 프로젝트 또는 역할 범주를 지정한 다음 역할 범주와 해당 역할을 선택합니다.
+
+
+. *새 역할 추가*를 선택합니다.
+
+
+.다음 단계
+link:create-discover-systems.html["Google Cloud NetApp Volumes 시스템을 추가합니다"].

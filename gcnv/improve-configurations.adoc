@@ -1,0 +1,132 @@
+---
+sidebar: sidebar 
+permalink: gcnv/improve-configurations.html 
+keywords: improve configurations, optimize configurations, implement best practices, well-architected storage pool, Google Cloud NetApp Volumes, GCNV 
+summary: 워크로드 팩토리는 Google Cloud NetApp Volumes 구성을 스캔하여 운영 효율성을 높이는 데 도움이 되는 인사이트와 권장 사항을 제공합니다. 
+---
+= 잘 설계된 Google Cloud NetApp Volumes 구성을 구현합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+구성 분석 인사이트 및 권장 사항을 활용하여 NetApp을 통해 Google Cloud 스토리지에서 실행되는 Google Cloud NetApp Volumes 스토리지 풀에 대한 모범 사례를 구현하세요. 아키텍처가 잘 설계된 상태를 쉽게 검토하고, 구성 관련 문제를 파악하고, 안정성, 보안, 성능 및 비용 측면에서 최적화되지 않은 스토리지 풀의 아키텍처를 개선하기 위한 권장 사항을 받아볼 수 있습니다.
+
+link:configuration-analysis.html["구성 분석 및 아키텍처 설계 상태에 대해 알아보세요."]
+
+
+
+[[about-this-task]]
+== 이 작업 정보
+
+NetApp은 Google Cloud의 NetApp Volumes 스토리지 풀 배포를 매일 분석합니다. 일일 분석을 통해 아키텍처가 올바른 상태는 물론, 구성 문제를 이해하고 스토리지 풀이 모범 사례를 준수하도록 돕는 인사이트와 권장 사항을 제공합니다.
+
+일일 분석이 완료되면 대시보드에 아키텍처가 잘 설계된 리소스의 총 개수, 심각한 상태의 리소스 개수, 경고 상태의 리소스 개수가 표시됩니다. 구성은 아키텍처 프레임워크의 핵심 요소인 안정성, 운영 효율성, 비용 최적화, 성능 효율성, 보안을 기준으로 분류됩니다. 대시보드에는 모든 구성 목록, 각 구성의 아키텍처 상태, 심각도, 범주, 리소스 유형(볼륨 또는 스토리지 풀), 영향을 받는 리소스, 그리고 구성이 최적화되지 않은 경우 권장 사항을 볼 수 있는 옵션이 포함된 표도 제공됩니다.
+
+
+
+[[before-you-begin]]
+== 시작하기 전에
+
+* link:https://console.netapp.com/add-working-environment/choose-type["Google Cloud NetApp Volumes 스토리지 풀 추가"] NetApp Console에 로그인하여 아키텍처 설계 상태 및 구성 문제에 대한 권장 사항을 확인해야 합니다.
+
+
+
+
+[[view-recommendations-for-configuration-issues]]
+== 구성 문제에 대한 권장 사항 보기
+
+일일 분석이 완료되면 구성 문제에 대한 권장 사항을 확인할 수 있습니다. 권장 사항에는 최적화되지 않은 구성의 모범 사례와 잠재적 위험이 설명되어 있습니다. 또한 권장 사항을 CSV 파일로 다운로드할 수도 있습니다.
+
+.단계
+. link:https://console.netapp.com/home["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드*를 선택한 다음 *잘 설계된 아키텍처*를 선택합니다.
+. 잘 설계된 대시보드에서 원하는 구성에 대해 *보기* 를 선택합니다.
++
+필요에 따라 모든 구성에 대한 권장 사항이 담긴 CSV 파일을 다운로드할 수 있습니다.
+
+. 권장 사항을 검토하십시오.
+
+
+
+
+[[dismiss-a-configuration-analysis]]
+== 구성 분석 무시
+
+Google Cloud NetApp Volumes 스토리지 풀 또는 선택한 볼륨에 대한 구성 분석을 중지합니다. 필요에 따라 분석을 다시 시작할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.스토리지 풀에 대한 구성 분석 해제
+--
+.단계
+. link:https://console.netapp.com/home["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드*를 선택한 다음 *잘 설계된 아키텍처*를 선택합니다.
+. 잘 설계된 대시보드에서 원하는 구성에 대해 *보기* 를 선택합니다.
+. 구성에서 사용자 환경에 적용되지 않는 구성을 찾은 다음 *닫기*를 선택합니다.
+. 구성 분석을 중지하려면 [구성 해제] 대화 상자에서 [닫기]를 선택하십시오.
+
+
+--
+.볼륨에 대한 구성 분석 무시
+--
+.단계
+. link:https://console.netapp.com/home["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드*를 선택한 다음 *잘 설계된 아키텍처*를 선택합니다.
+. 잘 설계된 대시보드에서 원하는 구성에 대해 *보기* 를 선택합니다.
+. 구성에서 선택한 볼륨에 대해 해제할 구성을 확인한 다음 *보기*를 선택합니다.
+. 구성 분석에서 제외할 볼륨을 식별합니다.
++
+** 볼륨 하나의 경우: 작업 메뉴를 선택한 다음 *볼륨 닫기*를 선택하십시오.
+** 여러 볼륨을 처리하려면 볼륨을 선택한 다음 일괄 작업 옆에 있는 *Dismiss*를 선택하십시오.
+
+
+. 구성에 대한 분석을 중지하려면 *Dismiss* 를 선택합니다.
+. 볼륨 닫기 대화 상자에서 *닫기*를 선택하여 확인합니다.
+
+
+--
+====
+.결과
+스토리지 풀 또는 선택한 볼륨에 대한 구성 분석이 중지됩니다.
+
+언제든지 분석을 다시 활성화할 수 있습니다.
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== 해제된 구성 분석을 다시 활성화합니다
+
+해제된 구성 분석을 언제든지 다시 활성화할 수 있습니다. 하나 이상의 구성을 선택하여 다시 활성화할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.스토리지 풀에 대한 구성 분석 재활성화
+--
+.단계
+. link:https://console.netapp.com/home["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드*를 선택한 다음 *잘 설계된 아키텍처*를 선택합니다.
+. *해제된 구성*을 선택합니다.
+. 다시 활성화할 구성을 선택하고 *다시 활성화*를 선택하십시오.
+
+
+--
+.볼륨에 대한 구성 분석 재활성화
+--
+.단계
+. link:https://console.netapp.com/home["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드*를 선택한 다음 *잘 설계된 아키텍처*를 선택합니다.
+. *해제된 구성*을 선택합니다.
+. 구성 분석을 통해 재활성화할 볼륨을 식별합니다.
++
+** 볼륨 하나의 경우: 작업 메뉴를 선택한 다음 *볼륨 재활성화*를 선택합니다.
+** 여러 볼륨을 처리하려면 볼륨을 선택한 다음 일괄 작업 옆에 있는 *Reactivate*를 선택하십시오.
+
+
+
+
+--
+====
+.결과
+시스템이 구성 분석을 다시 시작합니다. 새로운 분석은 매일 수행됩니다.

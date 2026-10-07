@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/improve-configurations.html 
+keywords: implement best practices, well-architected file system, Amazon FSx for NetApp ONTAP, FSx for ONTAP 
+summary: Workload Factory는 Amazon FSx for NetApp ONTAP 구성을 스캔하여 운영 효율성을 달성하는 데 도움이 되는 통찰력과 권장 사항을 제공합니다. 
+---
+= ONTAP 파일 시스템 구성을 위한 잘 설계된 FSx 구현
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workload Factory를 사용하여 FSx for ONTAP 파일 시스템에 대한 모범 사례를 구현하십시오. 잘 설계된 상태를 쉽게 검토하고, 구성 문제에 대해 알아보고, 문제를 해결하여 안정성, 보안, 효율성, 성능 및 비용 측면에서 최적화되지 않은 시스템의 아키텍처를 개선할 수 있습니다.
+
+link:configuration-analysis.html["구성 분석 및 아키텍처 설계 상태에 대해 알아보세요."]
+
+
+
+[[about-this-task]]
+== 이 작업 정보
+
+Workload Factory는 Amazon FSx for NetApp ONTAP 파일 시스템 배포 구성을 매일 분석합니다.
+
+스토리지 구성 요구 사항은 다양하므로 스토리지 환경에 적용되지 않는 특정 구성의 분석을 제외할 수 있습니다.
+
+링크 연결을 통해 Workload Factory는 성능, 데이터 보호 및 구성 문제를 스캔할 수 있습니다. link:create-link.html["링크를 사용하여 FSx for ONTAP 파일 시스템에 연결합니다."] 파일 시스템 리소스에 대한 가장 포괄적인 분석을 수행하십시오.
+
+.분석 대상
+Workload Factory는 FSx for ONTAP 파일 시스템에 대해 다음과 같은 구성의 아키텍처 설계 상태를 분석합니다.
+
+* 안정성: 볼륨 백업, 스냅샷 정책, 지역 간 복제, SSD 용량 여유, 복제 정책 레이블 및 파일 오브젝트 용량
+* 보안: 랜섬웨어 방지(ARP/AI) 및 무단 iSCSI 볼륨 접근 방지
+* 운영 효율성: 자동 용량 관리, 볼륨 파일 용량 여유 공간, FlexCache 쓰기 모드, FlexCache 복제본 크기, 호스트에서 확인 가능한 용량 보고, OS 유형, 블록 장치 공간 관리 및 씬 프로비저닝
+* 비용 최적화: 콜드 데이터 티어링, 스토리지 효율성, 백업 만료, 스냅샷 만료, 비활성 블록 장치, SSD 용량 과잉 프로비저닝, 비활성 NAS 볼륨
+* 성능 효율성: FlexGroup 볼륨 재조정 및 FlexVol 볼륨 재조정
+
+
+
+
+[[before-you-begin]]
+== 시작하기 전에
+
+* AWS 계정에 link:add-credentials.html["_작업 및 복구_ 권한 부여"]해야 합니다.
+* link:create-link.html["링크를 사용하여 FSx for ONTAP 파일 시스템에 연결합니다."] 파일 시스템 리소스에 대한 가장 포괄적인 분석을 수행하십시오.
+
+
+
+
+[[fix-a-configuration-issue]]
+== 구성 문제 해결
+
+FSx for ONTAP 파일 시스템 또는 파일 시스템 내 선택한 볼륨의 구성 문제를 해결할 수 있습니다. 하나 이상의 구성을 선택하여 수정할 수 있습니다.
+
+수정 작업으로 인해 인스턴스 다운타임이나 서비스 중단이 발생할 수 있습니다. 구성 문제를 수정하기 전에 각 권장 사항을 주의 깊게 검토하십시오.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *우수한 아키텍처* > *FSx for ONTAP*를 선택하십시오.
+. 구성에 대해 *View and fix* 를 선택합니다. 권장 사항을 꼼꼼히 검토하시기 바랍니다.
++
+이 권장 사항은 모범 사례와 최적화되지 않은 구성의 잠재적 문제점을 설명합니다.
+
+. 리소스를 선택한 다음 *Fix*를 클릭합니다.
++
+일부 수정 작업은 특정 작업에만 사용할 수 있으며, 여러 리소스에 대해 동시에 사용할 수 없는 경우도 있습니다. 예를 들어, 단일 볼륨의 구성은 수정할 수 있지만 여러 볼륨의 구성은 수정할 수 없을 수도 있습니다.
+
+. 인스턴스 다운타임이나 서비스 중단 등 이 수정 사항의 결과에 대해 알아보려면 조치 항목을 검토하십시오.
+. Workload Factory에서 권장 변경 사항을 적용하려면 *Fix*를 선택하십시오.
+
+
+.결과
+복구 프로세스가 시작됩니다. 계정 설정 메뉴를 선택한 다음 *Tracker*를 선택하여 작업 상태를 확인합니다.
+
+
+
+[[dismiss-a-configuration-analysis]]
+== 구성 분석 무시
+
+하나 이상의 리소스에 대한 구성 분석을 무기한 중지합니다. 필요에 따라 분석을 다시 시작할 수 있습니다.
+
+하나 이상의 FSx for ONTAP 파일 시스템 또는 볼륨에 대한 구성 분석을 중지하려면 닫기를 클릭하십시오. 분석은 언제든지 다시 시작할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.구성에 대한 구성 분석 무시
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *우수한 아키텍처* > *FSx for ONTAP*를 선택하십시오.
+. 구성 항목에서 사용자 환경에 적용되지 않는 구성을 확인하십시오.
+. image:icon-action.png["작업 메뉴 아이콘"]을 선택한 다음 *닫기*를 선택합니다.
+. 구성 해제 대화 상자에서 *해제*를 선택하여 구성에 대한 분석을 중지합니다.
+
+
+--
+.리소스에 대한 구성 분석 무시
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *우수한 아키텍처* > *FSx for ONTAP*를 선택하십시오.
+. FSx for ONTAP 잘 설계된 대시보드의 구성 섹션에서 사용자 환경에 적용되지 않는 구성을 선택하십시오.
+. 구성 페이지에서 구성 분석에서 제외할 리소스를 선택합니다.
++
+** 특정 리소스의 경우, image:icon-action.png["작업 메뉴 아이콘"] 를 선택한 다음 *Dismiss* 를 선택합니다.
+** 여러 리소스를 처리하려면 리소스를 선택한 다음 일괄 작업 옆에 있는 *해제*를 선택하십시오.
+
+
+. 리소스 해제 대화 상자에서 *해제*를 선택하여 분석을 중지합니다.
+
+
+--
+====
+.결과
+Workload Factory는 선택한 구성에 대한 구성 분석을 중지합니다.
+
+
+
+[[reactivate-a-dismissed-configuration-analysis]]
+== 해제된 구성 분석을 다시 활성화합니다
+
+해제된 구성 분석을 언제든지 다시 활성화할 수 있습니다. 하나 이상의 구성 또는 리소스를 선택하여 다시 활성화할 수 있습니다.
+
+[role="tabbed-block"]
+====
+.구성에 대한 구성 분석 재활성화
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *우수한 아키텍처* > *FSx for ONTAP*를 선택하십시오.
+. *해제된 구성*을 선택합니다.
+. 재활성화할 구성을 선택하고 *재활성화*를 선택하십시오.
+
+
+--
+.리소스에 대한 구성 분석 재활성화
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *우수한 아키텍처* > *FSx for ONTAP*를 선택하십시오.
+. FSx for ONTAP 잘 설계된 대시보드의 구성 섹션에서 사용자 환경에 적용되지 않는 구성을 선택하십시오.
+. 구성 페이지에서 *해제된 구성*을 선택합니다.
+. 재활성화할 리소스를 선택합니다.
++
+** 리소스 하나의 경우: image:icon-action.png["작업 메뉴 아이콘"]을 선택한 다음 *다시 활성화*를 선택합니다.
+** 여러 리소스를 처리하려면 리소스를 선택한 다음 일괄 작업 옆에 있는 *재활성화*를 선택하십시오.
+
+
+
+
+--
+====
+.결과
+Workload Factory는 구성 분석을 다시 활성화하고 매일 새로운 분석을 실행합니다.

@@ -1,0 +1,169 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/adjust-file-system-capacity.html 
+keywords: adjust capacity, elastic file system capacity, increase file system capacity, increase FSx capacity, decrease file system capacity, decrease FSx capacity 
+summary: 다양한 활성 작업 세트가 있는 프로젝트 기반 워크로드의 요구 사항을 충족하려면 FSx for ONTAP 파일 시스템의 SSD 스토리지 용량을 수동으로 조정하십시오. 
+---
+= NetApp Workload Factory에서 파일 시스템 용량 조정
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory에서 활성 작업 세트가 다양하게 변하는 워크로드 요구 사항에 맞춰 FSx for ONTAP 파일 시스템의 솔리드 스테이트 드라이브(SSD) 스토리지 용량을 조정할 수 있습니다. 사용량이 임계값을 초과하면 수동으로 용량을 늘리고, 작업 세트를 사용하지 않을 때는 용량을 줄여 비용을 절감할 수 있습니다. 또는 자동 용량 관리를 활성화하면 Workload Factory가 시간이 지남에 따라 요구 사항이 변경될 때 증분 스토리지를 추가하므로 수동 모니터링 부담을 줄일 수 있습니다.
+
+
+NOTE: SSD 스토리지 용량 감소는 2세대 파일 시스템에서만 지원됩니다.
+
+
+
+[[adjust-file-system-capacity-manually]]
+== 파일 시스템 용량을 수동으로 조정합니다
+
+탄력적인 파일 시스템 용량을 사용하면 워크로드 요구 사항에 맞춰 파일 시스템 용량을 동적으로 조정할 수 있습니다.
+
+.이 작업 정보
+파일 시스템 용량을 변경하면 FSx for ONTAP 파일 시스템의 IOPS에 영향을 미칩니다.
+
+파일 시스템에 대해 자동으로 link:provision-iops.html["프로비전 IOPS"]할 때, SSD 용량이 1GiB 증가 또는 감소할 때마다 IOPS는 3 IOPS씩 증가 또는 감소합니다.
+
+수동으로 link:provision-iops.html["프로비전 IOPS"]할 경우 파일 시스템 용량 증가를 지원하기 위해 IOPS 할당량을 늘려야 할 수도 있습니다.
+
+SSD 스토리지 용량 제한에 대해서는 AWS FSx for NetApp ONTAP 설명서의 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/limits.html["할당량"^]을 참조하십시오.
+
+.시작하기 전에
+파일 시스템의 용량을 조정하려면 먼저 <<자동 용량 및 inode 관리 활성화,자동 용량 관리 비활성화>>.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지*를 선택합니다.
+. 대시보드에서 *SSD 용량 조정*을 선택합니다.
+. 용량을 조정할 파일 시스템을 선택한 다음 *계속*을 선택하십시오.
+. SSD 용량 조정 대화 상자에서 *프로비저닝된 용량*에 숫자를 입력합니다.
+. 프로비저닝된 용량의 단위를 선택하십시오.
+. *적용*을 선택합니다.
+
+
+
+
+[[enable-automatic-capacity-and-inode-management]]
+== 자동 용량 및 inode 관리 활성화
+
+용량 및 inode 관리를 활성화하면 NetApp Workload Factory가 시간 경과에 따른 용량 요구 사항 변화에 따라 FSx for ONTAP 파일 시스템에 증분 스토리지 및 inode(파일)를 볼륨에 자동으로 추가할 수 있습니다. 이러한 기능을 통해 용량 및 inode를 수동으로 모니터링할 필요가 없어집니다.
+
+하나의 계정으로만 이러한 기능을 관리할 수 있습니다.
+
+
+
+[[enable-automatic-capacity-management-and-capacity-notifications]]
+=== 자동 용량 관리 및 용량 알림을 활성화합니다.
+
+FSx for ONTAP 파일 시스템의 최대 크기 제한까지 증분 스토리지를 자동으로 추가하려면 자동 용량 관리를 활성화하십시오. 파일 시스템이 특정 용량 임계값에 도달하면 알림을 받도록 알림을 설정하십시오.
+
+.이 작업 정보
+Workload Factory는 FSx for ONTAP 파일 시스템을 30분마다 스캔하여 증분 스토리지를 추가해야 하는지 확인합니다.
+
+모든 FSx for ONTAP 파일 시스템의 최대 SSD 스토리지 용량은 524,288 GiB입니다. 할당량 증가를 요청하려면 AWS FSx for NetApp ONTAP 설명서의 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/limits.html["할당량"^]를 참조하십시오.
+
+.시작하기 전에
+시작하기 전에 다음 사항을 고려하십시오:
+
+* 이 작업을 완료하려면 Workload Factory에서 link:add-credentials.html["_보기, 계획 및 분석_ 권한 정책을 사용하여 자격 증명을 부여합니다"^]해야 합니다.
+* 볼륨 inode가 스토리지 용량과 함께 증가하도록 하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+* AWS는 SSD 용량 증가 사이에 최소 6시간의 대기 시간을 적용하므로 데이터 마이그레이션 중에는 이 기능을 활성화하지 않는 것이 좋습니다. 이 제한으로 인해 조정이 지연될 수 있으므로 미리 계획을 세우십시오.
+
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지*를 선택합니다.
+. 스토리지 메뉴에서 *인벤토리*를 선택합니다.
+. *인벤토리*에서 자동 용량 조정을 활성화할 파일 시스템을 선택하십시오.
++
+선택한 파일 시스템의 처리량과 SSD 용량을 모두 표시하는 *탄력성* 그래프를 찾으십시오.
+
+. *SSD*를 선택한 다음 *관리*를 선택합니다.
+. 용량 관리 방식을 선택하십시오. 옵션은 증분 모드와 적응형 모드입니다.
++
+** *증분*: 임계값에서 고정된 양만큼 용량을 증가시킵니다.
++
+*** *임계값*: Workload Factory 알림 서비스에서 알림을 트리거하려면 임계값을 증분 증가율보다 낮게 설정하십시오. 기본값은 70%입니다.
++
+임계값 설정은 link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Workload Factory 알림 서비스를 활성화했습니다"^]인 경우에만 사용할 수 있습니다.
+
+*** *증분 증가*: FSx for ONTAP 파일 시스템의 최대 증가율을 입력합니다. 기본값은 80%입니다.
++
+이는 Workload Factory가 용량 증가 작업을 트리거하는 임계값입니다. 예를 들어 파일 시스템 용량이 80%에 도달하면 Workload Factory는 용량을 증가시킵니다.
+
+
+
+** *적응형*: 기간별 데이터를 기반으로 용량을 예측하고 변경합니다.
++
+*** *Look-back*: 용량 예측을 위해 고려할 기간별 데이터의 양을 결정하기 위해 분석 기간을 시간 단위로 설정합니다. 기본값은 120시간입니다.
+*** *미리 계획하세요*: 용량 증설이 실제로 필요하기 전에 확보될 수 있도록 여유 시간을 시간 단위로 설정하세요. 기본값은 48시간입니다.
+
+
+
+
+. *자동 용량 관리 활성화*를 선택하고 자격 증명 _보기, 계획 및 분석_ 권한을 선택합니다.
++
+또는 해당 기능을 비활성화하십시오. 파일 시스템 용량을 늘려야 하는 경우 먼저 자동 용량 관리를 비활성화해야 합니다.
+
+. 설정한 임계값에 도달하거나 Workload Factory에서 자동 용량 증가를 수행할 때마다 알림을 받으려면 *용량 알림 활성화*를 선택하십시오. 기본값은 70%입니다.
++
+용량 알림 설정은 link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Workload Factory 알림 서비스를 활성화했습니다"^] 및 자동 용량 관리가 활성화된 경우에만 사용할 수 있습니다.
+
+. *적용*을 선택합니다.
+
+
+.결과
+파일 시스템 검사는 추가 용량이 필요한지 여부를 판단하기 위해 30분마다 수행됩니다.
+
+
+
+[[enable-automatic-inode-management-for-a-file-system]]
+=== 파일 시스템에 대한 자동 inode 관리 활성화
+
+자동 inode 관리를 활성화하여 볼륨당 inode(파일) 수를 허용 한도까지 늘릴 수 있습니다.
+
+.이 작업 정보
+Workload Factory는 FSx for ONTAP 파일 시스템을 30분마다 스캔하여 사용 가능한 볼륨 inode를 확인하고 증분 inode를 추가해야 하는지 여부를 확인합니다. 이 카운트는 자동 inode 관리 임계값에 따라 증가합니다.
+
+
+NOTE: *Terraform 사용자*: Terraform에는 모든 작업을 Terraform 내에서 완료해야 한다는 제약 사항이 있습니다. Terraform에서는 inode 관리가 지원되지 않지만, Workload Factory 콘솔에서 자동 inode 관리를 활성화할 수 있습니다.
+
+.시작하기 전에
+시작하기 전에 다음 사항을 고려하십시오:
+
+* 볼륨 inode를 자동으로 관리하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+* 자동 inode 관리는 Workload Factory 알림 서비스에서 알림을 트리거하는 _경고 임계값_을 설정하여 구성할 수 있습니다. 이 기능을 사용하려면 먼저 link:../admin/configure-notifications.html["Workload Factory 알림 서비스를 활성화합니다"^] 해야 합니다.
+* 이 작업을 완료하려면 Workload Factory에서 link:add-credentials.html["_보기, 계획 및 분석_ 권한 정책을 사용하여 자격 증명을 부여합니다"^]해야 합니다.
+
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. FSx for ONTAP 페이지에서 *인벤토리*를 선택하십시오.
+. *인벤토리*에서 자동 inode 관리를 활성화할 파일 시스템의 작업 메뉴를 선택하십시오.
+. *관리*를 선택합니다.
+. 정보에서 *자동 inode 관리* 옆에 있는 연필 아이콘을 선택합니다. 마우스 커서를 *자동 inode 관리* 행 위로 가져가면 드롭다운 화살표 옆에 연필 아이콘이 나타납니다.
+. *자동 inode 관리* 대화 상자에서 다음 정보를 입력하십시오.
++
+.. *자격 증명*: 드롭다운 메뉴에서 _자동화_ 권한이 있는 자격 증명을 선택하십시오.
+.. *자동 inode 관리 활성화*를 하려면 활성화 버튼을 선택하십시오.
++
+또는 해당 기능을 비활성화할 수도 있습니다. inode 수를 늘려야 하는 경우, 먼저 자동 inode 관리를 비활성화해야 합니다.
+
+.. *경고 임계값*: Workload Factory 알림 서비스에서 알림이 발생하도록 하려면 경고 임계값을 임계값 증가치보다 낮게 설정하십시오. 기본값은 70%입니다.
++
+경고 임계값 설정은 link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Workload Factory 알림 서비스를 활성화했습니다"^] 경우에만 사용할 수 있습니다.
+
+.. *임계값 증가*: 볼륨당 inode(파일) 수의 최대 증가율을 입력하십시오. 기본값은 80%입니다.
+.. *점진적 증가*: inode(파일) 수를 점진적으로 증가시킬 백분율을 입력하십시오. 기본값은 10%입니다.
+
+
+. *적용*을 선택합니다.
+
+
+.결과
+파일 시스템 검사는 볼륨당 추가 inode(파일)가 필요한지 여부를 확인하기 위해 30분마다 수행됩니다.

@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/protect-sql-server.html 
+keywords: protect, server, Microsoft SQL Server, SQL Server, protect instance, protect database 
+summary: Microsoft SQL Server 인스턴스 및 데이터베이스를 보호합니다. 
+---
+= NetApp Workload Factory for Databases를 사용하여 Microsoft SQL Server 워크로드를 보호합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Workload Factory 콘솔에서 NetApp Backup and Recovery를 사용하여 Microsoft SQL Server 애플리케이션 데이터를 보호하십시오. 이 통합을 통해 다음과 같은 보호 목표를 달성할 수 있습니다. 로컬 기본 Amazon FSx for NetApp ONTAP(FSx for ONTAP) 스토리지에 로컬 스냅샷으로 워크로드를 백업하고, 워크로드를 보조 FSx for ONTAP 스토리지로 복제할 수 있습니다.
+
+
+
+[[about-this-task]]
+== 이 작업 정보
+
+Workload Factory는 리소스 검색, 필수 조건 검증, Microsoft SQL Server용 플러그인 구성 및 설치를 자동화하여 NetApp Backup and Recovery로 워크로드를 보호할 수 있도록 준비합니다. 이 플러그인은 Microsoft SQL Server 워크로드를 보호할 수 있도록 지원하는 NetApp 소프트웨어의 호스트 측 구성 요소입니다.
+
+NetApp Backup and Recovery는 NetApp SnapMirror 데이터 복제 기술을 활용하여 스냅샷 복사본을 생성하고 이를 백업 위치로 전송함으로써 모든 백업이 완벽하게 동기화되도록 합니다.
+
+Backup and Recovery를 통한 보호에 대한 자세한 내용은 link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-mssql-protect-overview.html["백업 및 복구를 사용한 Microsoft SQL 워크로드 보호 개요"^]을(를) 참조하십시오.
+
+
+
+[[before-you-begin]]
+== 시작하기 전에
+
+Backup and Recovery로 Microsoft SQL Server 워크로드를 보호하려면 다음 요구 사항을 충족해야 합니다.
+
+* 사용 환경이 link:https://docs.netapp.com/us-en/data-services-backup-recovery/concept-start-prereq.html#microsoft-sql-server-workload-requirements["Backup and Recovery SQL Server 요구 사항"^]을(를) 충족하는지 확인하십시오.
+* link:https://docs.netapp.com/us-en/data-services-backup-recovery/concept-start-prereq.html#in-netapp-console["NetApp Console 요구 사항 완료"^] 설정, IAM 역할 할당, Console 에이전트 설치 등을 포함합니다.
+
+
+NetApp 계정에 대한 조직 관리자 액세스 권한이 있는 경우, <<NetApp Backup and Recovery로 보호를 준비하십시오.,NetApp Backup and Recovery로 보호 준비>>할 때  `backup and recovery super admin` 역할이 자동으로 할당됩니다.
+
+* 커넥터에서 호스트 확인을 설정합니다
++
+데이터베이스를 검색하려면 Connector에서 호스트 확인을 설정해야 합니다. 호스팅된 장치에서  `/etc/hosts` 파일에 IP 주소와 호스트 이름 매핑을 추가하십시오.
+
++
+** link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-start-licensing.html["NetApp Backup and Recovery 라이선스 설정"^]
+
+
+
+
+
+
+[[prepare-for-protection-with-netapp-backup-and-recovery]]
+== NetApp Backup and Recovery로 보호를 준비하십시오.
+
+NetApp Backup and Recovery를 사용하여 Microsoft SQL Server 리소스를 보호하기 위한 준비 프로세스를 완료하십시오.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *데이터베이스*를 선택합니다.
+. 데이터베이스 메뉴에서 *인벤토리*를 선택하십시오.
+. 인벤토리에서 엔진 유형으로 *Microsoft SQL Server*를 선택하십시오.
+. 보호하려는 인스턴스를 찾은 다음 메뉴에서 *보호*를 선택합니다.
+. 메시지가 표시되면 관리자 권한이 있는 Windows 자격 증명을 입력하십시오.
++
+보호를 위해 NetApp Backup and Recovery를 사용하려면 Windows 자격 증명을 사용하여 Workload Factory에 SQL Server 인스턴스를 등록해야 합니다.
+
+. 여러 Console 에이전트가 활성화되어 있고 사용 가능한 경우 워크로드를 등록하고 보호할 *Console 에이전트*를 선택하십시오.
+. 데이터 보호를 준비하기 위해 Workload Factory는 SQL Server 리소스를 Backup and Recovery에 자동으로 등록하고, Microsoft SQL Server용 플러그인을 구성 및 설치하며, SQL Server 인스턴스 보호를 위한 사전 요구 사항을 충족하도록 리소스를 검색합니다. 프로세스를 시작하려면 *시작*을 선택하십시오.
+. 필수 조건을 충족한 후 *리디렉션*을 선택하여 Backup and Recovery에 액세스하십시오.
+
+
+.다음 단계
+Backup and Recovery에서 Microsoft SQL Server 인스턴스와 데이터베이스를 보호하는 정책을 생성합니다.
+
+link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-policies-create.html["Microsoft SQL Server 인스턴스 및 데이터베이스를 보호하는 정책을 만드는 방법을 알아보세요"^].
+
+관련 정보는 Microsoft SQL Server 워크로드 관리를 위한 link:https://docs.netapp.com/us-en/data-services-backup-recovery/br-use-mssql-protect-overview.html["백업 및 복구 문서"^]을(를) 참조하십시오.
+
+
+
+[[edit-protection-for-microsoft-sql-server-resources]]
+== Microsoft SQL Server 리소스에 대한 보호 편집
+
+NetApp Backup and Recovery에서 이미 보호된 Microsoft SQL Server 인스턴스 및 데이터베이스에 대한 보호 설정을 편집할 수 있습니다. 보호 설정을 편집하면 보호 대상 SQL Server 인스턴스에 대한 보호 정책 또는 일정을 수정할 수 있습니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *데이터베이스*를 선택합니다.
+. 데이터베이스 메뉴에서 *인벤토리*를 선택하십시오.
+. 인벤토리에서 엔진 유형으로 *Microsoft SQL Server*를 선택하십시오.
+. *데이터베이스* 탭을 선택합니다.
+. 보호 설정을 변경할 데이터베이스를 찾은 다음 메뉴에서 *보호 설정 편집*을 선택합니다.
++
+NetApp Console의 Backup and Recovery로 리디렉션되며, 여기서 보호 정책 또는 일정을 수정할 수 있습니다.
+
+

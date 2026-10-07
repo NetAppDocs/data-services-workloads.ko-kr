@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: fsx-vmware/deploy-fsx-file-system-evs.html 
+keywords: vm workloads, deploy fsx, deploy storage for vms, evs, elastic vmware service 
+summary: '권장되는 FSx for ONTAP 파일 시스템(경우에 따라 여러 파일 시스템)이 사용자의 요구 사항을 정확히 충족하는지 확인한 후 Workload Factory를 사용하여 AWS 환경에 시스템을 배포할 수 있습니다.' 
+---
+= 권장되는 FSx for ONTAP 파일 시스템을 배포하십시오.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+권장되는 FSx for ONTAP 파일 시스템(경우에 따라 여러 파일 시스템)이 요구 사항을 정확히 충족하는지 확인한 후 Workload Factory를 사용하여 AWS 환경에 시스템을 배포할 수 있습니다.
+
+Workload Factory 계정에 추가한 정책 및 권한에 따라 Workload Factory를 사용하여 FSx for ONTAP 파일 시스템을 완전히 배포할 수 있습니다(읽기/쓰기 모드 사용). 권한이 적거나(읽기 전용 모드) 권한이 없는 경우(기본 모드), Codebox에서 CloudFormation 템플릿을 사용하여 AWS에 FSx for ONTAP 파일 시스템을 직접 배포해야 합니다.
+
+
+
+[[requirements]]
+== 요구 사항
+
+* Amazon Elastic VMware Service 구독이 있어야 합니다.
+* AWS 계정에 FSx for ONTAP 파일 시스템을 생성하려면 필요한 권한이 있어야 합니다.
+
+
+
+
+[[considerations]]
+== 고려 사항
+
+* 빠른 생성 또는 고급 생성 옵션을 사용할 수 있습니다. 고급 생성은 사용자 지정할 수 있는 몇 가지 추가 스토리지 매개변수를 제공합니다. link:../fsx-storage/create-discover-systems.html["이 두 가지 옵션이 제공하는 내용을 알아보세요"].
+* "Amazon Elastic VMware Service 환경설정" 섹션에서 외부 데이터스토어에 연결할 EVS 가상화 환경을 선택할 수 있습니다. 이렇게 하면 배포를 위한 모범 사례 옵션으로 일부 필드가 자동으로 채워집니다. 필요에 따라 이러한 옵션을 변경할 수 있습니다.
+
+
+
+
+[[steps]]
+== 단계
+
+. *계획 검토* 페이지 하단에서 *배포*를 선택하면 FSx for ONTAP 파일 시스템 생성 페이지가 표시됩니다.
++
+FSx for ONTAP 파일 시스템을 정의하는 대부분의 필드는 사용자가 제공한 정보를 기반으로 자동으로 채워지지만, 이 페이지에서 직접 입력해야 하는 필드가 몇 가지 있습니다.
+
+. "파일 시스템 일반 구성" 섹션에 다음 정보를 입력하십시오:
++
+.. *AWS 자격 증명*: Workload Factory가 FSx for ONTAP 파일 시스템을 직접 생성하는 데 필요한 권한을 부여할 자격 증명을 선택하거나 추가합니다. 또한 Codebox에서 CloudFormation 코드를 선택하여 AWS에 FSx for ONTAP 파일 시스템을 직접 배포할 수도 있습니다.
+.. *파일 시스템 이름*: 이 FSx for ONTAP 파일 시스템에 사용할 이름을 입력하십시오.
+.. *태그*: 선택적으로, 이 FSx for ONTAP 파일 시스템을 분류하기 위해 태그를 추가할 수 있습니다.
+
+
+. "Amazon Elastic VMware Service 환경설정" 섹션의 "환경 ID" 목록에서 데이터스토어가 연결될 EVS 환경을 선택합니다.
++
+이렇게 하면 다음 필드가 자동으로 채워집니다:
+
++
+** *VPC*
+** *가용 영역*
+** *서브넷*
+** *NFS 데이터스토어 액세스* 섹션에서 *EVS 호스트 관리만* 옵션을 선택한 경우 *EVS 호스트 관리(CIDR)* 필드가 자동으로 채워집니다.
+** *데이터스토어 마운트 옵션* 섹션에서 데이터스토어를 EVS 클러스터에 마운트하도록 선택한 경우 *EVS 클러스터 VMware vCenter 주소* 및 *vSphere 관리자 자격 증명 비밀 ARN* 필드가 자동으로 채워집니다.
+
+
+. "네트워크 및 보안" 섹션에 다음 정보를 입력하십시오:
++
+.. *리전 및 VPC*: FSx for ONTAP 파일 시스템을 배포할 리전과 VPC를 선택하십시오.
+.. *보안 그룹*(고급 생성 전용): *고급 생성* 옵션을 사용하면 FSx for ONTAP VPC에 대한 기본 보안 그룹을 선택하여 모든 트래픽이 FSx for ONTAP 파일 시스템에 액세스할 수 있도록 할 수 있습니다. 새 보안 그룹을 생성하거나 기존 보안 그룹을 선택할 수 있습니다.
++
+*EVS NFS 데이터스토어에 맞게 보안 그룹 구성 조정* 옵션을 활성화하면 Workload Factory는 EVS NFS 데이터스토어 설정에 따라 보안 그룹을 구성합니다.
+
++
+보안 그룹에 인바운드 규칙을 추가하여 다른 AWS 서비스에서 FSx for ONTAP 파일 시스템에 액세스할 수 있는 범위를 제한할 수 있습니다. 이렇게 하면 열려 있는 서비스 수를 줄일 수 있습니다. 최소 포트 및 프로토콜은 다음과 같습니다.
+
++
+[cols="15,10,55"]
+|===
+| 프로토콜 | 포트 | 목적 
+
+
+| TCP, UDP | 111 | Portmapper(NFS 요청에 사용되는 포트를 협상하는 데 사용됨) 
+
+
+| TCP, UDP | 635 | NFS mountd (NFS 마운트 요청을 수신함) 
+
+
+| TCP, UDP | 2049 | NFS 네트워크 트래픽 
+
+
+| TCP, UDP | 4045 | 네트워크 잠금 관리자(NLM, lockd) - 잠금 요청을 처리합니다. 
+
+
+| TCP, UDP | 4046 | Network Status Monitor(NSM, statd) - 잠금 관리를 위해 서버 재부팅을 NFS 클라이언트에 알립니다. 
+|===
+.. *가용 영역*: 가용 영역과 서브넷을 선택하십시오.
++
+가용 영역 간 트래픽에 대한 요금 부과를 방지하려면 VMware SDDC가 배포된 것과 동일한 가용 영역을 선택해야 합니다.
+
+.. *암호화* (고급 생성 전용): *고급 생성* 옵션을 사용하는 경우 드롭다운에서 AWS 암호화 키 이름을 선택할 수 있습니다.
+.. *NFS 데이터스토어 액세스* (고급 생성 전용): *고급 생성* 옵션을 사용하는 경우 모든 호스트가 데이터스토어에 액세스할 수 있는지 또는 EVS 관리 호스트만 데이터스토어에 액세스할 수 있는지 선택할 수 있습니다.
+
+
+. "파일 시스템 세부 정보" 섹션에 다음 정보를 입력하십시오:
++
+.. *ONTAP 자격 증명*: ONTAP 사용자 이름과 비밀번호를 입력하십시오.
+.. *스토리지 VM 자격 증명* (고급 생성 전용): 스토리지 VM 암호를 입력하고 확인하십시오. 암호는 이 파일 시스템에 특화될 수도 있고, ONTAP 자격 증명에 입력한 암호를 사용할 수도 있습니다.
+
+
+. "EVS 클러스터 연결" 섹션에 다음 정보를 입력하십시오:
++
+.. *데이터스토어 마운트 옵션*: 선택적으로 *데이터스토어를 EVS 클러스터에 마운트* 옵션을 활성화하면 데이터스토어가 Amazon EVS 클러스터에 자동으로 연결됩니다. 또한 이 옵션을 사용하면 Workload Factory가 ONTAP 모범 사례 권장 사항에 맞춰 VMware ESXi 호스트 설정을 구성합니다. 파일 시스템을 배포하기 전에 *요약* 섹션에서 계획 세부 정보를 검토하여 변경된 설정을 확인할 수 있습니다.
+.. *EVS 클러스터 vSphere 콘솔 세부 정보*: Amazon EVS에 연결해야 하는 VMware vCenter 서버의 IP 주소 또는 FQDN을 입력하십시오.
+.. *vSphere 관리자 자격 증명 비밀 ARN*: vSphere 관리자 자격 증명에 사용할 비밀 ARN을 선택하십시오. 이 자격 증명은 데이터스토어를 마운트하고 권장 VMware 설정을 구성하는 데 사용됩니다.
++
+이 리전에서 Amazon EVS를 사용할 수 없거나 계정에 사용 가능한 비밀 ARN 목록을 가져올 권한이 없는 경우 비밀 ARN 값을 수동으로 입력할 수 있습니다.
+
+
+
+. *요약* 섹션에서는 VMware 마이그레이션 어드바이저가 사용자의 정보를 기반으로 설계한 FSx for ONTAP 파일 시스템 및 데이터스토어 구성을 확인할 수 있습니다.
+. FSx for ONTAP 파일 시스템을 배포하려면 *생성*을 선택하십시오. 이 과정은 최대 2시간이 소요될 수 있습니다.
++
+선택적으로 Codebox 창에서 *CloudFormation으로 리디렉션*을 선택하여 CloudFormation 스택을 사용하여 파일 시스템과 권장 VM 구성을 생성할 수 있습니다.
+
++
+어느 경우든 CloudFormation에서 생성 진행률을 모니터링할 수 있습니다.
+
+
+
+
+
+[[result]]
+== 결과
+
+FSx for ONTAP 파일 시스템이 배포되었습니다. 이제 Codebox의 AWS CloudFormation 템플릿을 사용하여 권장 VM 구성을 Amazon Elastic VMware Service 환경에 배포할 수 있습니다.

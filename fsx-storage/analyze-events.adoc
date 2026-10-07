@@ -1,0 +1,149 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/analyze-events.html 
+keywords: analyze events, events, FSx for ONTAP events, EMS, troubleshoot FSx for ONTAP, latency 
+summary: NetApp Workload Factory for FSx for ONTAP의 이벤트를 분석합니다. 
+---
+= NetApp Workload Factory에서 FSx for ONTAP 이벤트 분석
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory의 스마트 이벤트 분석기를 사용하여 FSx for ONTAP 파일 시스템 문제를 신속하게 식별하고 해결하세요. 이 이벤트 분석기는 Amazon Bedrock 통합을 지원하는 Agentic AI를 활용하여 FSx for ONTAP 이벤트 관리 시스템(EMS) 및 지연 시간 이벤트를 자동으로 추출하고 분석합니다.
+
+
+
+[[about-this-task]]
+== 이 작업 정보
+
+스토리지 관리자는 고객 불만이 접수된 후에야 FSx for ONTAP 이벤트에 대응하거나 사용자 지정 스크립트 및 알람을 유지 관리하는 경우가 많습니다. 이러한 사후 대응 방식은 효율성을 저하시키고 문제 해결을 지연시키며 가동 중지 시간을 증가시킬 수 있습니다.
+
+이벤트 분석기는 FSx for ONTAP 파일 시스템에서 다음과 같은 이벤트 유형을 자동으로 추출합니다.
+
+* *EMS 이벤트*: ONTAP 이벤트 관리 시스템에서 발생하는 오류, 경고 및 긴급 상황 이벤트입니다.
+* *지연 시간 이벤트*: 읽기 및 쓰기 지연 시간 이벤트를 표시합니다. 지연 시간 이벤트는 링크 연결 없이도 볼 수 있습니다.
+
+
+Amazon Bedrock 통합을 통해 Workload Factory는 AI를 사용하여 이벤트를 분석하고 실행 가능한 인사이트를 제공하여 FSx for ONTAP 파일 시스템의 상태와 성능을 유지합니다.
+
+주요 이점은 다음과 같습니다.
+
+* 고급 문제 해결: AI가 자동으로 FSx for ONTAP EMS 및 지연 이벤트를 식별, 분석하고 해결 방법에 대한 통찰력을 제공하여 수동 조사 시간을 줄여줍니다.
+* 모범 사례 해결 방법: 이벤트 분석기는 FSx for ONTAP EMS 및 지연 이벤트를 해결하기 위한 명확하고 실행 가능한 단계를 제공합니다.
+
+
+이벤트 분석기를 사용하면 고급 AI 분석의 이점을 누리면서 환경을 완벽하게 제어할 수 있습니다.
+
+Workload Factory에서 이벤트를 분석할 수 있도록 하려면 Amazon Bedrock을 활성화하고, Workload Factory에서 사용할 모델을 선택하고, Amazon Bedrock에 연결하기 위한 프라이빗 엔드포인트를 생성하고, 권한을 추가하고, 엔터프라이즈 라이센스를 생성해야 합니다.
+
+link:https://aws.amazon.com/bedrock/pricing/["Amazon Bedrock 가격"^]
+
+
+NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 메시지가 표시되며 AI 분석을 사용할 수 없습니다. 관리자 또는 link:../admin/manage-genai-features.html["AI 관리에 대해 알아보기"^]에 문의하십시오.
+
+
+
+[[data-privacy-and-security]]
+=== 데이터 개인정보 보호 및 보안
+
+귀하의 데이터 개인정보 보호 및 보안은 다음을 통해 보호됩니다.
+
+* *데이터 주권*: 모든 데이터와 집계 결과는 사용자의 AWS 계정 내에 유지되며, 공용 인터넷에 노출되지 않고 프라이빗 VPC 엔드포인트(Amazon Bedrock)를 통해 통신됩니다.
+* *AI 학습 없음*: 고객 데이터는 모델 학습 또는 개선에 사용되지 않습니다. Amazon Bedrock은 이벤트를 실시간으로 처리하지만 고객 데이터를 기반으로 학습하지 않습니다. 결과는 고객 환경에만 저장됩니다.
+
+
+자세한 내용은 link:https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html["Amazon Bedrock 데이터 보호 문서"^]을(를) 참조하십시오.
+
+
+
+[[before-you-begin]]
+== 시작하기 전에
+
+지연 시간 이벤트를 보려면 다음 단계를 수행해야 합니다.
+
+* AWS 계정의 link:add-credentials.html["_보기, 계획 및 분석_ 권한을 부여합니다"^].
+* link:create-link.html["링크를 사용하여 파일 시스템에 연결합니다."^].
+
+
+EMS 및 지연 시간 이벤트를 분석하고 AI 기반 인사이트 및 권장 사항을 받으려면 다음 사항을 확인하십시오.
+
+* AWS 계정에 link:add-credentials.html["_operations and remediation_ 권한"^]이(가) 있습니다.
+* link:create-link.html["링크를 사용하여 파일 시스템에 연결됨"^]이(가) 있습니다.
+* FSx for ONTAP 파일 시스템과 연결된 보안 그룹에서 포트 22(SSH)가 열려 있습니다.
+
+
+추가 요구 사항(이벤트 분석 중에 시스템에서 안내합니다):
+
+* *Amazon Bedrock 활성화*
++
+각 AWS 계정에 대해 Amazon Bedrock API를 구성하십시오. Amazon Bedrock API는 FSx for ONTAP 이벤트에 대한 인사이트를 제공하는 데 사용됩니다.
+
++
+권장 모델: `anthropic.claude-sonnet-4-20250514-v1:0`. 선택한 지역의 추론 프로필 ARN을 제공하십시오.
+
+* *Workload Factory 링크*
++
+FSx for ONTAP 파일 시스템과의 링크를 생성하고 연결하여 AI 기반 이벤트 분석을 활성화합니다. 링크는 Workload Factory와 하나 이상의 FSx for ONTAP 파일 시스템 간의 신뢰 관계를 설정하고 AWS Lambda를 활용합니다.
+
++
+link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"]. 링크가 연결되면 이 작업으로 돌아오십시오.
+
+* *AWS IAM 권한*
++
+Workload Factory IAM 역할 연결 정책에 다음 권한을 추가합니다.
+
++
+** `bedrock:InvokeModel`
+** `bedrock:InvokeModelWithResponseStream`
++
+이러한 권한을 통해 Workload Factory는 오류 조사 및 해결 지침을 위해 Bedrock 모델을 호출할 수 있습니다. 또한 이 프로필은 맞춤형 인사이트를 위한 안전한 AI 액세스를 보장합니다.
+
++
+Workload Factory와 연결된 AWS 자격 증명에 대해 다음 권한도 추가하십시오.
+
+** `bedrock:GetInferenceProfile`
+** `bedrock:ListInferenceProfiles`
++
+이러한 권한은 모델의 가용성을 확인합니다.
+
+
+
+
+
+
+
+[[view-and-analyze-events-for-fsx-for-ontap]]
+== FSx for ONTAP의 이벤트 보기 및 분석
+
+Workload Factory 콘솔을 사용하여 FSx for ONTAP 파일 시스템의 EMS 및 지연 시간 이벤트를 보고 분석할 수 있습니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. 스토리지 메뉴에서 *분석*을 선택합니다.
+. 분석 화면에서 보려는 FSx for ONTAP 파일 시스템이 포함된 AWS 계정, 자격 증명 및 리전을 선택합니다.
++
+이벤트가 있는 FSx for ONTAP 파일 시스템만 표시됩니다.
+
+. 보려는 FSx for ONTAP 파일 시스템을 선택하십시오.
++
+이벤트 테이블에는 해당 파일 시스템과 관련된 모든 이벤트가 표시됩니다.
+
+. 표에서 이벤트 세부 정보를 검토하십시오.
+. 이벤트를 분석하려면 다음 중 하나를 수행하십시오.
++
+** 여러 이벤트를 분석하려면 이벤트 옆의 확인란을 선택한 다음 표에서 *분석*을 선택하십시오.
+** 특정 이벤트를 분석하고 측면 패널에서 인사이트를 확인하려면 이벤트 이름을 선택한 다음 패널에서 *분석*을 선택하세요. 인사이트와 권장 사항이 패널에 표시됩니다.
+** 표에서 특정 이벤트를 분석하려면 해당 이벤트 행에서 *분석*을 선택한 다음 이벤트 이름을 선택하여 인사이트와 권장 사항을 확인하세요.
++
+필요한 경우, 화면 안내에 따라 AI 분석 설정 요구 사항을 완료하여 누락된 필수 조건을 충족하십시오.
+
+
+
+
+
+.관련 정보
+* link:set-volume-latency-thresholds.html["Workload Factory에서 볼륨 지연 시간 임계값 설정"]
+

@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: admin/manage-custom-dashboards-fsx.html 
+keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog 
+summary: Workload Factory에서 사용자 지정 대시보드를 보고, 새로 고치고, 삭제하려면 대시보드 카탈로그에 액세스하세요. 
+---
+= NetApp Workload Factory에서 사용자 지정 대시보드 관리
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+대시보드 카탈로그에서 사용자 지정 대시보드를 관리합니다. 여기에서 세부 정보를 확인하고, 대시보드를 공유하고, 데이터를 새로 고치거나, 더 이상 필요하지 않은 대시보드를 삭제할 수 있습니다.
+
+.이 작업 정보
+대시보드 카탈로그에서 사용자 지정 대시보드를 보고 관리할 수 있습니다. 비공개 대시보드는 본인만 볼 수 있으며, 공개 대시보드는 Workload Factory 계정의 모든 사용자가 볼 수 있습니다. 각 대시보드에는 생성자 이름, 생성 날짜, 공개 여부 레이블(비공개 또는 공개) 등 기본 세부 정보가 표시됩니다.
+
+사용자 지정 대시보드는 읽기 전용입니다. 스토리지 또는 워크로드 설정을 변경할 수 없습니다.
+
+.시작하기 전에
+Workload Factory 계정에 최소 하나 이상의 사용자 지정 대시보드가 있어야 합니다.
+
+
+
+[[access-the-dashboard-catalog]]
+== 대시보드 카탈로그에 액세스합니다
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. NetApp Console 메뉴에서 *워크로드* > *워크로드 개요* > *사용자 지정 대시보드*를 선택합니다.
++
+대시보드 카탈로그에는 Workload Factory 계정의 모든 사용자 지정 대시보드가 표시됩니다.
+
+. 대시보드 목록을 검토하세요.
+
+
+
+
+[[change-dashboard-visibility]]
+== 대시보드 표시 여부 변경
+
+대시보드 공개로 설정하면 팀과 공유할 수 있습니다. 비공개로 설정하면 공유를 중지할 수 있습니다.
+
+.단계
+. *사용자 지정 대시보드* 페이지에서 업데이트하려는 대시보드를 찾습니다.
+. 해당 대시보드의 *Actions* 드롭다운 메뉴 image:icon-action.png["작업 메뉴를 여는 세 점 아이콘"]에서 다음 중 하나를 선택합니다.
++
+** *대시보드 공유* - Workload Factory 계정의 모든 사용자가 대시보드를 볼 수 있도록 합니다.
+** *개인 대시보드로 변경* - 대시보드를 본인만 볼 수 있도록 설정합니다.
+
+
+
+
+.결과
+대시보드가 즉시 업데이트됩니다. 대시보드 카드에 표시된 가시성 레이블에는 현재 상태가 표시됩니다.
+
+
+
+[[refresh-dashboard-data]]
+== 대시보드 데이터 새로 고침
+
+대시보드를 열면 대시보드 데이터가 로드됩니다. 최신 정보를 보려면 새로고침하세요.
+
+대시보드가 워크로드에서 데이터를 다시 로드합니다. 마지막 업데이트 시간이 변경되어 데이터가 새로 고쳐진 시간을 표시합니다.
+
+
+
+[[delete-a-dashboard]]
+== 대시보드 삭제
+
+더 이상 필요하지 않은 대시보드를 삭제하세요. 이 작업은 영구적이며 되돌릴 수 없습니다.
+
+.단계
+. *사용자 지정 대시보드* 페이지에서 제거하려는 대시보드를 찾으세요.
+. 해당 대시보드의 *작업* 드롭다운 메뉴에서 *삭제*를 선택합니다.
+. 삭제를 확인하세요.
+
+
+.결과
+대시보드가 Workload Factory 계정에서 영구적으로 제거되며, 모든 사용자는 더 이상 대시보드에 접근할 수 없습니다.
+
+
+
+[[related-information]]
+== 관련 정보
+
+* link:create-custom-dashboard-fsx.html["추가 사용자 지정 대시보드 생성"]
+* link:troubleshoot-custom-dashboards-fsx.html["사용자 지정 대시보드 문제 해결"]
+

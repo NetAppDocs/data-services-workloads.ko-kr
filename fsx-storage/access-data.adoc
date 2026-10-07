@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/access-data.html 
+keywords: access data, mount point, mount volumes, mount clients, on-premises 
+summary: NAS 클라이언트용 볼륨을 마운트하고 SAN 클라이언트용 iSCSI LUN을 마운트하여 온프레미스에서 FSx for ONTAP 파일 시스템에 액세스할 수 있습니다. 
+---
+= FSx for ONTAP 파일 시스템 데이터에 액세스하십시오.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NAS 클라이언트용 볼륨을 마운트하고 SAN 클라이언트용 iSCSI LUN을 마운트하여 온프레미스에서 FSx for ONTAP 파일 시스템에 액세스할 수 있습니다.
+
+link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/supported-fsx-clients.html["데이터 접근"^] Amazon FSx for NetApp ONTAP 설명서에는 참조용으로 데이터 액세스 방법에 대한 항목이 나와 있습니다.
+
+NetApp Workload Factory에서 볼륨의 마운트 지점을 확인할 수도 있습니다.
+
+
+
+[[get-mount-point-for-volumes-in-netapp-workload-factory]]
+== NetApp Workload Factory에서 볼륨의 마운트 지점을 가져옵니다.
+
+CIFS 공유 또는 NFS 클라이언트에 공유를 마운트하려면 볼륨의 마운트 지점을 가져옵니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *볼륨 탐색기* > *FSx for ONTAP*을 선택합니다.
+. 해당 볼륨의 작업 메뉴를 선택한 다음 *기본 작업*을 선택하고 *마운트 명령 보기*를 선택합니다.
+. 마운트 명령 대화 상자에서 *복사*를 선택하여 NFS 마운트 지점 또는 CIFS 공유에 대한 명령을 복사합니다. 복사한 명령을 터미널에 입력합니다.
+. *닫기*를 선택합니다.
+
+
+
+
+[[connect-to-nas-clients]]
+== NAS 클라이언트에 연결
+
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-linux-client.html["Linux 클라이언트에서 볼륨을 마운트합니다"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-windows-client.html["Windows 클라이언트에서 볼륨 마운트"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/attach-mac-client.html["macOS 클라이언트에서 볼륨 마운트"^]
+
+
+
+
+[[connect-to-san-clients]]
+== SAN 클라이언트에 연결합니다
+
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/mount-iscsi-luns-linux.html["Linux 클라이언트에 iSCSI LUN 마운트"^]
+* link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/mount-iscsi-windows.html["Windows 클라이언트에 iSCSI LUN 마운트"^]
+

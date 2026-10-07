@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-s3-access-points.html 
+keywords: S3, s3, access points, manage access points, change access points, update access points, modify access points 
+summary: NetApp Workload Factory에서 볼륨의 S3 액세스 포인트를 관리할 수 있습니다. 
+---
+= NetApp Workload Factory에서 볼륨에 대한 S3 액세스 포인트를 관리합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory에서 볼륨의 S3 액세스 포인트 세부 정보를 업데이트하거나 S3 액세스 포인트를 삭제합니다.
+
+액세스 포인트에 대한 *인벤토리 테이블*을 활성화 또는 비활성화할 수도 있습니다. 인벤토리 테이블은 S3 액세스 포인트에서 접근 가능한 모든 객체에 대한 메타데이터를 생성하며, 이 과정에서 AWS S3 요청 비용이 발생합니다. 자세한 내용은 link:https://aws.amazon.com/s3/pricing/["Amazon S3 가격 책정 문서"^]을 참조하십시오.
+
+
+
+[[edit-the-s3-access-points-for-a-volume]]
+== 볼륨에 대한 S3 액세스 포인트를 편집합니다
+
+NetApp Workload Factory에서 볼륨의 S3 액세스 포인트를 편집합니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *볼륨 탐색기*를 선택합니다.
+. S3 액세스 포인트를 편집하려는 볼륨의 작업 메뉴를 선택한 다음 *고급 작업*을 선택하고 *S3 액세스 포인트 관리*를 선택합니다.
+. *S3 액세스 포인트 관리* 화면에서 작업 메뉴를 선택한 다음 *액세스 포인트 편집*을 선택합니다.
+. 업데이트한 후 *적용*을 선택합니다.
++
+저널 테이블 기능에 필요한 인프라를 설정하려면 S3 액세스 포인트의 네트워크 구성으로 *인터넷*을 선택해야 합니다. link:setup-journal-table.html["NetApp Workload Factory용 저널 테이블 인프라를 설정하는 방법을 알아보십시오"].
+
+
+
+
+
+[[view-s3-access-point-details-for-a-volume]]
+== 볼륨에 대한 S3 액세스 포인트 세부 정보 보기
+
+별칭, ARN, S3 URI와 같은 S3 액세스 포인트 세부 정보를 볼 수 있습니다. 인벤토리 및 저널 테이블이 활성화된 경우 S3 액세스 포인트 전반에 걸친 사용자 액세스 이벤트 및 객체 작업에 대한 메타데이터와 감사 로그를 확인할 수 있습니다.
+
+.이 작업 정보
+볼륨에서 인벤토리 테이블이 활성화되면 해당 볼륨에 연결된 기존 S3 액세스 포인트의 액세스 포인트, 인벤토리 테이블 및 테이블 버킷 세부 정보를 볼 수 있습니다. 또한 시스템은 AWS Management Console에서 인벤토리 테이블에 대한 링크를 제공합니다.
+
+저널 테이블이 활성화되면 Workload Factory는 액세스 포인트에 대한 로그를 참조용 테이블에 생성합니다. 이 테이블에는 CloudTrail 이벤트, 트레일(AWS 활동 기록), CloudTrail 필터, CloudWatch 로그 그룹 등이 포함됩니다.
+
+액세스 포인트 세부 정보를 복사하여 다른 애플리케이션에서 사용할 수 있습니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *볼륨 탐색기*를 선택합니다.
+. 세부 정보를 보려면 해당 볼륨의 작업 메뉴를 선택한 다음 *고급 작업*을 선택하고 *세부 정보 보기*를 선택합니다.
++
+세부 정보는 *액세스 포인트*, *인벤토리 테이블*, *저널 테이블*, *테이블 버킷*의 네 가지 탭 아래에 표시됩니다.
+
+. 인벤토리 또는 저널 테이블의 상태가 활성화되어 있지만 `get:Object` 권한이 없는 경우 대화 상자의 지침에 따라 필요한 권한을 추가하십시오.
+. 저널 테이블 상태가 '대기 중'인 경우, 저널 테이블을 생성된 인프라에 연결하려면 CloudTrail ARN을 제공해야 합니다. AWS CLI 또는 AWS Management Console을 사용하여 CloudFormation 스택을 배포하는 지침을 따른 다음, Workload Factory 콘솔로 돌아가 CloudTrail ARN을 입력하십시오.
+
+
+
+
+[[delete-the-s3-access-points-for-a-volume-in-netapp-workload-factory]]
+== NetApp Workload Factory에서 볼륨에 대한 S3 액세스 포인트를 삭제합니다
+
+NetApp Workload Factory의 볼륨에서 기존 S3 액세스 포인트를 삭제합니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *볼륨 탐색기*를 선택합니다.
+. S3 액세스 포인트를 관리하려는 볼륨의 작업 메뉴를 선택한 다음 *고급 작업*을 선택하고 *S3 액세스 포인트 관리*를 선택합니다.
+. 삭제할 S3 액세스 포인트의 작업 메뉴를 선택한 다음 * 삭제 * 를 선택합니다.
+. *S3 액세스 포인트 삭제* 대화 상자에서 *삭제*를 선택하여 볼륨에서 S3 액세스 포인트를 삭제합니다.
++
+Workload Factory는 인벤토리 또는 저널 테이블을 삭제하지 않지만 AWS Management Console에서 수동으로 제거할 수 있습니다.
+
+
+
+.관련 정보
+* link:setup-journal-table.html["저널 테이블 인프라를 설정합니다"]
+

@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: setup/quick-start.html 
+keywords: quick start 
+summary: Workload Factory를 시작하려면 NetApp Console에서 가입 및 계정을 생성하고 클라우드 공급자 자격 증명을 추가하여 Workload Factory가 리소스를 직접 관리하고 워크로드를 최적화할 수 있도록 하십시오. 
+---
+= NetApp Workload Factory 빠른 시작
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory는 사용자가 NetApp Console에서 클라우드 데이터 서비스로 이용할 수 있습니다. Workload Factory가 리소스를 직접 관리하고 워크로드를 최적화할 수 있도록 NetApp Console에 가입하여 계정을 생성하고 클라우드 공급자 자격 증명을 추가하여 Workload Factory를 시작하십시오.
+
+시작하기 전에 link:learn-about-workload-factory.html["Workload Factory"]에 대해 이해하고 있어야 합니다.
+
+
+
+[[sign-up-and-log-in-to-workload-factory-from-netapp-console]]
+== NetApp Console에서 Workload Factory에 가입하고 로그인하세요.
+
+link:sign-up-and-log-in.html["NetApp Console에서 Workload Factory에 가입하고 로그인하세요."]
+
+다음으로, 클라우드 제공업체의 *빠른 시작* 링크를 선택하여 시작하십시오.
+
+
+
+[[get-started-with-amazon-fsx-for-netapp-ontap]]
+== Amazon FSx for NetApp ONTAP 시작하기
+
+link:../fsx-storage/quick-start-fsx.html["Amazon FSx for NetApp ONTAP 빠른 시작"]
+
+
+
+[[get-started-with-oci-netapp-storage-service]]
+== OCI NetApp 스토리지 서비스 시작하기
+
+link:../oci/quick-start-oci.html["OCI NetApp 스토리지 서비스 빠른 시작"]
+
+
+
+[[get-started-with-google-cloud-netapp-volumes]]
+== Google Cloud NetApp Volumes 시작하기
+
+link:../gcnv/quick-start-gcnv.html["Google Cloud NetApp Volumes 빠른 시작"]

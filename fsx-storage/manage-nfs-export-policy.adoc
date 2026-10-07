@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-nfs-export-policy.html 
+keywords: NFS, nfs, export policy, change export policy, update export policy, modify export policy 
+summary: NetApp Workload Factory에서 NFSv3 또는 NFSv4.1 프로토콜 유형을 사용하는 볼륨에 대한 NFS 내보내기 정책을 관리합니다. 
+---
+= NetApp Workload Factory에서 볼륨에 대한 NFS 내보내기 정책을 관리합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory에서 NFSv3 또는 NFSv4.1 프로토콜 유형을 사용하는 볼륨에 대한 NFS 내보내기 정책을 관리합니다.
+
+.이 작업 정보
+볼륨의 내보내기 정책을 관리하려면 클라이언트 사양, 액세스 제어, 슈퍼 유저 액세스 및 NFS 버전을 자세히 지정하는 내보내기 정책 규칙을 추가해야 합니다. 여러 개의 내보내기 정책을 추가하고 우선순위를 지정할 수 있습니다.
+
+.시작하기 전에
+엑스포트 정책 규칙에 대한 클라이언트 사양을 결정합니다. 클라이언트 사양에 유효한 값은 다음과 같습니다:
+
+* IP 주소
+* 서브넷 마스크를 포함한 IP 주소
+* 네트워크 마스크를 사용한 IP 주소
+* “@” 문자로 시작하는 넷그룹 이름
+* 마침표 “.”가 앞에 오는 도메인 이름
+* 호스트 이름
+
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *볼륨 탐색기*를 선택합니다.
+. NFS 내보내기 정책을 변경할 볼륨의 작업 메뉴를 선택합니다.
+. *고급 작업*을 선택한 다음 *NFS 내보내기 정책 편집*을 선택합니다.
+. NFS 엑스포트 정책 편집 페이지에서 다음을 제공하십시오:
++
+.. *액세스 제어*: *사용자 지정 내보내기 정책* 또는 *기존 내보내기 정책*을 선택하십시오.
++
+또는 *볼륨에 접근 불가*를 선택할 수도 있습니다.
+
+.. *엑스포트 정책 이름*: 선택 사항으로, 엑스포트 정책의 이름을 입력합니다.
+.. *엑스포트 정책 규칙 추가*: 다음 세부 정보를 제공하고 #1을 우선순위 규칙으로 하여 정책 순위를 지정하십시오:
++
+... *클라이언트 사양*: 여러 값은 쉼표로 구분하십시오.
+... *액세스 제어*: 드롭다운 메뉴에서 *읽기/쓰기*, *읽기 전용* 또는 *액세스 없음*을 선택합니다.
+... *슈퍼 유저 액세스*: *예* 또는 *아니요*를 선택합니다.
+... *NFS 버전*: *모두*, *NFSv3* 또는 *NFSv4*를 선택합니다.
+
+
+
+
+. *적용*을 선택합니다.
+

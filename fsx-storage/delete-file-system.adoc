@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/delete-file-system.html 
+keywords: file system, delete file system, file system deletion 
+summary: NetApp Workload Factory에서 파일 시스템을 삭제하려면 먼저 해당 파일 시스템과 연결된 볼륨, 스토리지 VM 또는 복제 관계를 모두 삭제해야 합니다. 
+---
+= NetApp Workload Factory에서 파일 시스템을 삭제합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory에서 파일 시스템을 삭제하려면 먼저 해당 파일 시스템과 연결된 볼륨, 스토리지 VM 또는 복제 관계를 모두 삭제해야 합니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 삭제하려는 FSx for ONTAP 파일 시스템의 작업 메뉴를 선택합니다.
+. *관리*를 선택합니다.
+. *개요* 탭에서 작업 메뉴를 선택합니다.
+. *삭제*를 선택합니다.
+. FSx for ONTAP 파일 시스템 삭제 대화 상자에서 삭제할 FSx for ONTAP 파일 시스템의 이름을 입력합니다.
+. *삭제*를 선택하여 확인하십시오.
+

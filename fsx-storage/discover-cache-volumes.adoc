@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/discover-cache-volumes.html 
+keywords: discover cache volume, FlexCache technology, ONTAP FlexCache, FSx for ONTAP volume 
+summary: NetApp Workload Factory 콘솔을 벗어나지 않고 캐시 관계와 연결된 캐시 볼륨을 검색하고 볼 수 있습니다. 
+---
+= NetApp Workload Factory에서 캐시 볼륨 검색
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory 콘솔을 벗어나지 않고 캐시 관계와 연결된 _cache_ 볼륨을 검색하고 볼 수 있습니다. 캐시 관계는 ONTAP FlexCache 관계라고도 합니다. Workload Factory는 FlexCache 기술을 사용하여 기존 캐시 관계를 검색합니다. 이 기술은 데이터 액세스를 가속화하고, 읽기 집약적인 워크로드에서 WAN 지연 시간, 대역폭 및 비용을 절감하는 NetApp ONTAP의 원격 캐싱 기능으로, 특히 클라이언트가 동일한 데이터에 반복적으로 액세스해야 하는 경우에 유용합니다.
+
+link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/using-flexcache.html["FlexCache를 사용한 데이터 복제에 대해 자세히 알아보십시오."^]
+
+.이 작업 정보
+캐시 관계를 파악하려면 링크 연결이 필요합니다.
+
+하나의 FSx for ONTAP 파일 시스템과 하나의 Cloud Volumes ONTAP 시스템 등 두 ONTAP 시스템의 볼륨 간에 캐시 관계가 존재할 수 있습니다. 또한 단일 FSx for ONTAP 파일 시스템 내에서 볼륨 간에 캐시 관계가 존재할 수 있습니다.
+
+.시작하기 전에
+시작하기 전에 다음 사항을 고려하십시오.
+
+* 파일 시스템에서 캐시 관계를 검색하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+* 기존 캐시 관계가 있어야 합니다.
+
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 *캐시 관계* 탭을 선택합니다.
+. 사용자의 캐시 볼륨이 표에 표시됩니다. 표에는 각 캐시 볼륨에 대한 다음 정보가 포함되어 있습니다:
++
+** *원본 클러스터*: FlexCache 관계의 원본 또는 소스 클러스터입니다.
+** *원본 볼륨*: FlexCache 관계의 원본 또는 소스 볼륨입니다.
+** *원본 스토리지 VM*: 볼륨의 원본 또는 소스 스토리지 VM입니다.
+** *캐시 볼륨*: FlexCache 관계의 캐시 또는 대상 볼륨입니다.
+** *캐시 스토리지 VM*: 볼륨의 캐시 또는 대상 스토리지 VM입니다.
+** *상태*: FlexCache 관계의 상태입니다.
+** *캐시에서 사용 가능한 스토리지*: 캐시 볼륨에서 사용 가능한 스토리지 용량입니다.
+** *캐시 파일 시스템*: 캐시 볼륨의 파일 시스템입니다.
+** *쓰기 모드*: FlexCache 관계의 쓰기 모드입니다.
+** *DR 캐시*: FlexCache 관계가 재해 복구(DR) 캐시인지 여부를 나타냅니다.
+** *내보내기 정책*: 캐시 볼륨의 내보내기 정책입니다.
+
+
+
+
+.관련 정보
+link:manage-cache-volumes.html["캐시 볼륨 관리"^]

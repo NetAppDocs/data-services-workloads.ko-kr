@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: gcnv/configuration-analysis.html 
+keywords: configuration issues, issues, improve, analyze, storage configuration, recommendation, recommendations 
+summary: NetApp Console은 스토리지 시스템 구성을 정기적으로 분석하여 구성 문제가 있는지 확인합니다. 
+---
+= Google Cloud NetApp Volumes에 대한 구성 분석
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Console의 잘 설계된 대시보드는 스토리지 시스템 구성을 정기적으로 분석하여 구성 문제가 있는지 확인합니다. 문제가 발견되면 대시보드에 문제의 내용과 스토리지 시스템이 최상의 성능, 비용 효율성 및 모범 사례 준수를 달성할 수 있도록 변경해야 할 사항이 표시됩니다.
+
+주요 기능은 다음과 같습니다:
+
+* 일일 구성 분석
+* NetApp ONTAP 스토리지 시스템 및 파트너 스토리지 공급업체를 위한 자동 모범 사례 검증
+* 사전 예방적 관찰 가능성
+* 인사이트를 실행으로
+
+
+
+
+[[analysis-requirements]]
+== 분석 요구 사항
+
+완벽한 스토리지 풀 분석을 위해서는 다음 단계를 수행해야 합니다.
+
+* link:create-discover-systems.html["Google Cloud NetApp Volumes 시스템을 NetApp Console에 추가하세요"^].
+* Google Cloud 계정에서 _보기, 계획 및 분석_ 권한을 부여합니다.
++
+link:add-credentials.html["Google Cloud 계정에 권한을 부여하는 방법을 알아보십시오."^]
+
+
+
+
+
+[[best-practices-and-recommendations-for-storage-workloads]]
+== 스토리지 워크로드에 대한 모범 사례 및 권장 사항
+
+Workload Factory는 스토리지 및 ONTAP 모범 사례와 Google Cloud Well-Architected Framework를 기준으로 스토리지 구성을 평가합니다. 또한 평가 결과에 따라 개선 사항을 권장합니다.
+
+잘 설계된 분석은 프레임워크의 다음 두 가지 핵심 요소인 _신뢰성_ 및 _운영 우수성_을 기준으로 구성을 분류합니다.
+
+
+
+[[reliability]]
+=== 안정성
+
+안정성은 중단이 발생하더라도 워크로드가 의도된 기능을 정확하고 일관되게 수행하도록 보장합니다.
+
+* *스냅샷 정책*
++
+효율적인 백업과 빠른 복원을 위해 로컬 스냅샷을 예약하세요. 스냅샷은 볼륨의 즉각적인 특정 시점 이미지입니다.
+
+* *SSD 용량 여유 공간*
++
+Workload Factory는 SSD 계층 사용률을 80% 이하로 유지할 것을 권장합니다. 일부 워크로드는 추가 용량 여유 공간이 필요하며 사용률 목표를 낮춰야 할 수 있습니다. 사용량이 권장 여유 공간을 초과하면 성능 저하 및 서비스 문제 발생 위험이 증가하며, 특히 용량을 제때 확장하지 않을 경우 더욱 그렇습니다. 하나 이상의 스토리지 풀에 대해 이 기능을 비활성화했다가 필요에 따라 나중에 다시 활성화할 수 있습니다.
+
+
+
+
+
+[[operational-excellence]]
+=== 운영 우수성
+
+운영 우수성은 최적의 아키텍처와 비즈니스 가치 제공에 중점을 둡니다.
+
+* *볼륨 용량 여유 공간*
++
+Workload Factory는 공간 부족 위험을 줄이기 위해 볼륨 사용량을 80% 미만으로 유지할 것을 권장합니다. 볼륨이 예상보다 빠르게 증가하는 경우 신속하게 확장해야 할 수 있습니다. 특히 갑작스럽거나 급격한 증가는 애플리케이션에 영향을 미칠 위험을 증가시킬 수 있습니다. 씬 프로비저닝 및 자동 용량 관리를 사용하면 이 위험이 줄어듭니다. 하나 이상의 볼륨에 대해 이 기능을 비활성화했다가 필요에 따라 나중에 다시 활성화할 수 있습니다.
+
+
+
+.다음 단계
+link:improve-configurations.html["잘 설계된 Google Cloud NetApp Volumes 구성을 구현합니다"]

@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/replicate-svm-to-file-system.html 
+keywords: storage VM, SVM, replication, FSx for ONTAP, Workload Factory 
+summary: 스토리지 VM을 다른 FSx for ONTAP 파일 시스템으로 복제하면 데이터 손실 시 데이터 액세스에 대한 보호 계층이 제공됩니다. 
+---
+= 스토리지 VM을 다른 FSx for ONTAP 파일 시스템으로 복제합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory에서 스토리지 VM을 다른 FSx for ONTAP 파일 시스템으로 복제하면 데이터 손실 시 데이터 액세스에 대한 보호 계층이 제공됩니다. 이 작업은 하나의 스토리지 VM에 있는 모든 볼륨을 다른 FSx for ONTAP 파일 시스템으로 복제합니다.
+
+.시작하기 전에
+스토리지 VM을 다른 FSx for ONTAP 파일 시스템으로 복제하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 복제할 스토리지 VM이 있는 파일 시스템의 작업 메뉴를 선택한 다음 *관리*를 선택합니다.
+. 스토리지 VM 아래의 파일 시스템 개요에서 *관리*를 선택합니다.
+. 스토리지 VM 관리 화면에서 SVM을 복제할 스토리지 VM의 작업 메뉴를 선택한 다음 *고급 작업* > *스토리지 VM 복제*를 선택합니다.
+. 데이터 복제 페이지의 복제 대상 항목에 다음 정보를 입력하십시오.
++
+.. *FSx for ONTAP 파일 시스템*: 대상 FSx for ONTAP 파일 시스템에 대한 자격 증명, 지역 및 FSx for ONTAP 파일 시스템 이름을 선택하십시오.
+.. *스토리지 VM 이름*: 드롭다운 메뉴에서 스토리지 VM을 선택하십시오.
+.. *볼륨 이름*: 타겟 볼륨 이름은 다음 형식으로 자동으로 생성됩니다 `{OriginalVolumeName}_copy`.
+.. *계층화 정책*: 타겟 볼륨에 저장된 데이터에 대한 계층화 정책을 선택합니다.
++
+Workload Factory FSx for ONTAP 사용자 인터페이스를 사용하여 볼륨을 생성할 때 기본 티어링 정책은 _Auto_입니다. 볼륨 티어링 정책에 대한 자세한 내용은 AWS FSx for NetApp ONTAP 설명서의 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["볼륨 스토리지 용량"^]를 참조하십시오.
+
+.. *최대 전송 속도*: *제한됨*을 선택하고 최대 전송 한도를 MB/s 단위로 입력하십시오. 또는 *무제한*을 선택하십시오.
++
+제한이 없으면 네트워크 및 애플리케이션 성능이 저하될 수 있습니다. 대신, 주로 재해 복구에 사용되는 워크로드 등 중요한 워크로드의 경우 FSx for ONTAP 파일 시스템에 대해 무제한 전송 속도를 권장합니다.
+
+
+
+. 복제 설정에서 다음을 제공하십시오:
++
+.. *복제 간격*: 스냅샷이 소스 볼륨에서 타겟 볼륨으로 전송되는 빈도를 선택합니다.
+.. *장기 보존*: 선택적으로 장기 보존을 위한 스냅샷 기능을 활성화할 수 있습니다.
++
+장기 보존을 활성화하는 경우, 기존 정책을 선택하거나 새 정책을 생성하여 복제할 스냅샷과 보존할 스냅샷 수를 정의하십시오.
+
++
+... *기존 정책 선택*의 경우 드롭다운 메뉴에서 기존 정책을 선택하십시오.
+... *새 정책 생성*을 위해 다음 정보를 제공하십시오.
++
+.... *정책명*: 정책명을 입력하십시오.
+.... *스냅샷 정책*: 표에서 스냅샷 정책 빈도와 보존할 복사본 수를 선택합니다. 스냅샷 정책은 두 개 이상 선택할 수 있습니다.
+
+
+
+
+
+
+. *생성*을 선택합니다.
+
+
+.결과
+스토리지 VM 내의 모든 볼륨이 타겟 파일 시스템으로 복제됩니다.

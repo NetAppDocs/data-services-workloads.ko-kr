@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: admin/use-codebox.html 
+keywords: codebox, automation, cloudformation, rest api, aws cli, permissions 
+summary: Codebox를 사용하면 NetApp Workload Factory에서 지원하는 모든 작업을 실행하는 데 필요한 코드를 생성할 수 있습니다. 
+---
+= NetApp Workload Factory에서 자동화를 위해 Codebox를 사용하십시오.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Codebox를 사용하면 NetApp Workload Factory에서 지원하는 모든 작업을 실행하는 데 필요한 코드를 생성할 수 있습니다. Workload Factory REST API, AWS CLI 및 AWS CloudFormation을 사용하여 사용 및 실행할 수 있는 코드를 생성할 수 있습니다.
+
+Codebox는 Workload Factory 계정에 각 사용자에게 제공된 AWS 권한에 따라 코드에 적절한 데이터를 채워 넣어 Workload Factory 권한 정책을 준수합니다. 이 코드는 템플릿처럼 사용할 수 있으며, 실행하기 전에 누락된 정보(예: 자격 증명)를 입력하거나 특정 데이터를 사용자 지정할 수 있습니다.
+
+
+
+[[how-to-use-codebox]]
+== Codebox 사용 방법
+
+NetApp Console의 사용자 인터페이스 마법사에서 값을 입력하면 각 필드를 완료할 때마다 Codebox에서 데이터가 업데이트되는 것을 확인할 수 있습니다. 마법사를 완료한 후 페이지 하단의 *생성* 버튼을 선택하기 전에 image:button-copy-codebox.png["복사 버튼"]을(를) 선택하여 Codebox에서 복사하여 구성을 빌드하는 데 필요한 코드를 캡처합니다. 예를 들어, 새 Microsoft SQL Server를 생성하는 이 스크린샷은 VPC 및 가용성 영역에 대한 마법사 항목과 REST API 구현에 대한 Codebox의 해당 항목을 보여줍니다.
+
+image:screenshot-codebox-example1.png["UI에서 Microsoft SQL Server를 생성하는 방법과 Codebox에서 VPC 및 가용성 영역에 대한 해당 항목을 보여주는 스크린샷입니다."]
+
+일부 코드 형식의 경우 다운로드 버튼을 선택하여 코드를 파일로 저장한 후 다른 시스템으로 가져와 사용할 수 있습니다. 필요한 경우 다운로드 후 코드를 편집하여 다른 AWS 계정에 맞게 수정할 수 있습니다.
+
+
+
+[[use-cloudformation-code-from-codebox]]
+== Codebox에서 CloudFormation 코드를 사용하십시오.
+
+Codebox에서 생성된 CloudFormation 코드를 복사한 다음 AWS 계정에서 Amazon Web Services CloudFormation 스택을 실행할 수 있습니다. CloudFormation은 Workload Factory UI에서 정의한 작업을 수행합니다.
+
+CloudFormation 코드를 사용하는 단계는 FSx for ONTAP 파일 시스템을 배포하는지, 계정 자격 증명을 생성하는지, 또는 다른 Workload Factory 작업을 수행하는지에 따라 다를 수 있습니다.
+
+보안상의 이유로 CloudFormation으로 생성된 YAML 파일 내의 코드는 7일 후에 만료된다는 점에 유의하십시오.
+
+.시작하기 전에
+* AWS 계정에 로그인하려면 자격 증명이 필요합니다.
+* CloudFormation 스택을 사용하려면 다음과 같은 사용자 권한이 필요합니다:
++
+[%collapsible]
+====
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStack",
+                "cloudformation:UpdateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:DescribeChangeSet",
+                "cloudformation:ExecuteChangeSet",
+                "cloudformation:ListStacks",
+                "cloudformation:ListStackResources",
+                "cloudformation:GetTemplate",
+                "cloudformation:ValidateTemplate",
+                "lambda:InvokeFunction",
+                "iam:PassRole",
+                "iam:CreateRole",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:AttachRolePolicy",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+----
+====
+
+
+.단계
+. NetApp Console을 사용하여 수행할 작업을 정의한 후 Codebox의 코드를 복사하십시오.
+. *Redirect to CloudFormation*을 선택하면 Redirect to CloudFormation 페이지가 표시됩니다.
+. 다른 브라우저 창을 열고 AWS Management Console에 로그인하십시오.
+. 리디렉션 대상 CloudFormation 페이지에서 *계속*을 선택합니다.
+. 코드를 실행할 AWS 계정에 로그인하세요.
+. 빠른 스택 생성 페이지의 기능에서 *AWS CloudFormation 작업을 수행할 수 있음을 인정합니다...*를 선택합니다.
+. *스택 생성*을 선택합니다.
+. AWS 또는 Workload Factory에서 진행 상황을 모니터링하세요.
+
+
+
+
+[[use-rest-api-code-from-codebox]]
+== Codebox에서 REST API 코드 사용
+
+Codebox에서 생성된 Workload Factory REST API를 사용하여 FSx for ONTAP 파일 시스템 및 기타 AWS 리소스를 배포하고 관리할 수 있습니다.
+
+curl을 지원하고 인터넷에 연결된 모든 호스트에서 API를 실행할 수 있습니다.
+
+참고로 인증 토큰은 Codebox에서는 숨겨져 있지만, API 호출을 복사하여 붙여넣으면 자동으로 채워집니다.
+
+.단계
+. NetApp Console을 사용하여 수행할 작업을 정의한 후 Codebox에 있는 API 코드를 복사하십시오.
+. 코드를 붙여넣고 호스트 시스템에서 실행하세요.
+
+
+
+
+[[use-aws-cli-code-from-codebox]]
+== Codebox에서 AWS CLI 코드를 사용하세요
+
+Codebox에서 생성된 Amazon Web Services CLI를 사용하여 FSx for ONTAP 파일 시스템 및 기타 AWS 리소스를 배포하고 관리할 수 있습니다.
+
+.단계
+. NetApp Console을 사용하여 수행할 작업을 정의한 후 Codebox에서 AWS CLI를 복사하십시오.
+. 다른 브라우저 창을 열고 AWS Management Console에 로그인하십시오.
+. 코드를 붙여넣고 실행하세요.
+
+
+
+
+[[use-terraform-from-codebox]]
+== Codebox에서 Terraform을 사용하십시오
+
+Terraform을 사용하여 FSx for ONTAP 파일 시스템 및 기타 AWS 리소스를 배포하고 관리할 수 있습니다.
+
+.시작하기 전에
+* Terraform이 설치된 시스템(Windows/Mac/Linux)이 필요합니다.
+* AWS 계정에 로그인하려면 자격 증명이 필요합니다.
+
+
+.단계
+. NetApp Console을 사용하여 수행할 작업을 정의한 후 Codebox에서 Terraform 코드를 다운로드하십시오.
+. 다운로드한 스크립트 압축 파일을 Terraform이 설치된 시스템에 복사하십시오.
+. zip 파일의 압축을 풀고 README.md 파일의 단계를 따르십시오.
+

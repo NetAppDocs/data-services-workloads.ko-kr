@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: fsx-databases/deregister-instance.html 
+keywords: Microsoft SQL Server instance, PostgreSQL server instance, Oracle database, deregister instance, unregister instance, remove instance 
+summary: Workload Factory 콘솔에서 리소스를 더 이상 배포하거나 모니터링하지 않으려면 리소스 등록을 해제하십시오. 
+---
+= NetApp Workload Factory for Databases에서 리소스 등록을 해제합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory 콘솔에서 더 이상 리소스를 배포하거나 모니터링하지 않으려면 Microsoft SQL Server 인스턴스 또는 Oracle 데이터베이스 등 리소스를 등록 해제하십시오. 리소스를 등록 해제하면 해당 인스턴스에서 사용되는 FSx for ONTAP 스토리지 용량도 제거됩니다.
+
+리소스를 다시 등록할 수 있습니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *데이터베이스*를 선택합니다.
+. 데이터베이스 메뉴에서 *인벤토리*를 선택하십시오.
+. 인벤토리에서 엔진 유형을 선택합니다: *Microsoft SQL Server*, *Oracle* 또는 *PostgreSQL*.
+. 등록을 해제하려는 리소스를 찾고, 작업 메뉴를 선택한 다음, *등록 해제*를 선택합니다.
+

@@ -1,0 +1,101 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/manage-volume-settings.html 
+keywords: volume tags, edit volume tags, edit tags, enable immutable files, disable immutable files, lock files, unlock files, storage efficiency change, update storage efficiency 
+summary: 태그를 사용하면 리소스를 분류할 수 있습니다. FSx for ONTAP 볼륨의 경우 언제든지 볼륨 태그를 추가, 편집 및 삭제할 수 있습니다. 
+---
+= NetApp Workload Factory에서 볼륨 설정을 관리합니다.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+조직의 요구 사항에 맞게 NetApp Workload Factory에서 FSx for ONTAP 볼륨 설정을 사용자 지정합니다. 볼륨 태그를 관리하여 리소스를 분류하고, 스토리지 효율성 설정을 업데이트하여 공간 및 비용 절감을 최적화하고, 변경 불가능 파일 설정을 관리하여 데이터 보존을 제어하고 무단 변경으로부터 보호할 수 있습니다.
+
+
+
+[[manage-volume-tags]]
+== 볼륨 태그 관리
+
+태그를 사용하면 리소스를 분류할 수 있습니다. NetApp Workload Factory에서 FSx for ONTAP 볼륨에 대한 볼륨 태그를 언제든지 추가, 편집 및 제거할 수 있습니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *볼륨 탐색기*를 선택합니다.
+. 태그를 수정할 볼륨의 작업 메뉴를 선택합니다.
+. *기본 작업*을 선택한 다음 *볼륨 태그 편집*을 선택하세요.
+. 볼륨 태그 편집 페이지에서 태그를 추가, 편집 또는 삭제하십시오.
++
+한 볼륨에 적용할 수 있는 최대 태그 수는 50개입니다.
+
+. *적용*을 선택합니다.
+
+
+
+
+[[update-volume-storage-efficiency]]
+== 볼륨 스토리지 효율성 업데이트
+
+볼륨 생성 후 스토리지 효율성 설정을 업데이트하십시오.
+
+스토리지 효율성 기능에는 FlexVol 볼륨에서 최적의 공간 절약을 달성하기 위한 데이터 중복 제거, 데이터 압축 및 데이터 컴팩션이 포함됩니다. 데이터 중복 제거는 중복 데이터 블록을 제거합니다. 데이터 압축은 데이터 블록을 압축하여 필요한 물리적 스토리지의 양을 줄입니다. 데이터 컴팩션은 더 적은 공간에 더 많은 데이터를 저장하여 스토리지 효율성을 높입니다.
+
+볼륨을 생성할 때 스토리지 효율성 기능을 활성화하지 않도록 선택했더라도, 언제든지 해당 설정을 활성화하여 공간 및 비용을 절감할 수 있습니다.
+
+볼륨은 스토리지 효율성을 활성화 또는 비활성화하는지 여부와 관계없이 씬 프로비저닝을 사용합니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *볼륨 탐색기*를 선택합니다.
+. 스토리지 효율성 설정을 업데이트할 볼륨의 작업 메뉴를 선택합니다.
+. *고급 작업*을 선택한 다음 *스토리지 효율성 설정*을 선택합니다.
+. 볼륨 스토리지 효율성을 활성화 또는 비활성화할지 선택하십시오.
+. 변경 사항을 저장하려면 *적용*을 선택하십시오.
+
+
+
+
+[[manage-immutable-files-for-a-volume-in-netapp-workload-factory]]
+== NetApp Workload Factory에서 볼륨에 대한 변경 불가능한 파일을 관리합니다.
+
+이 기능을 활성화하면 보존 정책 및 기간, 자동 커밋 기간, 볼륨 추가 모드 등 볼륨에 대한 특정 변경 불가능 파일 설정을 업데이트할 수 있습니다.
+
+참고로, 변경 불가능한 파일 활성화는 link:create-volume.html["볼륨 생성"] 중에만 가능합니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *볼륨 탐색기*를 선택합니다.
+. 업데이트할 볼륨의 작업 메뉴를 선택합니다.
+. *데이터 보호 작업*을 선택한 다음 *변경 불가능한 파일 관리*를 선택합니다.
+. 변경 불가능한 파일 관리 페이지에서 다음 항목을 업데이트할 수 있습니다:
++
+** *보존 기간*: *지정 안 함* 또는 *기간 지정*을 선택하세요.
++
+*** *미지정*: 기본 최소 기간은 "0"년이고 기본 최대 기간은 "30년"입니다.
+*** *기간 지정*: 보존 정책, 최소 및 최대 기간, 자동 커밋 기능, 볼륨 추가 모드 기능을 정의하는 옵션입니다. 다음 세부 정보를 제공하십시오.
++
+**** *보존 정책*: 이 기간은 최소 보존 기간 이상이어야 하며 최대 보존 기간 이하이어야 합니다.
+**** *최소 및 최대 기간*: 이 볼륨의 파일을 변경 불가능한 WORM 상태로 커밋할 최소 및 최대 기간을 설정합니다.
+
+
+
+
+** *자동 커밋*: 자동 커밋 기간 동안 수정되지 않은 파일을 WORM에 자동으로 커밋하는 기능을 활성화 또는 비활성화합니다.
+** *권한 있는 삭제*: 이 기능을 활성화 또는 비활성화합니다. 이 기능을 활성화하면 SnapLock 관리자가 만료되지 않은 WORM 볼륨을 삭제할 수 있습니다. 이 기능은 엔터프라이즈 보존 모드에서만 지원됩니다.
+** *볼륨 추가 모드*: 이 기능을 활성화 또는 비활성화합니다. 볼륨 추가 모드를 활성화하면 WORM 파일에 새 콘텐츠를 추가할 수 있습니다.
+
+
+. *적용*을 클릭합니다.
+
+
+
+
+[[related-information]]
+== 관련 정보
+
+* link:create-volume.html["Workload Factory에서 볼륨 생성"]
+* link:manage-volume-capacity.html["Workload Factory에서 볼륨 용량 관리"]
+* link:change-tiering-policy.html["Workload Factory에서 볼륨 티어링 정책 변경"]
+* link:manage-s3-access-points.html["Workload Factory에서 S3 액세스 포인트 관리"]
+

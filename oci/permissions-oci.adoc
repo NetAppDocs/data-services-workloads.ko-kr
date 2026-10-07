@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: oci/permissions-oci.html 
+keywords: Oracle Cloud Infrastructure NetApp Storage Service,oci nss, permissions, actions 
+summary: NetApp Workload Factory 기능 및 서비스를 사용하려면 Workload Factory가 클라우드 환경에서 작업을 수행할 수 있도록 권한을 제공해야 합니다. 
+---
+= NetApp Workload Factory용 OCI NetApp 스토리지 서비스 권한
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Workload Factory를 사용하여 Oracle Cloud Infrastructure NetApp Storage Service(OCI NSS) 리소스를 관리하는 데 필요한 권한을 검토하십시오.
+
+
+
+[[how-workload-factory-uses-oci-netapp-storage-service-permissions]]
+== Workload Factory가 OCI NetApp 스토리지 서비스 권한을 사용하는 방법
+
+테넌트 간 정책을 생성하여 Workload Factory ID를 테넌트에 허용하면 Workload Factory는 해당 NetApp ID로 OCI API를 호출하고 OCI는 사용자가 부여한 권한에 대해 각 요청을 확인합니다.
+
+사용자 비밀번호나 API 키를 공유하지 않습니다. 액세스는 정책이 유효한 동안에만 유지됩니다.
+
+
+
+[[cross-tenancy-trust]]
+== 교차 테넌시 신뢰
+
+NetApp은(는) NetApp 소유의 OCI 테넌시에서  `workload-factory-OCI-SN` 그룹을 운영합니다. 사용자는 테넌시 루트 구획에 교차 테넌시 정책을 설정하여 해당 그룹에 사용자의 테넌시 내에서 제한적이고 명확한 권한 집합을 부여합니다. 모든 OCI API 호출은 요청별로 이 계약에 따라 평가되며, 사용자는 언제든지 이를 감사하고 취소할 수 있습니다.
+
+
+
+[[oci-netapp-storage-service-tenancy]]
+=== OCI NetApp 스토리지 서비스 테넌시
+
+OCI NSS의 기본 테넌시는 OCI 테넌시의 테넌시 루트 구획입니다.
+
+선택적으로, 최소 권한이 필요한 경우 각 줄에서 in tenancy를 in compartment <name>(으)로 바꿀 수 있습니다.
+
+
+
+[[iam-policies-for-oci-nss]]
+== OCI NSS용 IAM 정책
+
+Workload Factory는 Workload Factory 서비스를 허용하는 교차 테넌트 정책을 추가한 후에만 Oracle Cloud Infrastructure(OCI) 테넌트에 액세스합니다.
+
+테넌시의 루트 구획에 해당 정책을 생성합니다. 정책에는 Workload Factory가 사용할 수 있는 정확한 권한이 나열됩니다. 각 API 요청은 이 정책에 따라 검사됩니다. OCI 콘솔에서 정책을 검토하고 언제든지 취소하여 액세스를 중지할 수 있습니다.
+
+다음 권한 정책을 사용할 수 있습니다.
+
+* *보기, 계획 및 분석*: OCI NetApp 스토리지 서비스 리소스를 보고, 시스템 상태를 파악하고, 시스템에 최적화된 분석을 받고, 비용 절감 방안을 모색하세요.
+
+
+필수 정책을 확인하세요:
+
+.OCI NetApp 스토리지 서비스에 대한 권한 정책
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.보기, 계획 및 분석
+--
+[source, text]
+----
+Define tenancy NetAppWF as ocid1.tenancy.oc1..<>
+Define group NetAppOpsWF as ocid1.group.oc1..<>
+Admit group NetAppOpsWF of tenancy NetAppWF to inspect tenancies in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read compartments in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read instance-family in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read metrics in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read log-content in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to use virtual-network-family in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read file-family in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to manage functions-family in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read log-groups in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read netapp-storage-pool in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read netapp-svm in tenancy
+Admit group NetAppOpsWF of tenancy NetAppWF to read netapp-work-request in tenancy
+----
+--
+=====
+====

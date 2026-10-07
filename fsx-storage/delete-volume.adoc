@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/delete-volume.html 
+keywords: delete volume, volume deletion 
+summary: FSx for ONTAP 파일 시스템에서 더 이상 필요하지 않은 볼륨을 삭제하여 공간을 확보하십시오. 이 작업은 되돌릴 수 없습니다. 
+---
+= NetApp Workload Factory에서 볼륨 삭제
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+FSx for ONTAP 파일 시스템에서 더 이상 필요하지 않은 볼륨을 삭제하여 공간을 확보하십시오. 이 작업은 되돌릴 수 없습니다.
+
+.시작하기 전에
+볼륨을 삭제하기 전에 다음 사항을 고려하십시오:
+
+* 복제 관계: 손상된 관계가 남지 않도록 볼륨을 삭제하기 전에 이 볼륨에 대해 link:manage-replication.html["기존 복제 관계를 모두 삭제합니다"]해야 합니다.
+* 로컬 스냅샷: 이 FSx for ONTAP 파일 시스템과 관련된 모든 스냅샷은 영구적으로 삭제됩니다.
+* 볼륨 백업: 볼륨 백업 복사본은 그대로 유지되며 계속 사용할 수 있습니다.
+* 변경 불가능한 파일 및 스냅샷: 변경 불가능한 파일과 스냅샷이 포함된 볼륨은 보존 기간이 종료될 때까지 삭제할 수 없습니다.
+
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *볼륨 탐색기*를 선택합니다.
+. 삭제할 볼륨의 작업 메뉴를 선택합니다.
+. *기본 작업*을 선택한 다음 *볼륨 삭제*를 선택합니다.
+. 볼륨 삭제 대화 상자에서 다음을 수행하십시오:
++
+.. 선택적으로, 삭제하기 전에 볼륨을 백업하려면 *볼륨 백업*을 선택하십시오.
++
+백업은 사용자가 직접 삭제할 때까지 파일 시스템에 남아 있습니다.
+
+.. *계속*을 선택합니다.
+.. 볼륨을 삭제하려면 “delete”를 입력하십시오.
+.. *삭제*를 선택하여 확인하십시오.
+
+
+

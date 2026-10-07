@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: gcnv/create-discover-systems.html 
+keywords: Google Cloud NetApp Volumes, gcnv, volumes, create system, delete system, access key, secret key, region, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
+summary: NetApp Console에서 클라우드 스토리지 시스템을 생성하거나 검색하여 볼륨 및 추가 데이터 서비스를 추가하고 관리할 수 있습니다. 
+---
+= NetApp Console에서 Google Cloud NetApp Volumes 시스템을 생성하거나 검색합니다.
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Google Cloud NetApp Volumes 시스템을 검색하고 NetApp Console에서 볼륨 및 추가 데이터 서비스를 관리하십시오.
+
+
+
+[[discover-an-existing-cloud-storage-system]]
+== 기존 클라우드 스토리지 시스템 검색
+
+Discoverable systems 페이지에서 스토리지 시스템을 검색하십시오.
+
+.시작하기 전에
+Workload Factory에서 Google Cloud NetApp Volumes에 대한 자격 증명을 제공하십시오.
+
+.이 작업 정보
+계정 내에서 클라우드 스토리지 시스템을 한 번만 검색하여 하나의 워크스페이스에 연결할 수 있습니다. 스토리지 시스템은 나중에 제거하고 다른 워크스페이스에 다시 연결할 수 있습니다.
+
+.단계
+. NetApp Console 메뉴에서 *스토리지*, *관리*, 그리고 *Discoverable systems*를 차례로 선택합니다.
+. 검색된 클라우드 스토리지 시스템의 개수가 표시됩니다. *검색*을 선택합니다.
+. 하나 이상의 스토리지 시스템을 선택하고 *검색*을 선택하여 시스템 페이지에 추가하십시오.
+
+
+[NOTE]
+====
+* 이름이 지정되지 않은 스토리지 시스템을 선택하면 시스템 이름을 입력하라는 메시지가 표시됩니다.
+* 콘솔에서 관리하는 데 필요한 자격 증명이 없는 스토리지 시스템을 선택하면 필요한 권한이 있는 자격 증명을 선택하라는 메시지가 표시됩니다.
+
+
+====
+.결과
+콘솔은 시스템 페이지에 검색된 시스템을 표시합니다. NetApp Console의 워크로드, ONTAP 시스템 관리자 사용 또는 클라우드 공급자의 스토리지 관리 툴 사용 등 여러 가지 방법으로 스토리지 시스템을 관리할 수 있습니다.

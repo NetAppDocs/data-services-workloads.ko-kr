@@ -1,0 +1,215 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/explore-savings.html 
+keywords: cost, savings, compare costs, EBS, EFS, FSx for Windows file servers FSx for ONTAP 
+summary: 'Amazon Elastic Block Store(EBS) 스토리지, Elastic File System(EFS) 및 Windows 파일 서버용 FSx의 스토리지 워크로드에 대한 절감 효과를 AWS FSx for NetApp ONTAP과 비교하여 살펴보십시오.' 
+---
+= NetApp Workload Factory에서 ONTAP용 FSx를 사용하여 비용 절감 효과를 확인해 보세요.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Amazon Elastic Block Store(EBS), Elastic File System(EFS) 및 Windows File Server용 FSx를 사용하는 스토리지 워크로드에 대해 FSx for NetApp ONTAP과 비교하여 절감 효과를 살펴보십시오.
+
+NetApp Workload Factory에는 Amazon 스토리지 환경을 FSx for ONTAP과 비교할 수 있는 스토리지 절감액 계산기가 포함되어 있습니다. AWS 자격 증명을 제공하거나 제공하지 않고도 절감액을 살펴보고 스토리지 환경에 대한 구성 설정을 사용자 지정할 수 있습니다. AWS 자격 증명을 제공하는 경우, 예를 들어 하나 이상의 Amazon Elastic Block Store 인스턴스를 선택하고 Workload Factory에서 자동으로 비교하도록 할 수 있습니다. 수동이든 자동이든 계산기는 스토리지 요구 사항에 대해 가장 낮은 비용을 제공하는 스토리지 서비스를 결정합니다.
+
+스토리지 계산기가 가장 비용 효율적인 스토리지가 FSx for ONTAP이라고 판단하면, Workload Factory에 부여한 권한과 관계없이 FSx for ONTAP 구성을 생성하거나 저장하고 Codebox를 사용하여 Infrastructure-as-Code 템플릿을 생성할 수 있습니다.
+
+
+
+[[calculator-options]]
+== 계산기 옵션
+
+시스템과 FSx for ONTAP 간의 비용 비교를 위해 두 가지 계산기 옵션, 즉 사용자 지정 및 Amazon 스토리지 환경에 대한 자동 감지를 사용할 수 있습니다.
+
+맞춤 설정을 통해 비용 절감 효과를 확인해 보세요: 사용 사례, 지역, 볼륨 또는 파일 시스템 수, 스토리지 용량, 스냅샷 빈도, 스냅샷당 변경량, 프로비저닝된 IOPS, 처리량 등 스토리지 환경에 대한 구성 설정을 제공합니다.
+
+감지된 스토리지 환경에 대한 비용 절감 효과를 확인해 보세요. Workload Factory는 기존 AWS 스토리지 환경에 연결하여 세부 정보를 계산기로 가져와 자동으로 비교합니다. 자동 모드를 사용하려면 자동화 권한을 부여해야 합니다. 사용 사례는 변경할 수 있지만, 그 외 모든 세부 정보는 계산 과정에서 자동으로 결정됩니다.
+
+또한 link:add-credentials.html["AWS 자격 증명 추가"^]하여 계산기 분석의 정확도를 높일 수 있습니다. *기존 리소스를 기반으로 절감액 계산*을 선택합니다. 자격 증명 추가 페이지로 이동합니다. 자격 증명을 추가한 후 FSx for ONTAP과 비교할 기존 리소스를 선택하고 *절감액 살펴보기*를 선택합니다.
+
+
+
+[[explore-savings-via-customization]]
+== 맞춤 설정을 통해 비용 절감 효과를 확인해 보세요
+
+스토리지 선택 탭 아래의 단계를 따르십시오.
+
+[role="tabbed-block"]
+====
+.Amazon Elastic Block Store(EBS)
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 *절약 사항 살펴보기*를 선택한 다음 *Amazon Elastic Block Store(EBS)* 탭을 선택합니다.
+. 스토리지 절약 계산기에서 다음 세부 정보를 제공하십시오:
++
+.. *사용 사례*: 필수 항목입니다. 드롭다운 메뉴에서 사용 사례를 선택하십시오. 선택한 사용 사례에 따라 비교를 위한 FSx for ONTAP 파일 시스템 특성이 결정됩니다.
+.. *리전*: 선택 사항입니다. 드롭다운 메뉴에서 EBS 구성에 사용할 리전을 선택하십시오.
+.. *EBS 볼륨 유형 선택*: 선택 사항입니다. 구성에 사용되는 EBS 볼륨 유형을 선택합니다.
+.. *볼륨 개수*: 선택 사항입니다. EBS 구성의 볼륨 개수를 입력합니다.
+.. *볼륨당 스토리지 양(TiB)*: 선택 사항입니다. 볼륨당 스토리지 양을 TiB 단위로 입력하십시오.
+.. *스냅샷 빈도*: 선택 사항입니다. EBS 구성에 대한 스냅샷 빈도를 선택하십시오.
+.. *스냅샷당 변경량(GiB)*: 선택 사항입니다. 스냅샷 스토리지에만 해당합니다. 스냅샷당 변경량을 GiB 단위로 입력하십시오.
+.. *볼륨별 프로비저닝된 IOPS*: 선택 사항입니다. gp3, io1 및 io2 볼륨의 경우. 볼륨별 프로비저닝된 IOPS를 입력하십시오.
+.. *처리량(MiB/s)*: 선택 사항입니다. gp3 볼륨에만 해당됩니다. 볼륨당 처리량을 MiB/s 단위로 입력하십시오.
+
+
+
+
+--
+.Amazon FSx for Windows File Server
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 *절약 사항 살펴보기*를 선택한 다음 *Amazon Elastic Block Store(EBS)* 탭을 선택합니다.
+. 스토리지 절약 계산기에서 다음 세부 정보를 제공하십시오:
++
+.. *사용 사례*: 필수 항목입니다. 드롭다운 메뉴에서 사용 사례를 선택하십시오. 선택한 사용 사례에 따라 비교를 위한 FSx for ONTAP 파일 시스템 특성이 결정됩니다.
+.. *지역*: 선택 사항입니다. 드롭다운 메뉴에서 FSx for Windows File Server 구성에 대한 지역을 선택하십시오.
+.. *배포 유형*: 선택 사항입니다. *단일 가용 영역* 또는 *다중 가용 영역*을 선택하십시오.
+.. *스토리지 유형*: SSD 스토리지 유형이 기본적으로 선택되어 있습니다.
+.. *스토리지 용량(TiB)*: 선택 사항입니다. 구성에 대한 스토리지 용량을 입력합니다.
+.. *중복 제거 절감(%)*: 선택 사항입니다. 중복 제거를 통해 예상되는 용량 절감 백분율을 입력하십시오.
+.. *스냅샷 빈도*: 선택 사항입니다. 구성에 대한 스냅샷 빈도를 선택합니다.
+.. *스냅샷당 변경량(GiB)*: 선택 사항입니다. 스냅샷 스토리지에만 해당합니다. 스냅샷당 변경량을 GiB 단위로 입력하십시오.
+.. *프로비저닝된 SSD IOPS*: 선택 사항입니다. 프로비저닝된 SSD IOPS를 입력하십시오.
+.. *처리량(MiB/s)*: 선택 사항입니다. 처리량을 MiB/s 단위로 입력하십시오.
+
+
+
+
+--
+.Amazon Elastic File System(EFS)
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 *절약 사항 살펴보기*를 선택한 다음 *Amazon Elastic Block Store(EBS)* 탭을 선택합니다.
+. 스토리지 절약 계산기에서 다음 세부 정보를 제공하십시오:
++
+.. *사용 사례*: 필수 항목입니다. 드롭다운 메뉴에서 사용 사례를 선택하십시오. 선택한 사용 사례에 따라 비교를 위한 FSx for ONTAP 파일 시스템 특성이 결정됩니다.
+.. *지역*: 선택 사항입니다. 드롭다운 메뉴에서 FSx for Windows File Server 구성에 대한 지역을 선택하십시오.
+.. *파일 시스템 유형*: 선택 사항입니다. *지역* 또는 *단일 영역*을 선택하십시오.
+.. *스토리지 용량(TiB)*: 선택 사항입니다. EFS 구성의 스토리지 용량을 입력합니다.
+.. *자주 액세스하는 데이터 비율(%)*: 선택 사항입니다. 자주 액세스하는 데이터의 비율을 입력하십시오.
+.. *처리량 모드*: 선택 사항입니다. *프로비저닝된 처리량* 또는 *탄력적인 처리량*을 선택하십시오.
+.. *처리량(MiB/s)*: 선택 사항입니다. 처리량을 MiB/s 단위로 입력하십시오.
+
+
+
+
+--
+====
+스토리지 시스템 구성에 대한 세부 정보를 제공한 후, 페이지에 제공된 계산 및 권장 사항을 검토하십시오.
+
+또한, 페이지 하단으로 스크롤하여 다음 중 하나를 선택하면 보고서를 볼 수 있습니다:
+
+* *PDF로 내보내기*
+* *이메일로 보내기*
+* *계산 내역 보기*
+
+
+FSx for ONTAP으로 전환하려면 다음 지침을 따르십시오<<FSx for ONTAP 파일 시스템 배포,FSx for ONTAP 파일 시스템 배포>>.
+
+
+
+[[explore-savings-for-detected-storage-environments]]
+== 감지된 스토리지 환경에 따른 비용 절감 효과를 살펴보세요
+
+.시작하기 전에
+Workload Factory가 AWS 계정에서 Amazon Elastic Block Store(EBS), Elastic File System(EFS) 및 FSx for Windows File Server 스토리지 환경을 감지하려면 AWS 계정에서 link:add-credentials.html["_보기, 계획 및 분석_ 권한을 부여합니다"^] 확인하십시오.
+
+
+NOTE: 이 계산기 옵션은 EBS 스냅샷 및 FSx for Windows File Server 섀도 복사본에 대한 계산을 지원하지 않습니다. 사용자 지정을 통한 비용 절감 효과를 확인하려면 EBS 및 FSx for Windows File Server 스냅샷 세부 정보를 제공할 수 있습니다.
+
+스토리지 선택 탭 아래의 단계를 따르십시오.
+
+[role="tabbed-block"]
+====
+.Amazon Elastic Block Store(EBS)
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 *절약 사항 살펴보기*를 선택한 다음 *Amazon Elastic Block Store(EBS)* 탭을 선택합니다.
+. *Elastic Block Store(EBS)* 탭에서 FSx for ONTAP과 비교할 인스턴스를 선택하고 *절감 효과 살펴보기*를 선택합니다.
+. 스토리지 절감 계산기가 나타납니다. 선택한 인스턴스를 기준으로 다음과 같은 스토리지 시스템 특성이 미리 채워져 있습니다:
++
+.. *사용 사례*: 구성에 대한 사용 사례입니다. 필요한 경우 사용 사례를 변경할 수 있습니다.
+.. *선택된 볼륨*: EBS 구성의 볼륨 수
+.. *총 저장량(TiB)*: 볼륨당 저장량(TiB)
+.. *총 프로비저닝된 IOPS*: gp3, io1 및 io2 볼륨용
+.. *총 처리량(MiB/s)*: gp3 볼륨에만 해당
+
+
+
+
+--
+.Amazon FSx for Windows File Server
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 *절약 사항 살펴보기*를 선택한 다음 *Amazon FSx for Windows File Server* 탭을 선택합니다.
+. *Amazon FSx for Windows File Server* 탭에서 FSx for ONTAP과 비교할 인스턴스를 선택하고 *절약액 살펴보기*를 선택합니다.
+. 스토리지 절약 계산기가 나타납니다. 선택한 인스턴스의 배포 유형에 따라 다음과 같은 스토리지 시스템 특성이 미리 채워져 있습니다:
++
+.. *사용 사례*: 구성에 대한 사용 사례입니다. 필요한 경우 사용 사례를 변경할 수 있습니다.
+.. *선택된 파일 시스템*
+.. *총 스토리지 용량(TiB)*
+.. *프로비저닝된 SSD IOPS*
+.. *처리량(MiB/s)*
+
+
+
+
+--
+.Amazon Elastic File System(EFS)
+--
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP*에서 *절약 사항 살펴보기*를 선택한 다음 *Amazon Elastic File System(EFS)* 탭을 선택합니다.
+. *Elastic File System (EFS)* 탭에서 FSx for ONTAP과 비교할 인스턴스를 선택하고 *절감 효과 살펴보기*를 선택합니다.
+. 스토리지 절감 계산기가 나타납니다. 선택한 인스턴스를 기준으로 다음과 같은 스토리지 시스템 특성이 미리 채워져 있습니다:
++
+.. *사용 사례*: 구성에 대한 사용 사례입니다. 필요한 경우 사용 사례를 변경할 수 있습니다.
+.. *총 파일 시스템 수*
+.. *총 스토리지 용량(TiB)*
+.. *총 프로비저닝된 처리량(MiB/s)*
+.. *총 탄력적 처리량 - 읽기(GiB)*
+.. *총 탄력적 처리량 - 쓰기 (GiB)*
+
+
+
+
+--
+====
+스토리지 시스템 구성에 대한 세부 정보를 제공한 후, 페이지에 제공된 계산 및 권장 사항을 검토하십시오.
+
+또한, 페이지 하단으로 스크롤하여 다음 중 하나를 선택하면 보고서를 볼 수 있습니다:
+
+* *PDF로 내보내기*
+* *이메일로 보내기*
+* *계산 내역 보기*
+
+
+
+
+[[deploy-fsx-for-ontap-file-systems]]
+== FSx for ONTAP 파일 시스템 배포
+
+비용 절감을 위해 FSx for ONTAP으로 전환하려면 *생성*을 선택하여 FSx for ONTAP 파일 시스템 생성 마법사에서 직접 파일 시스템을 생성하거나, *저장*을 선택하여 나중을 위해 권장 구성을 저장하십시오.
+
+배포 방법:: _파일 시스템 생성_ 권한이 있으면 Workload Factory에서 직접 FSx for ONTAP 파일 시스템을 배포할 수 있습니다. 또한 Codebox 창에서 콘텐츠를 복사하고 Codebox 방법 중 하나를 사용하여 시스템을 배포할 수도 있습니다.
++
+--
+_보기, 계획 및 분석_ 권한이 있으면 Codebox 창에서 콘텐츠를 복사하고 Codebox 방법 중 하나를 사용하여 FSx for ONTAP 파일 시스템을 배포할 수 있습니다.
+
+--
+

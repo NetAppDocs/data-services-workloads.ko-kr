@@ -1,0 +1,166 @@
+---
+sidebar: sidebar 
+permalink: fsx-storage/use-onprem-data.html 
+keywords: use, detect, replicate, remove, on-premises, ONTAP cluster, on-premises cluster, ONTAP 
+summary: 온프레미스 ONTAP 데이터를 NetApp Workload Factory에서 검색하고 복제하여 클라우드에서 백업으로 사용할 수 있습니다. 
+---
+= 온프레미스 ONTAP 클러스터 데이터를 NetApp Workload Factory에 복제합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+온프레미스 ONTAP 데이터를 NetApp Workload Factory에서 검색하고 복제하여 클라우드에서 백업으로 사용할 수 있습니다.
+
+.이 작업 정보
+온프레미스 ONTAP 클러스터의 데이터를 사용하려면 먼저 온프레미스 ONTAP 클러스터를 검색해야 합니다. 온프레미스 ONTAP 클러스터를 검색한 후에는 다음과 같은 사용 사례에 해당 데이터를 사용할 수 있습니다.
+
+사용 사례::
++
+--
+* *클라우드 백업 및 마이그레이션*: 온프레미스 ONTAP 볼륨 데이터를 FSx for ONTAP 파일 시스템으로 복제하여 클라우드에서 백업으로 사용할 수 있습니다.
+* *데이터 계층화*: 복제 후, 자주 액세스하지 않는 온프레미스 ONTAP 볼륨 데이터는 SSD 스토리지 계층에서 용량 풀 스토리지 계층으로 계층화할 수 있습니다.
+
+
+--
+
+
+
+
+[[discover-an-on-premises-ontap-cluster]]
+== 온프레미스 ONTAP 클러스터 검색
+
+NetApp Workload Factory에서 온프레미스 ONTAP 클러스터를 검색하여 데이터를 Amazon FSx for NetApp ONTAP 파일 시스템으로 복제할 수 있습니다.
+
+.시작하기 전에
+시작하기 전에 다음 사항을 준비했는지 확인하십시오:
+
+* 복제를 위한 FSx for ONTAP 파일 시스템입니다.
+* 검색된 온프레미스 클러스터와 연결할 링크입니다. 링크가 없으면 link:create-link.html["하나를 생성하십시오"^]해야 합니다.
+* 필요한 권한이 있는 ONTAP 사용자 자격 증명.
+* 온프레미스 ONTAP 버전 9.8 이상.
+* 연결은 다음 다이어그램과 같습니다.
++
+image:screenshot-on-prem-connectivity.png["온프레미스 ONTAP 클러스터를 Amazon Web Services 클라우드의 관리 경로 및 데이터 경로에 연결하는 방법을 보여주는 스크린샷"]
+
+
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP* 메뉴에서 *온프레미스 ONTAP*을 선택합니다.
+. *Discover*를 선택합니다.
+. 필수 조건을 검토하고 *다음*을 선택하세요.
+. Discover ONTAP 온프레미스 페이지에서 *클러스터 구성* 아래에 다음 정보를 입력하십시오:
++
+.. *링크*: 링크를 선택하십시오. 이 링크는 온프레미스 클러스터와 연결되어 클러스터와 Workload Factory 간의 연결을 생성합니다.
++
+링크를 생성하지 않았다면 안내에 따라 링크를 생성한 후 이 작업으로 돌아와 링크를 선택하십시오.
+
+.. *클러스터 IP 주소*: 복제할 온프레미스 ONTAP 클러스터의 IP 주소를 제공하십시오.
+.. *ONTAP credentials*: 다음을 제공하십시오.
++
+*** GovCloud 계정: ONTAP 자격 증명을 사용하여 ARN을 입력하십시오.
+*** 기타 모든 계정: 온프레미스 ONTAP 클러스터의 ONTAP 자격 증명을 입력하십시오. 사용자에게 필요한 권한이 있는지 확인하십시오.
+
+
+
+
+. 탐색 프로세스를 시작하려면 *탐색*을 선택하십시오.
+
+
+.결과
+온프레미스 ONTAP 클러스터가 검색되어 이제 *온프레미스 ONTAP* 탭에 나타납니다.
+
+이제 온프레미스 ONTAP 클러스터의 데이터를 확인하고 <<온프레미스 ONTAP 클러스터에서 볼륨 데이터를 복제합니다,데이터를 FSx for ONTAP 파일 시스템으로 복제합니다>>.
+
+
+
+[[replicate-volume-data-from-an-on-premises-ontap-cluster]]
+== 온프레미스 ONTAP 클러스터에서 볼륨 데이터를 복제합니다
+
+온프레미스 ONTAP 클러스터에서 FSx for ONTAP 파일 시스템으로 볼륨 데이터를 복제합니다. 복제 후, 해당 데이터를 사용하여 AI 지식 기반을 강화할 수 있습니다.
+
+.시작하기 전에
+* 볼륨 데이터를 복제하려면 온프레미스 ONTAP 클러스터를 검색해야 합니다.
+* 복제 대상이 될 사용 가능한 FSx for ONTAP 파일 시스템이 있어야 합니다.
+* 온프레미스 ONTAP 클러스터와 복제 관계에 사용하는 FSx for ONTAP 파일 시스템 모두에 연결된 링크가 있어야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP* 메뉴에서 *온프레미스 ONTAP*을 선택합니다.
+. 스토리지 VM별 볼륨을 찾으려면 드롭다운 메뉴에서 *스토리지 VM 선택*을 하시면 됩니다.
+. 복제할 볼륨을 하나 이상 선택한 다음 *복제*를 선택하십시오.
+. 복제 생성 페이지의 복제 대상 항목에 다음 정보를 입력하십시오.
++
+.. *FSx for ONTAP 파일 시스템*: 대상 FSx for ONTAP 파일 시스템에 대한 자격 증명, 지역 및 FSx for ONTAP 파일 시스템 이름을 선택하십시오.
+.. *스토리지 VM 이름*: 드롭다운 메뉴에서 스토리지 VM을 선택하십시오.
+.. *볼륨 이름*: 타겟 볼륨 이름은 다음 형식으로 자동으로 생성됩니다 `{OriginalVolumeName}_copy`. 자동 생성된 볼륨 이름을 사용하거나 다른 볼륨 이름을 입력할 수 있습니다.
+.. *데이터 계층화*: 타겟 볼륨에 저장된 데이터에 대한 계층화 정책을 선택합니다.
++
+*** *자동*: Workload Factory FSx for ONTAP 사용자 인터페이스를 사용하여 볼륨을 생성할 때의 기본 티어링 정책입니다. 사용자 데이터 및 스냅샷을 포함한 모든 콜드 데이터를 특정 기간 동안 용량 풀 스토리지 티어로 티어링합니다.
+*** *스냅샷 전용*: 스냅샷 데이터만 용량 풀 스토리지 티어로 계층화합니다.
+*** *없음*: 볼륨의 모든 데이터를 기본 스토리지 계층에 유지합니다.
+*** *모두*: 모든 사용자 데이터와 스냅샷 데이터를 콜드 데이터로 표시하고 용량 풀 스토리지 계층에 저장합니다.
++
+일부 계층화 정책에는 볼륨의 사용자 데이터가 "콜드" 상태로 간주되어 용량 풀 스토리지 계층으로 이동되기 위해 비활성 상태로 유지되어야 하는 시간, 즉 _냉각 일수_를 설정하는 최소 냉각 기간이 연결되어 있다는 점에 유의하십시오. 냉각 기간은 데이터가 디스크에 기록될 때 시작됩니다.
+
++
+볼륨 계층화 정책에 대한 자세한 내용은 AWS FSx for NetApp ONTAP 설명서에서 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["볼륨 스토리지 용량"^]를 참조하십시오.
+
+
+
+.. *최대 전송 속도*: *제한됨*을 선택하고 최대 전송 한도를 MiB/s 단위로 입력하십시오. 또는 *무제한*을 선택하십시오.
++
+제한이 없으면 네트워크 및 애플리케이션 성능이 저하될 수 있습니다. 대신, 주로 재해 복구에 사용되는 워크로드 등 중요한 워크로드의 경우 FSx for ONTAP 파일 시스템에 대해 무제한 전송 속도를 권장합니다.
+
+
+
+. 복제 설정에서 다음을 제공하십시오:
++
+.. *복제 간격*: 스냅샷이 소스 볼륨에서 타겟 볼륨으로 전송되는 빈도를 선택합니다.
+.. *장기 보존*: 선택적으로 장기 보존을 위한 스냅샷 기능을 활성화할 수 있습니다.
++
+장기 보존을 활성화하는 경우, 기존 정책을 선택하거나 새 정책을 생성하여 복제할 스냅샷과 보존할 스냅샷 수를 정의하십시오.
+
++
+*** 기존 정책의 경우 *기존 정책 선택*을 선택한 다음 드롭다운 메뉴에서 기존 정책을 선택하십시오.
+*** 새로운 정책을 생성하려면 *새 정책 생성*을 선택하고 다음을 입력하십시오:
++
+**** *정책명*: 정책명을 입력하십시오.
+**** *스냅샷 정책*: 표에서 스냅샷 정책 빈도와 보존할 복사본 수를 선택합니다. 스냅샷 정책은 두 개 이상 선택할 수 있습니다.
+
+
+
+
+
+
+. *생성*을 선택합니다.
+
+
+.결과
+복제 관계는 타겟 FSx for ONTAP 파일 시스템의 *복제 관계* 탭에 나타납니다.
+
+
+
+[[remove-an-on-premises-ontap-cluster-from-netapp-workload-factory]]
+== NetApp Workload Factory에서 온프레미스 ONTAP 클러스터 제거
+
+필요에 따라 NetApp Workload Factory에서 온프레미스 ONTAP 클러스터를 제거합니다.
+
+.시작하기 전에
+손상된 관계가 남아 있지 않도록 클러스터를 제거하기 전에 온프레미스 ONTAP 클러스터의 모든 볼륨에 대해 link:manage-replication.html["기존 복제 관계를 모두 삭제합니다"] 해야 합니다.
+
+.단계
+. link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 Workload Factory의 메뉴 항목인 Workloads로 이동하는 데 사용됩니다."], *워크로드* > *스토리지* > *FSx for ONTAP*을 선택합니다.
+. *FSx for ONTAP* 메뉴에서 *온프레미스 ONTAP*을 선택합니다.
+. 제거할 온프레미스 ONTAP 클러스터를 선택하십시오.
+. 작업 메뉴를 선택하고 *Workload Factory에서 제거*를 선택합니다.
+
+
+.결과
+온프레미스 ONTAP 클러스터가 NetApp Workload Factory에서 제거됩니다.
