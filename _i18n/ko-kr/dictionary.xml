@@ -6429,7 +6429,6 @@
   <block id="e7eedef49aec1304d7b6e635357cf103" category="doc">NetApp Workload Factory에서 Oracle Cloud Infrastructure NetApp 스토리지 서비스 빠른 시작</block>
   <block id="4921b955e2ee790fb36dea7d888abc3d" category="paragraph">자격 증명 및 권한을 추가하고, 필요한 경우 링크를 생성하고, 스토리지 시스템을 생성하거나 검색하여 Oracle Cloud Infrastructure NetApp Storage Service(OCI NSS)를 시작하십시오.</block>
   <block id="51e2ade1c8d95d7f0f67d863179b93df" category="inline-link-macro">계정에 자격 증명 추가</block>
-  <block id="6f03cc1414acef942ae2e128ecc52497" category="paragraph"><block ref="518d818b180e3db000763010b4d6108f" category="inline-link-macro-rx"></block>. 여기에는 워크로드 기능 선택 및 필요한 권한에 대한 IAM 정책 생성이 포함됩니다.</block>
   <block id="290a812b6a2763487fb9805ae3edcc9f" category="inline-link-macro">보기, 계획 및 분석</block>
   <block id="728a221143ba043fd0f57efb7223a156" category="paragraph">기본 <block ref="5ac42561767f3951cc6f464c1ccfc0f3" category="inline-link-macro-rx"></block> 권한 정책을 선택하십시오.</block>
   <block id="34fa64212b217b9064088a993c30cfe4" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 링크 생성</block>
@@ -6633,7 +6632,6 @@
   <block id="6c98e127eb9f894ba57b9bfc2d5dab1f" category="paragraph"><block ref="6c98e127eb9f894ba57b9bfc2d5dab1f" category="inline-link-macro-rx"></block></block>
   <block id="2f4902a24a062f32e6a6cfa57616c831" category="summary">Workload Factory는 NetApp Console에서 액세스할 수 있습니다. Workload Factory를 시작하려면 먼저 기존 NetApp 지원 사이트 자격 증명을 사용하거나 NetApp 클라우드 로그인을 생성하여 가입해야 합니다.</block>
   <block id="ae09b16571bb5c1b5c1fccf487b44ea7" category="paragraph">NetApp Workload Factory는 NetApp Console에서 액세스할 수 있습니다. Console을 사용하려면 NetApp Support Site 자격 증명으로 가입 또는 로그인하거나 NetApp Console 로그인을 생성하십시오. 회사에서 처음으로 가입하는 경우 관리자로서 새 조직을 생성합니다. 회사에 이미 조직이 있는 경우 기존 NetApp Support Site 자격 증명 또는 회사 Single Sign-On(SSO)으로 가입하거나 로그인하십시오.</block>
-  <block id="78929a53b7d6974b9d8b34e9c74d7da0" category="paragraph">&lt;stdin&gt; - include::https://raw.githubusercontent.com/NetAppDocs/console-setup-admin/main/_include/task-sign-up-saas.adoc[]에서 해결되지 않은 지시문</block>
   <block id="9b2e339c9639747e25e597bf41706151" category="paragraph">이제 로그인되었으며 Workload Factory를 사용하여 스토리지 시스템과 워크로드를 관리할 수 있습니다. Workload Factory로 이동하려면 메인 메뉴에서 *워크로드*를 선택하십시오.</block>
   <block id="cd1196d5845aaf259540d322ace00ee9" category="summary">워크로드 관리, 서비스 관리, 스토리지 기능, 권한 등에 대한 업데이트 및 개선 사항 등 NetApp Console의 Workload Factory에 대한 새로운 기능을 알아보십시오.</block>
   <block id="83006b8c743f417478830e1d83e1bb41" category="doc">NetApp Console의 Workload Factory에 새로 추가된 기능은 무엇인가요?</block>
@@ -6773,4 +6771,28 @@
   <block id="733ae60890dc5503303e1f5780ac5c9b" category="sidebar">Codebox를 사용하여 코드를 생성하세요</block>
   <block id="4ab00ae468588a563b956d814954695d" category="sidebar">CloudShell 사용</block>
   <block id="25f033e226552b2f5ae002edb8e5fd2f" category="sidebar">자격 증명 제거</block>
+  <block id="24974380365a2e3e3af1d901b4f56526" category="paragraph"><block ref="8e78b98d3ec3e8310cb1961b36d417e0" category="inline-link-macro-rx"></block>. 여기에는 워크로드 기능 선택 및 필요한 권한에 대한 IAM 정책 생성이 포함됩니다.</block>
+  <block id="0946433107c0141c86e12d9acfc94eb5" category="section-title">최초 조직 관리자로 NetApp Console에 가입하십시오</block>
+  <block id="826401015c53957df701460dc5fefb05" category="paragraph">회사에 NetApp Console 조직이 없는 경우 가입하여 생성하십시오. 첫 번째 사용자는 조직 관리자가 되어 사용자 계정 및 권한을 관리합니다. 나중에 역할을 업데이트하고 관리자를 추가할 수 있습니다.</block>
+  <block id="6c479e362a71650f0ec9bfca93ce7f12" category="list-text">웹 브라우저를 열고<block ref="9fa63571706fcef6edc9d423212e6d10" category="inline-link-rx"></block>로 이동합니다.</block>
+  <block id="dc346f53e29026800c3b9274294105f6" category="list-text">NetApp 지원 사이트 계정이 있는 경우, *로그인* 페이지에서 계정과 연결된 이메일 주소를 직접 입력하십시오.</block>
+  <block id="b1c0e39fde6fd83a65dd3bd95142165f" category="paragraph">콘솔은 초기 로그인 과정에서 NetApp 지원 사이트 자격 증명을 사용하여 사용자를 등록합니다.</block>
+  <block id="bf093decf90516c940874ca448e5647c" category="list-text">Console 로그인을 생성하여 가입하려면 *Sign up*을 선택하십시오.</block>
+  <block id="dafbc60d299b7ecf7d1bf490a178f77f" category="list-text">*회원가입* 페이지에서 필요한 정보를 입력하고 *다음*을 선택합니다.</block>
+  <block id="95f99a60f019f663b3b74472e57bd99b" category="admonition">회원가입 양식에는 영문자만 입력할 수 있습니다.</block>
+  <block id="422588021a93cfdaa26ce8d7d46dfeda" category="list-text">이메일 주소 인증 지침이 포함된 NetApp의 이메일이 받은 편지함에 있는지 확인하십시오.</block>
+  <block id="745229ae5b2bced3482332829ac60c32" category="paragraph">가입을 완료하려면 이메일 주소를 인증하세요.</block>
+  <block id="9e8f3a5627d6a315be184e88407a8e4b" category="list-text">로그인 후 최종 사용자 라이선스 계약을 검토하고 동의하십시오.</block>
+  <block id="4c93133d0f71016860e62cd5febc8888" category="list-text">*환영* 페이지에서 조직을 생성하십시오.</block>
+  <block id="16a6acfaa9478d613f4568fcc7f798b9" category="list-text">*시작하기*를 선택하세요.</block>
+  <block id="d7398f410905989b0cfbd7c8949dea25" category="inline-link-macro">Console Assistant 사용법에 대해 알아보십시오.</block>
+  <block id="d3c4045cc716512dce22d4f648f90c3d" category="paragraph">+ 처음 사용자 및 조직 관리자로서 안내에 따라 스토리지 리소스를 추가하고 Console 에이전트를 생성하는 등의 작업을 수행합니다. <block ref="8411fcab28bea2c0f0cc571757b43362" category="inline-link-macro-rx"></block></block>
+  <block id="11fd5297be439890aa7909ed6b065791" category="inline-link-macro">NetApp Console의 ID 및 액세스 관리에 대해 알아보십시오.</block>
+  <block id="01d4731d174643f3b86d001a74ec91d4" category="paragraph">관리자로서 Console Assistant에 포함된 단계를 완료한 후에는 ID 및 액세스 전략을 계획하고, 조직에 사용자를 추가하고, 역할을 할당해야 합니다. <block ref="e8cd337a181a13b2fbfafad53132bafb" category="inline-link-macro-rx"></block></block>
+  <block id="347778e3054043c713d65df7f9e10e01" category="section-title">이미 조직이 있는 경우 NetApp Console에 가입하거나 로그인하십시오.</block>
+  <block id="5acfd694e6aaca7505fcdbc950ee0e38" category="paragraph">회사에 이미 NetApp Console 조직이 있는 경우, 가입 또는 로그인하여 액세스하십시오. 가입 또는 로그인 방법은 회사에서 ID 페더레이션을 사용하는지 또는 NetApp 지원 사이트 자격 증명을 보유하고 있는지에 따라 다릅니다. 그렇지 않은 경우, NetApp Console 로그인을 생성하십시오.</block>
+  <block id="7db903b190082d22d5def424cfdf8da1" category="list-text">NetApp 지원 사이트 계정이 있거나 회사에서 싱글 사인온(SSO)을 설정한 경우 *로그인* 페이지에서 연결된 이메일 주소 또는 SSO 자격 증명을 입력하십시오. 안내에 따라 로그인을 완료하십시오.</block>
+  <block id="f6400c3e909c93ba53f8281302a7ffef" category="paragraph">두 경우 모두 최초 로그인 과정에서 콘솔에 가입하게 됩니다.</block>
+  <block id="adbbbb6561b05ff5263526309e842926" category="inline-link-macro">조직 관리자에게 문의하는 방법을 알아보십시오.</block>
+  <block id="172584f9c60790ff1f0e0a5fce827ebd" category="list-text">시스템에서 조직을 생성하라는 메시지가 표시되면 대화 상자를 닫고 Console 관리자에게 알려 Console 조직에 추가하고 액세스 권한을 부여받으십시오. <block ref="b322cd1c319c783c8c76cc03c56dbbda" category="inline-link-macro-rx"></block></block>
 </blocks>

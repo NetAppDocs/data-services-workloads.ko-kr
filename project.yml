@@ -320,7 +320,7 @@ sidebar:
     - title: OCI NetApp 스토리지 서비스 빠른 시작
       url: "/oci/quick-start-oci.html"
     - title: OCI 자격 증명 추가
-      url: "/oci/add-credentials.html"
+      url: "/oci/add-credentials-oci.html"
     - title: OCI 스토리지 시스템 검색
       url: "/oci/create-discover-systems.html"
     - title: OCI 스토리지 시스템에 연결합니다

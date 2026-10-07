@@ -13,7 +13,71 @@ summary: Workload Factory는 NetApp Console에서 액세스할 수 있습니다.
 [role="lead"]
 NetApp Workload Factory는 NetApp Console에서 액세스할 수 있습니다. Console을 사용하려면 NetApp Support Site 자격 증명으로 가입 또는 로그인하거나 NetApp Console 로그인을 생성하십시오. 회사에서 처음으로 가입하는 경우 관리자로서 새 조직을 생성합니다. 회사에 이미 조직이 있는 경우 기존 NetApp Support Site 자격 증명 또는 회사 Single Sign-On(SSO)으로 가입하거나 로그인하십시오.
 
-<stdin> - include::https://raw.githubusercontent.com/NetAppDocs/console-setup-admin/main/_include/task-sign-up-saas.adoc[]에서 해결되지 않은 지시문
 
-.결과
+
+[[sign-up-for-netapp-console-as-the-initial-organization-administrator]]
+== 최초 조직 관리자로 NetApp Console에 가입하십시오
+
+회사에 NetApp Console 조직이 없는 경우 가입하여 생성하십시오. 첫 번째 사용자는 조직 관리자가 되어 사용자 계정 및 권한을 관리합니다. 나중에 역할을 업데이트하고 관리자를 추가할 수 있습니다.
+
+.단계
+. 웹 브라우저를 열고 https://console.netapp.com["NetApp Console"^]로 이동합니다.
+. NetApp 지원 사이트 계정이 있는 경우, *로그인* 페이지에서 계정과 연결된 이메일 주소를 직접 입력하십시오.
++
+콘솔은 초기 로그인 과정에서 NetApp 지원 사이트 자격 증명을 사용하여 사용자를 등록합니다.
+
+. Console 로그인을 생성하여 가입하려면 *Sign up*을 선택하십시오.
++
+.. *회원가입* 페이지에서 필요한 정보를 입력하고 *다음*을 선택합니다.
++
+
+NOTE: 회원가입 양식에는 영문자만 입력할 수 있습니다.
+
+.. 이메일 주소 인증 지침이 포함된 NetApp의 이메일이 받은 편지함에 있는지 확인하십시오.
++
+가입을 완료하려면 이메일 주소를 인증하세요.
+
+
+
+. 로그인 후 최종 사용자 라이선스 계약을 검토하고 동의하십시오.
+. *환영* 페이지에서 조직을 생성하십시오.
+. *시작하기*를 선택하세요.
+
+
++ 처음 사용자 및 조직 관리자로서 안내에 따라 스토리지 리소스를 추가하고 Console 에이전트를 생성하는 등의 작업을 수행합니다. link:https://docs.netapp.com/us-en/console-setup-admin/task-console-assistant.html["Console Assistant 사용법에 대해 알아보십시오."^]
+
+.다음 단계
+관리자로서 Console Assistant에 포함된 단계를 완료한 후에는 ID 및 액세스 전략을 계획하고, 조직에 사용자를 추가하고, 역할을 할당해야 합니다. link:https://docs.netapp.com/us-en/console-setup-admin/task-iam-get-started.html["NetApp Console의 ID 및 액세스 관리에 대해 알아보십시오."^]
+
+
+
+[[sign-up-or-login-to-netapp-console-when-an-organization-already-exists]]
+== 이미 조직이 있는 경우 NetApp Console에 가입하거나 로그인하십시오.
+
+회사에 이미 NetApp Console 조직이 있는 경우, 가입 또는 로그인하여 액세스하십시오. 가입 또는 로그인 방법은 회사에서 ID 페더레이션을 사용하는지 또는 NetApp 지원 사이트 자격 증명을 보유하고 있는지에 따라 다릅니다. 그렇지 않은 경우, NetApp Console 로그인을 생성하십시오.
+
+.단계
+. 웹 브라우저를 열고 https://console.netapp.com["NetApp Console"^]로 이동합니다.
+. NetApp 지원 사이트 계정이 있거나 회사에서 싱글 사인온(SSO)을 설정한 경우 *로그인* 페이지에서 연결된 이메일 주소 또는 SSO 자격 증명을 입력하십시오. 안내에 따라 로그인을 완료하십시오.
++
+두 경우 모두 최초 로그인 과정에서 콘솔에 가입하게 됩니다.
+
+. Console 로그인을 생성하여 가입하려면 *Sign up*을 선택하십시오.
++
+.. *회원가입* 페이지에서 필요한 정보를 입력하고 *다음*을 선택합니다.
++
+
+NOTE: 회원가입 양식에는 영문자만 입력할 수 있습니다.
+
+.. 이메일 주소 인증 지침이 포함된 NetApp의 이메일이 받은 편지함에 있는지 확인하십시오.
++
+가입을 완료하려면 이메일 주소를 인증하세요.
+
+
+
+. 로그인 후 최종 사용자 라이선스 계약을 검토하고 동의하십시오.
+. 시스템에서 조직을 생성하라는 메시지가 표시되면 대화 상자를 닫고 Console 관리자에게 알려 Console 조직에 추가하고 액세스 권한을 부여받으십시오. link:https://docs.netapp.com/us-en/console-setup-admin/task-user-settings.html#contact-admin["조직 관리자에게 문의하는 방법을 알아보십시오."^]
+
+
+.다음 단계
 이제 로그인되었으며 Workload Factory를 사용하여 스토리지 시스템과 워크로드를 관리할 수 있습니다. Workload Factory로 이동하려면 메인 메뉴에서 *워크로드*를 선택하십시오.
