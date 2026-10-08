@@ -39,6 +39,8 @@ indexpage:
     links:
     - title: 알림 설정
       url: "/admin/configure-notifications.html"
+    - title: AI 에이전트
+      url: "/admin/learn-agent.html"
     - title: AI 기능 관리
       url: "/admin/manage-genai-features.html"
     - title: Codebox를 사용하여 작업을 자동화하세요

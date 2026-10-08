@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: admin/manage-genai-features.html 
-keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration 
+keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, administration 
 summary: Workload Factory에서 Bedrock 기반 AI 기능에 대한 액세스를 제어합니다. AI 기능을 비활성화하거나 NetApp이 관리하는 AWS Bedrock을 사용할 수 있습니다. 
 ---
-= NetApp Workload Factory에서 FSx for ONTAP의 AI 기능 관리
+= NetApp Workload Factory에서 AI 기능 관리
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: Workload Factory에서 Bedrock 기반 AI 기능에 대한 액세스를 
 
 
 [role="lead"]
-Workload Factory에서 FSx for ONTAP의 AI 기능에 대한 액세스를 제어합니다. AI 기능을 끄거나 NetApp에서 관리하는 AWS Bedrock을 사용할 수 있습니다.
+Workload Factory에서 AI 기능에 대한 액세스를 제어합니다. AI 기능을 끄거나 NetApp에서 관리하는 AWS Bedrock을 사용할 수 있습니다.
 
 
 
 [[about-ai-features]]
 == AI 기능 정보
 
-Workload Factory에는 Ask Me, 맞춤형 대시보드, EMS, 데이터베이스 로그 및 지연 시간 분석기 등 사용자 경험을 향상시키는 여러 AI 기반 기능이 포함되어 있습니다.
+Workload Factory에는 Ask Me, AI 에이전트, 맞춤형 대시보드, 규칙 빌더, EMS, 데이터베이스 로그 및 지연 시간 분석기 등 사용자 경험을 향상시키는 여러 AI 기반 기능이 포함되어 있습니다.
 
 Workload Factory 관리자는 AI 설정 페이지에서 이러한 기능이 AI를 사용하는 방식을 제어할 수 있습니다.
 
@@ -41,7 +41,7 @@ NetApp 관리형 Bedrock(권장):: NetApp이 관리하는 AWS Bedrock 서비스�
 
 
 --
-GenAI 기능 비활성화:: 모든 AI 기능을 비활성화합니다. 사용자는 더 이상 질문하기, 분석기, 사용자 지정 대시보드, 규칙 생성기 또는 기타 AI 기반 툴을 사용할 수 없습니다.
+GenAI 기능 비활성화:: 모든 AI 기능을 비활성화합니다. 사용자는 더 이상 Ask Me, AI 에이전트, 분석기, 사용자 지정 대시보드, 규칙 빌더 또는 기타 AI 기반 툴을 사용할 수 없습니다.
 
 
 
@@ -59,7 +59,7 @@ GenAI 기능 비활성화:: 모든 AI 기능을 비활성화합니다. 사용자
 
 .단계
 . link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
-. NetApp Console 메뉴에서 *워크로드* > *관리* > *AI 설정*을 선택합니다.
+. 메뉴에서 *관리*를 선택한 다음 *AI 설정*을 선택합니다.
 . *AI 설정* 페이지에서 원하는 구성을 선택합니다.
 +
 ** *NetApp-관리형 Bedrock(권장)*: NetApp-관리형 AWS Bedrock을 사용하십시오.
@@ -136,7 +136,7 @@ AI 설정을 변경하면 활성화된 AI 세션이 일시적으로 종료됩니
 == 관련 정보
 
 * link:../setup/learn-about-workload-factory.html["Workload Factory 기능에 대해 알아보기"]
-* link:learn-custom-dashboards-fsx.html["맞춤형 대시보드에 대해 알아보기"]
+* link:../admin/learn-custom-dashboards-fsx.html["맞춤형 대시보드에 대해 알아보기"]
 * link:../fsx-storage/add-credentials.html["AWS 자격 증명 추가"]
 * link:../fsx-storage/permissions-reference-fsx.html["권한 참조"]
 

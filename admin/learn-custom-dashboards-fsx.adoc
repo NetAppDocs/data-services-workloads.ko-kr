@@ -4,7 +4,7 @@ permalink: admin/learn-custom-dashboards-fsx.html
 keywords: custom dashboards, dashboards, personalized dashboards, AI dashboards, operational visibility, workload monitoring 
 summary: 미리 정의된 보기 방식에 얽매이지 않고, 워크로드와 우선순위에 맞춰 개인화된 AI 기반 대시보드를 생성하여 운영 가시성을 향상시키세요. 
 ---
-= NetApp Workload Factory에서 FSx for ONTAP용 사용자 지정 대시보드에 대해 알아보십시오.
+= NetApp Workload Factory의 사용자 지정 대시보드에 대해 알아보십시오.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -18,7 +18,7 @@ summary: 미리 정의된 보기 방식에 얽매이지 않고, 워크로드와 
 Workload Factory 계정에 등록된 모든 사용자는 모든 사용자 지정 대시보드를 볼 수 있습니다. 이러한 공유 설정을 통해 팀은 협업하고 조직 전체에서 동일한 운영 정보를 확인할 수 있습니다.
 
 
-NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 메시지가 표시되고 대시보드를 생성할 수 없습니다. 관리자 또는 link:manage-genai-features.html["AI 관리에 대해 알아보기"]에 문의하십시오.
+NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 메시지가 표시되며 대시보드를 생성하거나 편집할 수 없습니다. 관리자 또는 link:../admin/manage-genai-features.html["AI 관리에 대해 알아보기"]에 문의하십시오.
 
 
 
@@ -47,6 +47,11 @@ Workload Factory 사용자는 다양한 워크로드, 환경 및 우선순위를
 * 추적하고 표시해야 하는 규칙 또는 요구 사항
 
 
+카탈로그에서 대시보드를 편집하고, 수정된 버전을 저장할지 여부를 결정하기 전에 대시보드 이름, 설명, 카테고리 또는 모니터링 요청을 업데이트할 수 있습니다.
+
+
+NOTE: 대시보드 생성자만 대시보드를 편집할 수 있습니다. 편집하는 동안에는 저장하기 전까지 다른 사용자는 변경 내용을 볼 수 없습니다.
+
 
 
 [[view-and-share-dashboards]]
@@ -60,7 +65,7 @@ Workload Factory 사용자는 다양한 워크로드, 환경 및 우선순위를
 
 각 대시보드 카드에는 대시보드가 비공개인지 공개인지 표시되므로 어떤 대시보드가 공유되는지 빠르게 확인할 수 있습니다.
 
-link:manage-custom-dashboards-fsx.html#change-dashboard-visibility["대시보드 표시 여부를 변경하는 방법을 알아보세요."].
+link:../admin/manage-custom-dashboards-fsx.html#change-dashboard-visibility["대시보드 표시 여부를 변경하는 방법을 알아보세요."].
 
 
 
@@ -85,7 +90,7 @@ link:../fsx-storage/add-credentials.html["AWS 자격 증명을 추가하고 IAM 
 
 Workload Factory는 FSx for ONTAP 파일 시스템에 연결하기 위한 링크가 필요합니다. 링크는 Workload Factory와 하나 이상의 FSx for ONTAP 파일 시스템 간의 신뢰 관계 및 연결을 생성합니다. 이를 통해 Amazon FSx for ONTAP API를 통해 사용할 수 없는 특정 파일 시스템 기능을 ONTAP REST API 호출을 통해 직접 모니터링하고 관리할 수 있습니다.
 
-link:../fsx-storage/create-link.html["링크를 만드는 방법을 알아보세요"^].
+link:../fsx-storage/create-link.html["링크를 만드는 방법을 알아보세요"].
 
 
 
@@ -134,7 +139,7 @@ Workload Factory 데모 계정을 사용 중인 경우, 몇 가지 사전 구축
 [[next-steps]]
 == 다음 단계
 
-* link:create-custom-dashboard-fsx.html["사용자 지정 대시보드 만들기"]
-* link:manage-custom-dashboards-fsx.html["사용자 지정 대시보드 관리"]
-* link:troubleshoot-custom-dashboards-fsx.html["사용자 지정 대시보드 문제 해결"]
+* link:../admin/create-custom-dashboard-fsx.html["사용자 지정 대시보드 만들기"]
+* link:../admin/manage-custom-dashboards-fsx.html["사용자 지정 대시보드 관리"]
+* link:../admin/troubleshoot-custom-dashboards-fsx.html["사용자 지정 대시보드 문제 해결"]
 

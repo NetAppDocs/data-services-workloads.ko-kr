@@ -21,7 +21,7 @@ summary: AI 기반 프롬프트를 활용하여 맞춤형 대시보드를 생성
 사용자 지정 대시보드는 기본적으로 읽기 전용으로 설계되었으며 스토리지 또는 워크로드 구성을 변경할 수 없다는 점을 기억하십시오.
 
 
-NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 메시지가 표시되고 대시보드를 생성할 수 없습니다. 관리자 또는 link:manage-genai-features.html["AI 관리에 대해 알아보기"]에 문의하십시오.
+NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 메시지가 표시되고 대시보드를 생성할 수 없습니다. 관리자 또는 link:../admin/manage-genai-features.html["AI 관리에 대해 알아보기"]에 문의하십시오.
 
 
 
@@ -30,7 +30,7 @@ NOTE: 계정 관리자가 AI 기능을 비활성화한 경우 메시지가 표�
 
 .단계
 . link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
-. NetApp Console 메뉴에서 *워크로드* > *워크로드 개요* > *사용자 지정 대시보드*를 선택합니다.
+. 메뉴 image:workloads-menu-icon.png["햄버거 메뉴 아이콘은 스토리지, EDA, AI, 데이터베이스, VMware 및 관리와 같은 워크로드를 탐색하는 데 사용됩니다."]를 선택한 다음 *워크로드 개요* > *사용자 지정 대시보드*를 선택합니다.
 +
 이 대시보드가 처음이라면 시작하는 데 도움이 되는 샘플 프롬프트가 있는 빈 화면이 표시됩니다. *프롬프트 복사*를 선택하면 샘플 프롬프트를 AI 대화 상자의 텍스트 상자에 복사할 수 있습니다.
 
@@ -50,15 +50,16 @@ AI는 사용자의 요구 사항을 더 잘 이해하기 위해 여러 옵션 �
 대시보드를 생성하는 중입니다. 잠시 시간이 걸릴 수 있습니다.
 
 .결과
-사용자 지정 대시보드가 생성되어 대시보드 카탈로그에 추가됩니다. 기본적으로 대시보드는 비공개이며 본인만 볼 수 있습니다. Workload Factory 계정의 다른 사용자와 공유하려면 공개로 변경할 수 있습니다. link:manage-custom-dashboards-fsx.html#change-dashboard-visibility["대시보드 표시 여부를 변경하는 방법을 알아보세요."].
+사용자 지정 대시보드가 생성되어 대시보드 카탈로그에 추가됩니다. 기본적으로 대시보드는 비공개이며 본인만 볼 수 있습니다. Workload Factory 계정의 다른 사용자와 공유하려면 공개로 변경할 수 있습니다. link:../admin/manage-custom-dashboards-fsx.html#change-dashboard-visibility["대시보드 표시 여부를 변경하는 방법을 알아보세요."].
 
-대시보드가 준비되면 알림을 받게 됩니다. 생성할 수 없는 경우, 다시 시도할 수 있는 링크가 포함된 알림을 받게 됩니다. link:configure-notifications.html["알림 구성에 대해 알아보기"].
+대시보드가 준비되면 알림을 받게 됩니다. 생성할 수 없는 경우, 다시 시도할 수 있는 링크가 포함된 알림을 받게 됩니다. link:../admin/configure-notifications.html["알림 구성에 대해 알아보기"].
 
 .다음 단계
 생성 후에는 다음을 수행할 수 있습니다.
 
 * 팀과 공유할 수 있도록 대시보드 공개 범위를 변경합니다.
 * 대시보드 데이터를 새로 고침하여 최신 정보를 확인하세요.
+* 대시보드를 편집하여 지표, 차트, 시간 범위 등 표시되는 내용을 변경할 수 있습니다.
 * 더 이상 필요하지 않은 대시보드를 삭제합니다.
 * 대시보드 생성자 및 마지막 업데이트 시점 등 대시보드 세부 정보를 확인합니다.
 
@@ -68,6 +69,6 @@ AI는 사용자의 요구 사항을 더 잘 이해하기 위해 여러 옵션 �
 [[related-information]]
 == 관련 정보
 
-* link:manage-custom-dashboards-fsx.html["사용자 지정 대시보드 관리"]
-* link:troubleshoot-custom-dashboards-fsx.html["사용자 지정 대시보드 문제 해결"]
+* link:../admin/manage-custom-dashboards-fsx.html["사용자 지정 대시보드 관리"]
+* link:../admin/troubleshoot-custom-dashboards-fsx.html["사용자 지정 대시보드 문제 해결"]
 

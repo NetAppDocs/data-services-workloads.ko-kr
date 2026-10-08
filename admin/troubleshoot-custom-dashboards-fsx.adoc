@@ -25,7 +25,7 @@ summary: '사용자 지정 대시보드에서 발생하는 일반적인 문제(�
 **해결 방법:** 다음을 시도해 보세요.
 
 * 모니터링하고 싶은 대상을 더 명확하게 명시하여 요청을 다시 작성해 주세요.
-* link:create-custom-dashboard-fsx.html["사용자 지정 대시보드 만들기"]에 있는 샘플 프롬프트 중 하나로 시작하세요.
+* link:../admin/create-custom-dashboard-fsx.html["사용자 지정 대시보드 만들기"]에 있는 샘플 프롬프트 중 하나로 시작하세요.
 * 복잡한 모니터링 요구 사항을 여러 개의 간단한 대시보드로 분할하세요.
 * 추적할 워크로드, 메트릭, 시간 범위 또는 차원을 지정하십시오.
 
@@ -41,7 +41,7 @@ summary: '사용자 지정 대시보드에서 발생하는 일반적인 문제(�
 
 **해결 방법:**
 
-* **권한 확인:** Workload Factory 계정에 대시보드에서 사용하는 워크로드 및 리소스에 대한 읽기 액세스 권한이 있는지 확인하십시오. 권한 요구 사항은 link:learn-custom-dashboards-fsx.html#aws-credentials-and-permissions["AWS 자격 증명 및 권한"]에서 검토하십시오.
+* **권한 확인:** Workload Factory 계정에 대시보드에서 사용하는 워크로드 및 리소스에 대한 읽기 액세스 권한이 있는지 확인하십시오. link:../admin/learn-custom-dashboards-fsx.html#aws-credentials-and-permissions["권한 요구 사항"]을(를) 검토하십시오.
 * **자격 증명 확인:** AWS 자격 증명이 유효하고 만료되지 않았는지 확인하십시오. 자세한 내용은 link:../fsx-storage/add-credentials.html["AWS 자격 증명 추가"]을 참조하십시오.
 
 
@@ -85,4 +85,4 @@ Workload Factory 계정의 모든 사용자는 사용자 지정 대시보드를 
 [[additional-help]]
 == 추가 도움말
 
-사용자 지정 대시보드 관련 문제가 계속 발생하는 경우 link:../get-help.html["도움말 보기"] NetApp 지원팀에 문의하는 방법에 대한 정보를 참조하십시오.
+사용자 지정 대시보드 관련 문제가 계속 발생하는 경우 NetApp 지원팀에 문의하는 방법에 대한 자세한 내용은 link:../get-help.html["도움말 보기"]을(를) 참조하십시오.
