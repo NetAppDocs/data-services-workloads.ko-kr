@@ -45,7 +45,7 @@ FSx for ONTAP은 다음과 같은 기능을 제공합니다:
 == Workload Factory의 추가 기능
 
 * *스토리지 비용 비교 계산기*: Amazon Elastic Block Store(EBS), Elastic File System(EFS) 및 FSx for Windows File Server 스토리지 비용을 FSx for ONTAP과 비교합니다. 이 계산기를 통해 FSx for ONTAP 스토리지 구성이 제공하는 잠재적 비용 절감 효과를 확인하고 FSx for ONTAP 스토리지로의 마이그레이션을 계획할 수 있습니다.
-* *Workload Factory 사용자 인터페이스*: _빠른 생성_ 및 _고급 생성_ 배포 모드 옵션을 제공합니다. 빠른 생성에는 AWS, NetApp 및 업계 표준 모범 사례를 기반으로 한 스토리지 구성이 포함됩니다.
+* *콘솔 사용자 인터페이스*: _빠른 생성_ 및 _고급 생성_ 배포 모드 옵션을 제공합니다. 빠른 생성에는 스토리지 구성을 위한 AWS, NetApp 및 업계 표준 모범 사례가 포함됩니다. 또한 이 인터페이스는 SSD 스토리지 용량 및 처리량 사용 추세, 워크로드 요약, 그리고 확장할 수 있는 상세 구성 설정을 보여줍니다.
 * *Codebox*: 개발자에게 FSx for ONTAP 운영용 코드 뷰어, 복사 및 다운로드용 코드 템플릿, 코드 재사용을 위한 자동화 카탈로그를 제공합니다.
 
 

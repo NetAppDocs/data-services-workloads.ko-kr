@@ -114,7 +114,7 @@ NOTE: 영향을 받는 볼륨이 10개 이상인 경우, 이메일에는 처음 
 * *Amazon SNS*: 다른 시스템과의 통합을 위해 구성된 SNS 주제에 게시됩니다
 
 
-알림을 활성화하려면 link:../admin/configure-notifications.html#wf-console-email-notifications["알림 설정 구성"]을 참조하십시오.
+알림을 활성화하려면 link:../admin/configure-notifications.html["알림 설정 구성"]을 참조하십시오.
 
 
 
