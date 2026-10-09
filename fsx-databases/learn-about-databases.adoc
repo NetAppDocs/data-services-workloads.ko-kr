@@ -138,6 +138,9 @@ AWS, NetApp ONTAP, Microsoft SQL Server, Oracle 및 PostgreSQL의 모범 사례�
 | Microsoft SQL Server | SQL Server 2022 | Windows Server 2022 | FCI, 독립형 
 
 
+| Microsoft SQL Server | SQL Server 2025 | Windows Server 2025 | FCI, 독립형 
+
+
 | Microsoft SQL Server | SQL Server 2017 | 모든 | FCI, 독립형 
 
 
