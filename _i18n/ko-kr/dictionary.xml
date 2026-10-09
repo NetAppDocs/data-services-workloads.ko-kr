@@ -2816,7 +2816,6 @@
   <block id="0be251ac51e901583999154779926c3b" category="paragraph">블록 장치가 7일 동안 사용되지 않으면 블록 장치 데이터를 보관하거나 사용하지 않는 블록 장치를 삭제하여 비용을 절감하십시오.</block>
   <block id="8611faa768b220ecb3795c6fda54fdaa" category="list-text">*SSD 용량 과잉 프로비저닝*</block>
   <block id="934fd3399568391e103ee0d773bf954d" category="list-text">*비활성 NAS 볼륨*</block>
-  <block id="72d8d7f27cf31b02bb7df1a01b23ab49" category="paragraph">구성 분석을 통해 활발하게 사용되지 않는 NAS 볼륨을 식별하고 비용 절감을 위해 해당 볼륨을 삭제하거나 보관 처리할 것을 제안합니다.</block>
   <block id="8722112d28d6eea0aff9478fb61c5de7" category="section-title">성능 효율성</block>
   <block id="62d0d3849cddbcf3cccae74f05719854" category="paragraph">성능 효율성은 스토리지 리소스를 효과적으로 사용하고 워크로드가 최적의 성능을 발휘하도록 보장하는 데 도움이 됩니다.</block>
   <block id="fbb48f4d1a3f9488b40b10d1cb8a50bd" category="list-text">*FlexGroup 볼륨 재조정*</block>
@@ -3108,7 +3107,6 @@
   <block id="0abde7f01f46e5ae295493bf4b280687" category="list-text">전환 작업은 모든 스토리지 VM 구성 설정을 대상 스토리지 VM으로 마이그레이션하지 않습니다. 예를 들어 iSCSI, 브로드캐스트 도메인 MTU 및 DNS 설정은 마이그레이션되지 않습니다. 전환 후 대상 스토리지 VM에서 이러한 설정을 수동으로 업데이트해야 합니다. 자세한 내용은 <block ref="af05d35e02c20d22f4e6b1df9b57e0a2" category="inline-xref-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="893700039eb02078c7602e997d7f9922" category="list-text">스토리지 VM에서 도메인 터널 인증을 사용하는 경우 마이그레이션을 시작하기 전에 대상 파일 시스템에서 도메인 터널을 설정하고 활성화하십시오.</block>
   <block id="dddf91d5ccee3135470e6089b62618ba" category="list-text">*클론*: 클론은 개별 볼륨으로 마이그레이션되므로 대상 FSx for ONTAP 파일 시스템에서 더 많은 공간을 차지하게 됩니다. 대상 시스템의 용량 증가를 방지하려면 전환 전에 클론을 삭제하는 것을 고려하십시오.</block>
-  <block id="233115f3ed74b7b4516b8f0a1efbaedf" category="list-text">*캐시 볼륨*: ONTAP FlexCache 9.17.x 이하 버전에 해당합니다. 캐시 볼륨이 포함된 소스 스토리지 VM은 전환이 지원되지 않습니다. 마이그레이션 실패를 방지하려면 전환 전에 ONTAP FlexCache 관계를 제거하십시오.</block>
   <block id="03c85e91696d00a533c3da3b08434532" category="list-text">*AWS S3 액세스 포인트*: S3 액세스 포인트가 있는 볼륨의 경우 마이그레이션 사용 사례에 대한 컷오버 복제가 지원되지 않습니다. 마이그레이션 실패를 방지하려면 소스 볼륨에서 S3 액세스 포인트를 삭제하십시오.</block>
   <block id="849ee629a3b8f33b04a9b242a47e3d59" category="list-text">*ONTAP S3 구성*: ONTAP S3 구성이 있는 vserver에서는 마이그레이션 사용 사례를 위한 컷오버 복제가 지원되지 않습니다. 마이그레이션 실패를 방지하려면 vserver에서 object-store-server, bucket, 사용자, 그룹 또는 정책을 포함한 ONTAP S3 구성을 제거하십시오.</block>
   <block id="ab3171de62100468c23112d3fda9227b" category="list-text">*LUN 일련 번호 및 iSCSI 타겟 IQN*: LUN 일련 번호와 iSCSI 타겟 IQN은 컷오버 중에 변경됩니다.</block>
@@ -6830,18 +6828,15 @@
   <block id="8bc0878ae35d7f3c225b4bac0e907504" category="paragraph"><block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
   <block id="0ef70b60892b97d12c2eebf7686872ca" category="paragraph">사용자 지정 규칙을 사용하면 잘 설계된 대시보드에서 NetApp 모범 사례와 함께 자체 아키텍처 표준을 설정, 확인 및 적용할 수 있습니다.</block>
   <block id="91b90f08c0d07c5aa66b502a1d12c868" category="paragraph">규칙 작성기를 사용하면 일반 언어로 사용자 지정 규칙을 만들 수 있습니다. 이러한 규칙은 모든 리소스에 대해 검사됩니다. 사용자 지정 규칙을 통해 기본 규칙에서 다루지 못할 수 있는 조직의 표준, 위험 한도 및 운영 요구 사항을 적용할 수 있습니다.</block>
-  <block id="60a625f073158b990bcf2ad232af27aa" category="admonition">계정 관리자가 AI 기능을 비활성화한 경우 새 규칙을 만들거나 기존 규칙을 수정할 수 없습니다. 이미 예약된 규칙은 계속 실행됩니다. <block ref="fb4375aa776b206d4ba3c7bbae1bcfb2" category="inline-link-macro-rx"></block>.</block>
   <block id="4edc72502b9f9929e41bae938a7490c1" category="paragraph">사용자 지정 규칙은 AI를 사용하여 일반 언어로 된 지침을 명확하고 구조화된 규칙으로 변환합니다. AI는 사용자의 요청을 번역하고, 규칙을 제안하고, 지침을 어떻게 이해했는지 설명하고, 규칙을 저장하거나 예약하기 전에 승인을 요청합니다. 이 프로세스를 통해 다음과 같은 사항을 보장할 수 있습니다.</block>
   <block id="0465277e228b6cf7f37c1fab3872f9cd" category="list-text">규칙은 명확하게 정의되어 있으며 오류 여부를 검사합니다</block>
   <block id="f2b92cb195f44b1f57205f66b9c1c992" category="list-text">사용자 정의 코드는 실행되지 않습니다</block>
   <block id="f6b50ace5a7da2eb893c9a1a1c3971be" category="list-text">규칙을 승인하기 전에 정확히 어떤 항목이 평가될지 검토할 수 있습니다.</block>
   <block id="110a917dc178ad706edce62d767a4196" category="list-text">각 사용자 지정 규칙에는 평가할 리소스 유형, 조건 논리, 심각도, 평가 일정 및 해결 지침이 포함됩니다.</block>
-  <block id="5eb43201405d6bbeac74bcd01d61e2e1" category="list-text">AWS 환경에 대한 읽기 전용 액세스 권한입니다. 사용자 지정 규칙은 보안 경계로 읽기 전용 권한을 요구합니다. <block ref="1db25aada4bff8233b24c1d7b39230cd" category="inline-link-macro-rx"></block>.</block>
   <block id="823a6e1d7fe661be55dd3af05f972b11" category="list-text">ONTAP 자격 증명</block>
   <block id="559e5220d6130b1d9f3af60fa24ff138" category="list-text">읽기 전용 권한을 가진 FSx 뷰어 사용자입니다. Workload Factory는 읽기 전용 사용자가 없는 경우 각 FSx for ONTAP 파일 시스템에 해당 사용자를 생성하여 평가를 수행할 수 있도록 합니다.</block>
   <block id="04d1424a4b58f665f6537d166f4f9750" category="list-text">링크 또는 에이전트</block>
   <block id="b68341d527b58582cc7cb537c3230cd8" category="inline-link-macro">링크를 사용하여 FSx for ONTAP 파일 시스템에 연결합니다.</block>
-  <block id="d358f748048c3fa0487b8cd6d6410fb2" category="list-text">AWS API에서 접근할 수 없는 설정을 확인하기 위해 ONTAP에 직접 연결해야 하는 규칙에만 필요합니다. <block ref="4c7cc50e5133efc728aaa88011208eda" category="inline-link-macro-rx"></block>.</block>
   <block id="00d54cb4ae79a42990f001ca7b1eafd2" category="list-text">규칙은 문제를 자동으로 해결할 수 없습니다. 제공된 지침을 사용하여 규정을 준수하지 않는 리소스를 직접 수정해야 합니다.</block>
   <block id="e0ff3e32dbc4b668a800d5b59c47613b" category="list-text">각 규칙은 한 가지 유형의 리소스만 검사하지만, 광범위한 리소스에 적용될 수 있습니다. 예를 들어, 하나의 규칙으로 여러 리전, 모든 리전 또는 여러 계정의 볼륨을 평가할 수 있습니다. 서로 다른 유형의 리소스를 평가하려면 별도의 규칙을 생성하십시오.</block>
   <block id="3f84490332db2de49bed3d46ab452bb0" category="list-text">과도한 스캔을 방지하기 위해 규칙은 최대 한 시간에 한 번만 실행됩니다.</block>
@@ -6863,7 +6858,6 @@
   <block id="cc36425e424f4c30e5d1dd8b4cf78a69" category="list-text">운영 볼륨 보호</block>
   <block id="9beacae88b6d84f519d92cf003a30d57" category="list-text">아카이브 볼륨 티어링</block>
   <block id="ccf414cfce06645c55d0bcfd5f41608b" category="list-text">파일 시스템 명명 표준</block>
-  <block id="9b4ad9b41b7f7f63bf3258fc3894691a" category="paragraph"><block ref="a9a97108e6fef351f8c6a7a2af6f4937" category="inline-link-macro-rx"></block> <block ref="8bc0878ae35d7f3c225b4bac0e907504" category="inline-link-macro-rx"></block></block>
   <block id="71d671c8e1cf2aa5cf976dd7ff9d340b" category="summary">규칙 카탈로그에서 사용자 지정 아키텍처 규칙을 보고, 편집, 활성화, 비활성화 및 삭제합니다.</block>
   <block id="1cf051440b9604c5c57c4c6cab344202" category="doc">NetApp Console에서 Workload Factory에 대한 사용자 지정 규칙 관리</block>
   <block id="8ef292d4be46fbc351d35b26b3ce8720" category="paragraph">규칙 카탈로그는 모든 사용자 지정 규칙을 관리할 수 있는 단일 공간입니다. 규칙 세부 정보를 검토하고, 규칙을 편집하고, 결과를 확인하고, 규칙이 일정에 따라 실행될지 여부를 제어할 수 있습니다.</block>
@@ -6913,4 +6907,10 @@
   <block id="64f2f595f7dd037774e1dbd99cb2ab7b" category="sidebar">AI 에이전트 설정 관리</block>
   <block id="3fba0171e458258e875a2f8013e395b8" category="cell">SQL Server 2025</block>
   <block id="9e5f96378bed43aac0d5d94368775263" category="cell">Windows Server 2025</block>
+  <block id="084b022f1511ba8dda542f70832d22e4" category="paragraph">NAS 볼륨을 31일 동안 사용하지 않으면 비용 절감을 위해 해당 볼륨을 보관하거나 삭제하십시오.</block>
+  <block id="6d4d9f3d79904b627f6aca8246717bca" category="list-text">*캐시 볼륨*: 캐시 볼륨이 포함된 소스 스토리지 VM은 전환이 지원되지 않습니다. 마이그레이션 실패를 방지하려면 전환 전에 ONTAP FlexCache 관계를 제거하십시오.</block>
+  <block id="179ab629584266b78c7a691ade72de63" category="admonition">계정 관리자가 AI 기능을 비활성화한 경우 새 규칙을 만들거나 기존 규칙을 수정할 수 없습니다. 이미 예약된 규칙은 계속 실행됩니다. <block ref="646cadbb9cfc9d23560c447c51098225" category="inline-link-macro-rx"></block>.</block>
+  <block id="22941004ec8c49f5d8a764461a973801" category="list-text">AWS 환경에 대한 읽기 전용 액세스 권한입니다. 사용자 지정 규칙은 보안 경계로 읽기 전용 권한을 요구합니다. <block ref="8e1e3c879b9dae9bf3456eb51959b906" category="inline-link-macro-rx"></block>.</block>
+  <block id="8af9128504255d95219d06192a7427f2" category="list-text">AWS API에서 접근할 수 없는 설정을 확인하기 위해 ONTAP에 직접 연결해야 하는 규칙에만 필요합니다. <block ref="c8334f2cb013f0b691325d2b949f8312" category="inline-link-macro-rx"></block>.</block>
+  <block id="ef517711d9a5dee55f2bb56046d3fd70" category="paragraph"><block ref="385442535e80145b437f6d2ceb94114a" category="inline-link-macro-rx"></block> <block ref="f571cd95e32f7c421382198bc0dd0eae" category="inline-link-macro-rx"></block></block>
 </blocks>
