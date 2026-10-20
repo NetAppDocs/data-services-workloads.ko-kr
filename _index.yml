@@ -19,8 +19,6 @@ indexpage:
       url: "/setup/learn-about-workload-factory.html"
     - title: 빠른 시작
       url: "/setup/quick-start.html"
-    - title: 회원가입 후 로그인하세요
-      url: "/setup/sign-up-and-log-in.html"
   - title: 권한
     links:
     - title: Amazon FSx for NetApp ONTAP에 대한 권한

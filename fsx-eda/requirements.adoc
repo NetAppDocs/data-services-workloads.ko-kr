@@ -13,7 +13,7 @@ summary: EDA에 NetApp Workload Factory를 사용하기 전에 NetApp Workload F
 [role="lead"]
 EDA에 NetApp Workload Factory를 사용하기 전에 NetApp Workload Factory와 AWS가 올바르게 설정되어 있는지 확인하십시오. 여기에는 AWS 로그인 자격 증명, 배포된 FSx for ONTAP 파일 시스템 등이 포함됩니다.
 
-Workload Factory 로그인 및 계정:: 다음을 수행해야 합니다 link:../setup/sign-up-and-log-in.html["NetApp Console에 가입하고 로그인하십시오."]
+Workload Factory 로그인 및 계정:: link:https://console.netapp.com["NetApp Console에 로그인합니다."^]해야 합니다. 계정이 없는 경우 먼저 NetApp Console에 link:https://docs.netapp.com/us-en/console-setup-admin/task-sign-up-saas.html["가입하기"^]한 다음 로그인하십시오.
 AWS 자격 증명 및 권한:: Workload Factory에 읽기/쓰기 권한이 있는 AWS 자격 증명을 추가해야 합니다. 즉, EDA를 위해 Workload Factory를 _읽기/쓰기_ 모드로 사용하게 됩니다.
 
 

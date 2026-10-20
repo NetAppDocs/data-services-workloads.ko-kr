@@ -1638,13 +1638,11 @@
   <block id="a42023de78ebfc0b813130624c220f36" category="paragraph">NetApp Console의 Backup and Recovery로 리디렉션되며, 여기서 보호 정책 또는 일정을 수정할 수 있습니다.</block>
   <block id="d05a91a23b39b2ef83c7f917a0c9c7e5" category="summary">NetApp Workload Factory for Databases를 사용하여 Infrastructure-as-Code 스니펫을 활용하고, 호스트를 검색하고, 리소스를 관리하는 등의 작업을 시작해 보십시오.</block>
   <block id="91494b330cfa4716e9d4103109705d0c" category="doc">NetApp Workload Factory for Databases 빠른 시작</block>
-  <block id="32a768a4494b46700624f156e8a8d294" category="paragraph">NetApp Workload Factory for Databases를 사용하면 _보기, 계획 및 분석_ 권한으로 즉시 시작할 수 있습니다. Workload Factory를 사용하여 호스트를 검색하고 리소스를 관리하는 등의 작업을 수행하려면 몇 단계만 거치면 시작할 수 있습니다.</block>
   <block id="eb7ed5d3b1a2ff72006245ad37f9817b" category="paragraph">데이터베이스를 사용하려면 AWS 계정이 있어야 합니다.</block>
   <block id="c37e590e9c50960a15f3292676cc0c18" category="paragraph">시작하려면 다음 단계를 따르세요.</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">하나</block>
   <block id="ddd0dc114cff37632f8d5d916455e0c4" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> NetApp Workload Factory에 로그인하십시오</block>
   <block id="ad3b46ea44ef643f0aa6cf10b5cddef7" category="inline-link-macro">가입하기</block>
-  <block id="a93f09a9fbe67e564e4ea4ed4468689c" category="paragraph"><block ref="88397380b49fccdb6c6bb520250fef48" category="inline-link-macro-rx"></block>하고 NetApp Console에 로그인해야 합니다.</block>
   <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">둘</block>
   <block id="6c14141954ea3609b0ca84567ff7b1d8" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 데이터베이스 워크로드에 대한 자격 증명 및 권한을 추가합니다</block>
   <block id="3e704746794b6c6da13402ca9df54660" category="inline-link-macro">계정에 자격 증명을 수동으로 추가</block>
@@ -2060,8 +2058,6 @@
   <block id="2edaf9b54abbf5ae956607d1cce3419f" category="doc">EDA용 Workload Factory 빠른 시작</block>
   <block id="0595b103e9174c24b7fffa0491687cc5" category="paragraph">환경을 설정하고, 모니터링 대시보드를 활성화하고, 지연 시간 분석을 구성하여 EDA 워크로드에 대한 FSx for ONTAP 성능을 최적화함으로써 Workload Factory for EDA를 시작하십시오.</block>
   <block id="3d784fb83da69a092542ad97e84229a1" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Workload Factory에 로그인하십시오</block>
-  <block id="ca5cacfa292d41c429bff08c8d7690dc" category="inline-link-macro">회원가입 후 로그인</block>
-  <block id="2b65dc1fa5bc4ea06844dd06cfbc7774" category="paragraph"><block ref="fb7d3ecda2cc192b57653cabe8dbab51" category="inline-link-macro-rx"></block>NetApp Console에 접속해야 합니다.</block>
   <block id="1283af7cc983573ed4713cdd57866991" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> EDA 워크로드에 대한 자격 증명 및 권한 추가</block>
   <block id="ccfaa839e768aad68d8df43945f3981f" category="inline-link-macro">필요한 권한에 대한 IAM 정책을 생성합니다</block>
   <block id="c4f56d16dd663e4eddc3092f24840c99" category="paragraph"><block ref="ba3df41527d282ff668fde47559ede13" category="inline-link-macro-rx"></block> EDA 워크로드 기능 선택이 포함되며, <block ref="130ddacc98dcbb955ac32d7d05051cd1" category="inline-link-macro-rx"></block>.</block>
@@ -2098,8 +2094,6 @@
   <block id="b888e1d990c199d358b31e27c7359f42" category="doc">EDA 요구 사항을 위한 Workload Factory</block>
   <block id="d2d53646427e24681e315985224607de" category="paragraph">EDA에 NetApp Workload Factory를 사용하기 전에 NetApp Workload Factory와 AWS가 올바르게 설정되어 있는지 확인하십시오. 여기에는 AWS 로그인 자격 증명, 배포된 FSx for ONTAP 파일 시스템 등이 포함됩니다.</block>
   <block id="55df1ea48b09b075b4b7dd39f32b38ee" category="list-text">Workload Factory 로그인 및 계정</block>
-  <block id="dabcc89e48ed40f90d46a458bf37e5b0" category="inline-link-macro">NetApp Console에 가입하고 로그인하십시오.</block>
-  <block id="85efebbb37402ada1347c4bc17a2384b" category="list-text">다음을 수행해야 합니다 <block ref="71451e2b8c58e5c7388bfcb10516e575" category="inline-link-macro-rx"></block></block>
   <block id="42f4fbe9bc96b7b414265e0b938084d8" category="list-text">Workload Factory에 읽기/쓰기 권한이 있는 AWS 자격 증명을 추가해야 합니다. 즉, EDA를 위해 Workload Factory를 _읽기/쓰기_ 모드로 사용하게 됩니다.</block>
   <block id="92b8944386b41a864c3b42d0a5f178da" category="paragraph">현재 _Basic_ 모드 및 _Read-only_ 모드 권한은 지원되지 않습니다.</block>
   <block id="4e63edb8bda7c519ba5aff97d0f43dc4" category="admonition">지연 시간 모니터링 기능을 사용하려면 AWS 자격 증명이 필요하며, 이 기능은 볼륨 성능 분석을 위해 CloudWatch 메트릭을 수집합니다. 지연 시간 이벤트에 대한 알림을 받으려면 Workload Factory 설정에서 알림 기본 설정을 구성하십시오. NetApp 관리 AI 분석이 활성화된 경우 복잡한 지연 시간 시나리오에 대한 선택적 AI 분석을 사용할 수 있습니다. <block ref="9a573596af789d1f770a6210c953bdc7" category="inline-link-macro-rx"></block>.</block>
@@ -5530,8 +5524,6 @@
   <block id="97735cf08bc8cd1817cf2dbadd06154d" category="doc">VMware 워크로드 마이그레이션 어드바이저를 사용하여 Amazon EVS로 마이그레이션하는 빠른 시작 가이드</block>
   <block id="546393155194873f3731142e84a340fd" category="inline-link-macro">NetApp Workload Factory에 대한 권한</block>
   <block id="3c32ee37a43b7a6669516fbe2facf360" category="paragraph">시작하기 전에 <block ref="eacf1b6c3c9c77b3898392ba00c514e5" category="inline-link-macro-rx"></block>에 대해 이해해야 합니다.</block>
-  <block id="e3f4d5b3a0d16b68c0f95c7031bbab0f" category="inline-link-macro">Workload Factory에서 계정을 설정하십시오</block>
-  <block id="e33655393b1233c30223f14cc97369ae" category="paragraph"><block ref="d5f88bdd528bbedf165d7f1b0ea62185" category="inline-link-macro-rx"></block>하고 NetApp Console에 로그인해야 합니다.</block>
   <block id="27c19be9febabd1e2fb82d7a39784f2d" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 자격 증명 및 권한 추가</block>
   <block id="e9efaa1e513d13bcfdc3a89da8fdd1f5" category="paragraph">필요에 맞는 <block ref="2e888142bf71f7498740798faa35edcf" category="inline-link-macro-rx"></block>을(를) 선택하십시오.</block>
   <block id="2c786a1fb129957422c7b03afe2c9e97" category="paragraph">권한을 부여하지 않기로 선택하면 <block ref="3ad155911ed8e0aa87bea22dfd1f9dea" category="inline-link-macro-rx"></block>에서 부분적으로 완성된 코드 샘플을 복사하여 Workload Factory for Databases 사용을 시작할 수 있습니다.</block>
@@ -6336,8 +6328,6 @@
   <block id="0b2f9e9a00a5dacc2b038c269cb56497" category="paragraph">Workload Factory는 <block ref="7532dfde8c533672ea63a5b546224a97" category="inline-link-macro-rx"></block>를 통해 접속할 수 있습니다. 이 SaaS 환경을 통해 최신 기능이 출시될 때 자동으로 이용할 수 있으며, Workload Factory 계정과 링크 간에 쉽게 전환할 수 있습니다.</block>
   <block id="69989491ca997ec4e156f1dec632e52c" category="section-title">회원가입 및 액세스 관리</block>
   <block id="f24427e667a0fadb0da6c11099e099d9" category="paragraph">NetApp Console을 사용하려면 NetApp 지원 사이트 자격 증명으로 가입하거나 NetApp Console 로그인을 생성해야 합니다. 첫 번째 사용자는 조직 관리자가 되어 사용자 계정 및 권한을 관리합니다. 나중에 역할을 업데이트하고 관리자를 추가할 수 있습니다.</block>
-  <block id="4083085de104c6eb7f6b02c9d3911a87" category="inline-link-macro">NetApp Console에 가입하고 로그인하는 방법을 알아보세요</block>
-  <block id="4b024ecd880487bbee4fa5734affe09d" category="list-text"><block ref="4b024ecd880487bbee4fa5734affe09d" category="inline-link-macro-rx"></block></block>
   <block id="01d3439f45ec98069c1e0ae140ab3de0" category="inline-link-macro">NetApp Console ID 액세스 관리에 대해 알아보십시오.</block>
   <block id="2f3706222de3054edfb52b48d669b7bb" category="list-text"><block ref="2f3706222de3054edfb52b48d669b7bb" category="inline-link-macro-rx"></block></block>
   <block id="d08ccf52b4cdd08e41cfb99ec42e0b29" category="section-title">권한</block>
@@ -6409,9 +6399,6 @@
   <block id="efaef01a8d4ed991197fd08168fbfd81" category="doc">NetApp Workload Factory 빠른 시작</block>
   <block id="32e93a25540f979c60b3b622506c2b83" category="paragraph">NetApp Workload Factory는 사용자가 NetApp Console에서 클라우드 데이터 서비스로 이용할 수 있습니다. Workload Factory가 리소스를 직접 관리하고 워크로드를 최적화할 수 있도록 NetApp Console에 가입하여 계정을 생성하고 클라우드 공급자 자격 증명을 추가하여 Workload Factory를 시작하십시오.</block>
   <block id="22e5a7336ebe77138f0282cedcb069ab" category="inline-link-macro">Workload Factory</block>
-  <block id="1927d1929476da1fd85f330219747da8" category="paragraph">시작하기 전에 <block ref="64c9dffcd52d81154557ee623279261c" category="inline-link-macro-rx"></block>에 대해 이해하고 있어야 합니다.</block>
-  <block id="d33f3e6aa75064a42fd24bc7cd68207c" category="section-title">NetApp Console에서 Workload Factory에 가입하고 로그인하세요.</block>
-  <block id="eb35e0ad2267a3e378e80904d60c13db" category="paragraph"><block ref="eb35e0ad2267a3e378e80904d60c13db" category="inline-link-macro-rx"></block></block>
   <block id="70b96a1bd8d5adb4ba241cb5b9fd8489" category="paragraph">다음으로, 클라우드 제공업체의 *빠른 시작* 링크를 선택하여 시작하십시오.</block>
   <block id="13c485f3dc852b05615bdb465dc35bb0" category="section-title">Amazon FSx for NetApp ONTAP 시작하기</block>
   <block id="c2ca61cdaafcad548af5836df039fcb3" category="inline-link-macro">Amazon FSx for NetApp ONTAP 빠른 시작</block>
@@ -6421,9 +6408,6 @@
   <block id="fd71ccec8830da3d36bd19531c1dffdc" category="paragraph"><block ref="fd71ccec8830da3d36bd19531c1dffdc" category="inline-link-macro-rx"></block></block>
   <block id="e66b3e97aedecd30709f87314c5ccf87" category="section-title">Google Cloud NetApp Volumes 시작하기</block>
   <block id="6c98e127eb9f894ba57b9bfc2d5dab1f" category="paragraph"><block ref="6c98e127eb9f894ba57b9bfc2d5dab1f" category="inline-link-macro-rx"></block></block>
-  <block id="2f4902a24a062f32e6a6cfa57616c831" category="summary">Workload Factory는 NetApp Console에서 액세스할 수 있습니다. Workload Factory를 시작하려면 먼저 기존 NetApp 지원 사이트 자격 증명을 사용하거나 NetApp 클라우드 로그인을 생성하여 가입해야 합니다.</block>
-  <block id="ae09b16571bb5c1b5c1fccf487b44ea7" category="paragraph">NetApp Workload Factory는 NetApp Console에서 액세스할 수 있습니다. Console을 사용하려면 NetApp Support Site 자격 증명으로 가입 또는 로그인하거나 NetApp Console 로그인을 생성하십시오. 회사에서 처음으로 가입하는 경우 관리자로서 새 조직을 생성합니다. 회사에 이미 조직이 있는 경우 기존 NetApp Support Site 자격 증명 또는 회사 Single Sign-On(SSO)으로 가입하거나 로그인하십시오.</block>
-  <block id="9b2e339c9639747e25e597bf41706151" category="paragraph">이제 로그인되었으며 Workload Factory를 사용하여 스토리지 시스템과 워크로드를 관리할 수 있습니다. Workload Factory로 이동하려면 메인 메뉴에서 *워크로드*를 선택하십시오.</block>
   <block id="cd1196d5845aaf259540d322ace00ee9" category="summary">워크로드 관리, 서비스 관리, 스토리지 기능, 권한 등에 대한 업데이트 및 개선 사항 등 NetApp Console의 Workload Factory에 대한 새로운 기능을 알아보십시오.</block>
   <block id="83006b8c743f417478830e1d83e1bb41" category="doc">NetApp Console의 Workload Factory에 새로 추가된 기능은 무엇인가요?</block>
   <block id="74bc5d714652a3ae18c64ee93e4ba085" category="section-title">2026년 9월 30일</block>
@@ -6432,7 +6416,6 @@
   <block id="a25d1f48f8818e91526df295a63c6a37" category="sidebar">클라우드 스토리지 워크로드를 최대한 활용할 수 있도록 NetApp Workload Factory를 시작해 보십시오. 설정이 완료되면 워크로드에 대한 스토리지 시스템을 생성, 최적화 및 관리하고, 비용 절감 효과를 확인하고, 내장된 Infrastructure-as-Code 코파일럿을 사용하여 플랫폼 전반의 자동화를 구현하고, Workload Factory에서 워크로드를 관리할 수 있습니다.</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">시작하기</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 노트</block>
-  <block id="6f63a12bf8b1e666c30303fbc446e01c" category="sidebar">회원가입 후 로그인하세요</block>
   <block id="90cd2289d496647e57ae167a4e1ded38" category="sidebar">Amazon FSx for NetApp ONTAP에 대한 권한</block>
   <block id="a85fa12e8eb81e521af50e170260f365" category="sidebar">클라우드 제공업체에 Workload Factory를 사용하십시오.</block>
   <block id="bec1e3daee54f5a9410751eb03bd867e" category="sidebar">Workload Factory 관리</block>
@@ -6450,7 +6433,6 @@
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
   <block id="4fae35446edac8369786b24141d0a4e4" category="sidebar">Workload Factory의 FSx for ONTAP에 대한 알려진 제한 사항</block>
   <block id="18d2e40048280edf4f45b62918292d82" category="sidebar">NetApp Console에서 Workload Factory에 대해 알아보십시오.</block>
-  <block id="d73e9a49c2210d74fef5ec0e42ad4292" category="sidebar">Workload Factory에 가입하고 로그인합니다.</block>
   <block id="78f8c00f462b0fbe742eab283e3fdf7a" category="sidebar">링크에 대해 알아보기</block>
   <block id="b0e4d816716f19944afffa8c9affdccb" category="sidebar">권한에 대해 알아보십시오</block>
   <block id="955740a91ca876bc1046f09e7108188e" category="sidebar">스토리지 워크로드에 FSx for ONTAP을 사용하십시오.</block>
@@ -6563,29 +6545,6 @@
   <block id="4ab00ae468588a563b956d814954695d" category="sidebar">CloudShell 사용</block>
   <block id="25f033e226552b2f5ae002edb8e5fd2f" category="sidebar">자격 증명 제거</block>
   <block id="24974380365a2e3e3af1d901b4f56526" category="paragraph"><block ref="8e78b98d3ec3e8310cb1961b36d417e0" category="inline-link-macro-rx"></block>. 여기에는 워크로드 기능 선택 및 필요한 권한에 대한 IAM 정책 생성이 포함됩니다.</block>
-  <block id="0946433107c0141c86e12d9acfc94eb5" category="section-title">최초 조직 관리자로 NetApp Console에 가입하십시오</block>
-  <block id="826401015c53957df701460dc5fefb05" category="paragraph">회사에 NetApp Console 조직이 없는 경우 가입하여 생성하십시오. 첫 번째 사용자는 조직 관리자가 되어 사용자 계정 및 권한을 관리합니다. 나중에 역할을 업데이트하고 관리자를 추가할 수 있습니다.</block>
-  <block id="6c479e362a71650f0ec9bfca93ce7f12" category="list-text">웹 브라우저를 열고<block ref="9fa63571706fcef6edc9d423212e6d10" category="inline-link-rx"></block>로 이동합니다.</block>
-  <block id="dc346f53e29026800c3b9274294105f6" category="list-text">NetApp 지원 사이트 계정이 있는 경우, *로그인* 페이지에서 계정과 연결된 이메일 주소를 직접 입력하십시오.</block>
-  <block id="b1c0e39fde6fd83a65dd3bd95142165f" category="paragraph">콘솔은 초기 로그인 과정에서 NetApp 지원 사이트 자격 증명을 사용하여 사용자를 등록합니다.</block>
-  <block id="bf093decf90516c940874ca448e5647c" category="list-text">Console 로그인을 생성하여 가입하려면 *Sign up*을 선택하십시오.</block>
-  <block id="dafbc60d299b7ecf7d1bf490a178f77f" category="list-text">*회원가입* 페이지에서 필요한 정보를 입력하고 *다음*을 선택합니다.</block>
-  <block id="95f99a60f019f663b3b74472e57bd99b" category="admonition">회원가입 양식에는 영문자만 입력할 수 있습니다.</block>
-  <block id="422588021a93cfdaa26ce8d7d46dfeda" category="list-text">이메일 주소 인증 지침이 포함된 NetApp의 이메일이 받은 편지함에 있는지 확인하십시오.</block>
-  <block id="745229ae5b2bced3482332829ac60c32" category="paragraph">가입을 완료하려면 이메일 주소를 인증하세요.</block>
-  <block id="9e8f3a5627d6a315be184e88407a8e4b" category="list-text">로그인 후 최종 사용자 라이선스 계약을 검토하고 동의하십시오.</block>
-  <block id="4c93133d0f71016860e62cd5febc8888" category="list-text">*환영* 페이지에서 조직을 생성하십시오.</block>
-  <block id="16a6acfaa9478d613f4568fcc7f798b9" category="list-text">*시작하기*를 선택하세요.</block>
-  <block id="d7398f410905989b0cfbd7c8949dea25" category="inline-link-macro">Console Assistant 사용법에 대해 알아보십시오.</block>
-  <block id="d3c4045cc716512dce22d4f648f90c3d" category="paragraph">+ 처음 사용자 및 조직 관리자로서 안내에 따라 스토리지 리소스를 추가하고 Console 에이전트를 생성하는 등의 작업을 수행합니다. <block ref="8411fcab28bea2c0f0cc571757b43362" category="inline-link-macro-rx"></block></block>
-  <block id="11fd5297be439890aa7909ed6b065791" category="inline-link-macro">NetApp Console의 ID 및 액세스 관리에 대해 알아보십시오.</block>
-  <block id="01d4731d174643f3b86d001a74ec91d4" category="paragraph">관리자로서 Console Assistant에 포함된 단계를 완료한 후에는 ID 및 액세스 전략을 계획하고, 조직에 사용자를 추가하고, 역할을 할당해야 합니다. <block ref="e8cd337a181a13b2fbfafad53132bafb" category="inline-link-macro-rx"></block></block>
-  <block id="347778e3054043c713d65df7f9e10e01" category="section-title">이미 조직이 있는 경우 NetApp Console에 가입하거나 로그인하십시오.</block>
-  <block id="5acfd694e6aaca7505fcdbc950ee0e38" category="paragraph">회사에 이미 NetApp Console 조직이 있는 경우, 가입 또는 로그인하여 액세스하십시오. 가입 또는 로그인 방법은 회사에서 ID 페더레이션을 사용하는지 또는 NetApp 지원 사이트 자격 증명을 보유하고 있는지에 따라 다릅니다. 그렇지 않은 경우, NetApp Console 로그인을 생성하십시오.</block>
-  <block id="7db903b190082d22d5def424cfdf8da1" category="list-text">NetApp 지원 사이트 계정이 있거나 회사에서 싱글 사인온(SSO)을 설정한 경우 *로그인* 페이지에서 연결된 이메일 주소 또는 SSO 자격 증명을 입력하십시오. 안내에 따라 로그인을 완료하십시오.</block>
-  <block id="f6400c3e909c93ba53f8281302a7ffef" category="paragraph">두 경우 모두 최초 로그인 과정에서 콘솔에 가입하게 됩니다.</block>
-  <block id="adbbbb6561b05ff5263526309e842926" category="inline-link-macro">조직 관리자에게 문의하는 방법을 알아보십시오.</block>
-  <block id="172584f9c60790ff1f0e0a5fce827ebd" category="list-text">시스템에서 조직을 생성하라는 메시지가 표시되면 대화 상자를 닫고 Console 관리자에게 알려 Console 조직에 추가하고 액세스 권한을 부여받으십시오. <block ref="b322cd1c319c783c8c76cc03c56dbbda" category="inline-link-macro-rx"></block></block>
   <block id="309e95695e9929bae28088a2259c1445" category="paragraph">NetApp Console을 사용하여 Workload Factory 알림을 구성할 수 있습니다.</block>
   <block id="4ecef83a6c0c3ac1ae349c42700f3f4d" category="paragraph">사용 가능한 알림 옵션은 다음과 같습니다. * *알림*: NetApp Console의 종 모양 아이콘 아래에 표시되는 알림을 보내도록 Workload Factory를 구성합니다. * *이메일*: Amazon SNS 구성 없이 계정과 연결된 모든 이메일 주소로 알림을 수신하도록 NetApp Console에서 이메일 알림을 활성화합니다. * *Amazon SNS*: Workload Factory가 Amazon SNS 주제로 알림을 보내도록 구성합니다.</block>
   <block id="3dba14348891216cbb525a2715282a3a" category="paragraph">NetApp Console에서 토픽으로 알림을 보내도록 구성한 후, Amazon SNS 설명서의 <block ref="88c7b6108316e02c36e39863bedc2019" category="inline-link-rx"></block>를 따라 해당 토픽을 구독하여 Workload Factory에서 알림을 수신할 수 있도록 하십시오.</block>
@@ -6922,4 +6881,15 @@
   <block id="5a79cccf92e71cd2b96cbbe67a02e898" category="paragraph">Workload Factory는 연결 성공 여부를 나타내는 알림을 표시합니다</block>
   <block id="43d91f7086bfc8e0d64b9a83a049c1f0" category="list-text">*GenAI 기능 끄기*: 모든 AI 기능을 끕니다.</block>
   <block id="5853c70be1c7abb4619f6f0a6696316e" category="paragraph"><block ref="5853c70be1c7abb4619f6f0a6696316e" category="inline-link-rx"></block></block>
+  <block id="f0ae5dab2d6ea2ffbd20c9563519edf2" category="paragraph">NetApp Workload Factory for Databases를 사용하면 권한 없이 바로 시작할 수 있습니다. Workload Factory를 사용하여 호스트를 검색하고 리소스를 관리하는 등의 작업을 몇 단계만 거치면 시작할 수 있습니다.</block>
+  <block id="e8fa42224c1549b42b010324f9a01216" category="inline-link-macro">NetApp Console에 로그인합니다.</block>
+  <block id="d230a33ac93525f8dedc1d4d45abbfab" category="paragraph"><block ref="534b2604f29302955349bba67822cd62" category="inline-link-macro-rx"></block>해야 합니다. 계정이 없는 경우 먼저 NetApp Console에 <block ref="65487489906fbce15e307f471fda380c" category="inline-link-macro-rx"></block>한 다음 로그인하십시오.</block>
+  <block id="9090c842809d5b87ef87f89f32e9670b" category="admonition">자식 클론이 있는 볼륨은 모든 자식 클론이 삭제되거나 독립적인 볼륨으로 분리될 때까지 삭제할 수 없습니다.</block>
+  <block id="98929bc2ec4e4b6c1fb3d202f0a1c02d" category="paragraph">데이터를 아카이빙하기 전에 동일 볼륨의 모든 블록 장치(LUNs)가 비활성화되었는지 확인하십시오.</block>
+  <block id="a12fbd750c270e54cd66855e6a9c0d66" category="list-text">사용하지 않는 블록 장치의 공간 회수 화면에서 용량을 회수할 블록 장치를 하나 이상 선택합니다.</block>
+  <block id="d9776f0775997b2e698c6975420b5c5d" category="inline-link-macro">가입하기</block>
+  <block id="e573c47809f6acfd1d17e1e175b2815d" category="list-text"><block ref="ae5fdce2a4a121cca2d9cfd9dfdd27a9" category="inline-link-macro-rx"></block> NetApp Console로 이동합니다.</block>
+  <block id="bbd3bc24a9cc71ad8a2822b80bf70ff9" category="paragraph">시작하기 전에 <block ref="64c9dffcd52d81154557ee623279261c" category="inline-link-macro-rx"></block>에 대한 이해가 필요합니다. 또한 NetApp Console에 <block ref="65487489906fbce15e307f471fda380c" category="inline-link-macro-rx"></block>해야 합니다.</block>
+  <block id="80655929466b53d4ebd339eb11bdf59d" category="section-title">NetApp Console에서 Workload Factory에 로그인합니다.</block>
+  <block id="12f44e4fd5c579fdafc7776b94e934d6" category="list-text"><block ref="9fa63571706fcef6edc9d423212e6d10" category="inline-link-rx"></block>에 로그인합니다.</block>
 </blocks>
