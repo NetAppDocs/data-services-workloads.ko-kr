@@ -239,13 +239,13 @@ sidebar:
       entries:
       - title: VMware용 NetApp Workload Factory에 대해 알아보십시오.
         url: "/fsx-vmware/learn-about-vmware-workloads.html"
-      - title: Amazon EVS로 마이그레이션하기 위한 빠른 시작 가이드
+      - title: Amazon EVS 마이그레이션 빠른 시작
         url: "/fsx-vmware/quick-start-evs.html"
-      - title: Amazon EC2로 마이그레이션하기 위한 빠른 시작
+      - title: Amazon EC2 마이그레이션 빠른 시작
         url: "/fsx-vmware/quick-start-native.html"
-      - title: VMware Cloud on AWS로 마이그레이션하기 위한 빠른 시작
+      - title: VMware Cloud on AWS 마이그레이션 빠른 시작
         url: "/fsx-vmware/quick-start-vmware.html"
-      - title: Google Cloud VMware Engine으로 마이그레이션을 위한 빠른 시작
+      - title: Google Cloud VMware Engine 마이그레이션 빠른 시작
         url: "/fsx-vmware/quick-start-gcve.html"
       - title: VMware 계획 센터를 살펴보세요
         url: "/fsx-vmware/explore-planning-center.html"

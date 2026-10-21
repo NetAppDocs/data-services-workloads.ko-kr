@@ -4968,7 +4968,6 @@
   <block id="dfb1565e1ec2734dcbcb24e6b43c9919" category="paragraph">*복원된 볼륨 이름* 필드에 복원할 볼륨에 대한 고유한 이름을 입력하십시오.</block>
   <block id="2321232f7bb400db057064cec47f4904" category="list-text">스냅샷에서 기존 볼륨으로 데이터를 복원합니다. 이 작업은 스냅샷 생성 시간 이후에 수정된 모든 데이터를 영구적으로 삭제합니다.</block>
   <block id="89737fdc47d2ffa6f11712bb340e2a19" category="summary">Amazon EVS와 FSx for ONTAP을 사용하여 얼마나 절약할 수 있는지 계산해 보십시오.</block>
-  <block id="122a56eb4649431a7f2dbb8886f047cc" category="doc">NetApp Workload Factory를 사용하여 Amazon Elastic VMware Service의 절감 효과를 살펴보십시오.</block>
   <block id="c99c39a5824ae2c9be487d0de19febcd" category="paragraph">VMware 워크로드를 Amazon Elastic VMware Service(EVS)로 마이그레이션하여 얻을 수 있는 잠재적 비용 절감 효과를 확인해 보세요. 이 계산기를 통해 스토리지로 Amazon FSx for NetApp ONTAP을 사용하는 경우와 사용하지 않는 경우의 Amazon EVS 사용 비용을 비교할 수 있습니다.</block>
   <block id="85f9ebcaf90aa1d0aea8e19f23446085" category="paragraph">비용 절감 계산기가 가장 비용 효율적인 스토리지가 FSx for ONTAP이라고 판단하면, 상세 평가를 생성할 수 있으며, 이는 사용 전에 검토할 수 있는 마이그레이션 계획을 제공합니다. 그런 다음 Codebox를 사용하여 Infrastructure-as-Code 템플릿을 생성할 수 있습니다.</block>
   <block id="b23b05aa1d44c04b2da76aa4c7408d6c" category="section-title">EVS 환경에서 절약할 수 있는 방법을 알아보세요</block>
@@ -4988,7 +4987,6 @@
   <block id="74ce259d0d76a9e0cd46f6300bcc2371" category="list-text">마이그레이션 어드바이저를 사용하여 Amazon EVS 환경에 대해 <block ref="9c54a102b37172c71de5c1a9f4ba94d1" category="inline-link-macro-rx"></block>하려면 *EVS 마이그레이션 계획*을 선택하십시오.</block>
   <block id="27cecac020f0eb3b6379d7eaa39d9edb" category="list-text">TCO 계산기를 닫으려면 *닫기*를 선택합니다.</block>
   <block id="495f22292688acea8c30ad6ad16b09d3" category="summary">현재 VM 구성을 캡처하려면 마이그레이션 어드바이저 VM 수집 스크립트 또는 RVTools를 사용할 수 있습니다. 가장 정확한 계획을 수립하려면 VM 구성 및 성능 데이터를 모두 수집하는 마이그레이션 어드바이저 VM 수집 스크립트를 사용하는 것이 좋습니다.</block>
-  <block id="f292a76e9c79b833f21da297f0ad751c" category="doc">VMware 워크로드를 사용하여 Amazon EC2로 마이그레이션하기 전에 VM 구성을 캡처하세요</block>
   <block id="f8e901b31808cd5fdd45bae1bb1b5200" category="paragraph">현재 VM 구성을 캡처하려면 마이그레이션 어드바이저 VM 데이터 수집 스크립트, RVTools 또는 NetApp Data Infrastructure Insights를 사용할 수 있습니다. 가장 정확한 계획을 수립하려면 VM 구성 및 성능 데이터를 모두 수집하는 마이그레이션 어드바이저 VM 수집 스크립트 또는 Data Infrastructure Insights를 사용하는 것이 좋습니다.</block>
   <block id="22a28a767d70781d263ac5d0d07edaf6" category="open-title">RVTools(빠른 평가) 사용</block>
   <block id="18498b95c15ee1034dbf55a71b7c7b9d" category="paragraph">RVTools는 VCenter 및 ESX 서버(5.x~8.0)와 상호 작용하여 VMware 가상 환경에 대한 정보를 수집하는 Windows 애플리케이션입니다. VM, CPU, 메모리, 디스크, 클러스터, ESX 호스트, 데이터스토어 등에 대한 정보를 수집합니다. 이 정보를 xlsx 파일로 내보내 마이그레이션 어드바이저에서 사용할 수 있습니다.</block>
@@ -5053,7 +5051,6 @@
   <block id="d5db9fed5445fd6da0101158bde40fad" category="list-text">Workload Factory 마이그레이션 어드바이저에서 사용할 수 있도록 이 토큰을 저장해 두십시오.</block>
   <block id="bf9f27fc21322ff6302a870d86e2e722" category="inline-link-macro">마이그레이션 어드바이저를 사용하여 Amazon EC2 배포 계획을 생성합니다</block>
   <block id="414196819b55791be7e7314c3ef3e1cb" category="paragraph"><block ref="256f57bc6446332fd4641ea86650235a" category="inline-link-macro-rx"></block>.</block>
-  <block id="3a23349f8d161f7653f1e95b602af0f5" category="doc">VMware 워크로드를 사용하여 VMware Cloud로 마이그레이션하기 전에 VM 구성을 캡처하세요.</block>
   <block id="c423127be094663f098066c3efa8a37a" category="open-title">마이그레이션 어드바이저 VM 수집기 스크립트를 사용하십시오</block>
   <block id="e7bc9976408bfbd315fb5cead8d7c4e2" category="paragraph">NetApp 마이그레이션 어드바이저 VM 수집기 스크립트는 RVTools가 수집하는 것과 유사하게 사용자의 vCenter에서 VM 구성 정보를 수집하지만, 실제 읽기 및 쓰기 IOPS와 처리량 통계를 제공하기 위해 현재 VM 성능 데이터를 캡처합니다.</block>
   <block id="45f41cadcd45c9728fa28d6a1cb8d206" category="list-text">VMware 메뉴에서 *평가 및 계획*을 선택한 다음 *VMware Cloud on AWS로 마이그레이션*을 선택합니다.</block>
@@ -5093,7 +5090,6 @@
   <block id="a409bb04787a5ddb8911b653d035c75e" category="summary">FSx for ONTAP 파일 시스템을 배포한 후에는 해당 시스템을 VMware Cloud on AWS 인프라에 연결해야 합니다. SDDC는 VPC 피어링 기능을 사용하여 외부 NFS 스토리지 볼륨에 대한 네트워크 연결을 확장함으로써 FSx for ONTAP 파일 시스템에 연결할 수 있는 네트워크 옵션을 제공합니다.</block>
   <block id="07413029412abf4b07d59a7418a48d98" category="doc">FSx for ONTAP 파일 시스템을 VMware Cloud on AWS에 연결하십시오</block>
   <block id="ff8452c1f30c7c23563874f41490c4aa" category="paragraph">FSx for ONTAP 파일 시스템을 배포한 후에는 해당 시스템을 VMware Cloud on AWS 인프라에 연결해야 합니다. 소프트웨어 정의 데이터 센터(SDDC)는 VPC 피어링 기능을 사용하여 외부 NFS 스토리지 볼륨에 대한 네트워크 연결을 확장함으로써 FSx for ONTAP 파일 시스템에 연결할 수 있는 네트워크 옵션을 제공합니다.</block>
-  <block id="36789903991e7a805b64dce62ee3cb41" category="inline-link">자세한 내용은 Amazon VPC 피어링 설명서를 참조하십시오</block>
   <block id="35e4dc1372c9892d7d45c118016255bf" category="paragraph">다음 다이어그램은 VPC 피어링을 사용하여 단일 가용 영역(AZ) SDDC 클러스터를 FSx for ONTAP 단일 AZ 배포에 연결하는 방법을 보여줍니다.</block>
   <block id="40c5156ee08f8bf4b4ba3c18de0844d9" category="inline-image-macro">FSx for ONTAP 단일 AZ 배포에 단일 AZ SDDC 클러스터를 연결하기 위해 VPC 피어링을 사용하는 방법을 보여주는 다이어그램입니다.</block>
   <block id="9d06593ee15f520ce9a945a1bbad4daf" category="paragraph"><block ref="9d06593ee15f520ce9a945a1bbad4daf" category="inline-image-macro-rx" type="image"></block></block>
@@ -5273,7 +5269,6 @@
   <block id="7bf67785b343875942142dd8baf52a33" category="paragraph">마이그레이션 계획은 기본적으로 계획 센터의 계획 목록에 자동으로 저장됩니다.</block>
   <block id="ac9813d9f42d076342006c3cf93e8674" category="list-text">계획을 진행할 준비가 되면 *프로비저닝*을 선택하여 권장되는 Amazon FSx for NetApp ONTAP 파일 시스템 배포를 시작하십시오.</block>
   <block id="7f23e40eb3340fde04d9926b7462c830" category="summary">VMware 계획 센터에서 Google Cloud VMware Engine 마이그레이션 어드바이저를 실행하여 필요에 맞게 사용자 지정된 마이그레이션 계획을 수립할 수 있습니다.</block>
-  <block id="5e50f9be4f1e626bb755e71b6ef9feec" category="doc">마이그레이션 어드바이저를 사용하여 Google Cloud VMware Engine용 배포 계획을 생성하십시오</block>
   <block id="bdef3354bb4b315740e7e8854254495b" category="paragraph">가상 머신을 Google Cloud VMware Engine으로 마이그레이션하고 사용자 지정 Google Cloud NetApp Volumes를 외부 NFS 데이터 저장소로 사용하는 배포 계획을 생성할 수 있습니다. 마이그레이션 어드바이저의 옵션은 VM 인벤토리 데이터를 수집하는 데 사용된 도구에 따라 다를 수 있습니다.</block>
   <block id="1ce5704c4651f821ecc5d74310e8a79c" category="inline-link-macro">VM 인벤토리를 업로드했습니다</block>
   <block id="f9f0670df28d68f5721b685831be446f" category="list-text"><block ref="07dde87656a21cbf828fade241eb2346" category="inline-link-macro-rx"></block>이(가) 있어야 합니다.</block>
@@ -5402,7 +5397,6 @@
   <block id="4c9e1a6d5098db9ed0d8724f69b55509" category="paragraph">생성된 Terraform 코드가 코드 상자에 표시됩니다. 코드를 클립보드에 복사하거나 파일로 다운로드하여 자체 Terraform 환경에서 실행할 수 있습니다.</block>
   <block id="98eb3550d72a811f20fc4046f149ca3c" category="list-text">Google Cloud NetApp Volumes NFS 데이터스토어를 생성하려면 *생성*을 선택하세요.</block>
   <block id="2559e4d6b9e2e602a91b8df995b458c8" category="summary">NetApp Workload Factory에 로그인하여 VMware 마이그레이션 어드바이저에 액세스하십시오. 마법사의 단계를 따라 사용자 요구에 맞게 사용자 지정된 배포 계획 또는 마이그레이션 계획을 생성합니다.</block>
-  <block id="d426ad1d2770909e76d9ec998753048e" category="doc">VMware 워크로드 마이그레이션 어드바이저를 사용하여 Amazon EC2용 배포 계획 생성</block>
   <block id="3980b900d127875dc01add3ae6aa636c" category="paragraph">Workload Factory에 액세스하려면 사용자 이름과 비밀번호가 있어야 합니다. 액세스 권한이 없는 경우 지금 계정을 만드십시오. 지침을 확인하십시오 <block ref="20e355b0b2171a42f3631b73a7284e27" category="inline-link-macro-rx"></block>.</block>
   <block id="8209a613eadf680eb0da074479c79a0b" category="section-title">온프레미스 vSphere 환경을 기반으로 배포 계획을 수립합니다.</block>
   <block id="12108488b525984a76d1a39aeb4948cb" category="paragraph">온프레미스 vSphere 환경의 현재 가상 머신 구성을 Amazon EC2의 가상 머신으로 마이그레이션하고 사용자 지정 Amazon FSx for NetApp ONTAP 파일 시스템을 외부 데이터 저장소로 사용할 수 있습니다.</block>
@@ -5424,7 +5418,6 @@
   <block id="6f5daac1f5bc785aa2a651e3d291c894" category="list-text">배포 계획을 .pdf 형식으로 다운로드하여 검토를 위해 배포하려면 *계획 다운로드 &gt; 보고서 다운로드*를 선택하십시오.</block>
   <block id="a3c29e0a60c7e00d242210d6b449287f" category="list-text">클라우드 기반의 지능형 데이터 인프라를 구축하는 데 사용할 수 있도록 외부 데이터 저장소 배포 계획을 .csv 형식으로 다운로드하려면 *계획 다운로드 &gt; 인스턴스 스토리지 배포 다운로드*를 선택하십시오.</block>
   <block id="1c541639432de5d11ef7e76941c43a49" category="list-text">권장되는 Amazon FSx for NetApp ONTAP 파일 시스템 배포를 시작하려면 *프로비저닝*을 선택하십시오.</block>
-  <block id="9aed60fda8e95affae05b540b6cbe03a" category="doc">VMware 워크로드 마이그레이션 어드바이저를 사용하여 VMware Cloud on AWS용 배포 계획을 생성합니다.</block>
   <block id="1e884770040a1369dfb00ff9fba06330" category="paragraph">VMware Cloud로 마이그레이션할 때 마이그레이션 어드바이저를 사용하여 현재 온프레미스 vSphere 환경을 VMWare cloud로 마이그레이션할 수 있습니다.</block>
   <block id="c9ff8945d5f4f913ea03f4ded22549da" category="paragraph">온프레미스 vSphere 환경의 현재 가상 머신 구성을 AWS의 VMware Cloud에 있는 가상 머신으로 마이그레이션하고 사용자 지정 Amazon FSx for NetApp ONTAP 파일 시스템을 외부 데이터스토어로 사용할 수 있습니다.</block>
   <block id="b315d9d256afa359134156c4a3ba121a" category="list-text">마이그레이션 어드바이저 VM 수집기(.csv 파일) 또는 RVTools(.xlsx 파일)를 사용하여 기존 시스템에서 인벤토리 파일을 생성해야 합니다.</block>
@@ -5513,7 +5506,6 @@
   <block id="63f2f07c0a027b7cde1cfd93d37fcb19" category="paragraph">VMware용 Workload Factory를 사용하기 위해 NetApp에서 별도의 라이선스를 취득할 필요는 없습니다.</block>
   <block id="df3078cbf2344fdc96564c4276d42b3a" category="paragraph">Workload Factory는 FSx for ONTAP이 지원되는 모든 상용 지역에서 지원됩니다.<block ref="54b85ac4e794c565ea8c7aad421e6e67" category="inline-link-rx"></block></block>
   <block id="2281d47edbe43f0701ce273bb95a9f2f" category="summary">VMware Hybrid Cloud Extension 등 툴을 사용하여 기존 가상 머신 스토리지에서 새 가상 머신에 연결된 FSx for NetApp ONTAP 볼륨으로 데이터를 이동하십시오. VMware HCX의 핵심 기능을 통해 온프레미스 데이터 센터에서 SDDC로 워크로드를 투명하게 마이그레이션할 수 있습니다.</block>
-  <block id="734e5b74e7595424d4721589d572eda7" category="doc">NetApp Workload Factory for VMware를 사용하여 데이터를 새로운 인프라로 마이그레이션하십시오.</block>
   <block id="63796ed0675a30eed387ff515fb4109d" category="paragraph">VMware Hybrid Cloud Extension(HCX) 등 툴을 사용하여 기존 가상 머신 스토리지에서 새 가상 머신에 연결된 FSx for NetApp ONTAP 볼륨으로 데이터를 이동하십시오. VMware HCX 핵심 기능을 통해 온프레미스 데이터 센터에서 소프트웨어 정의 데이터 센터(SDDC)로 워크로드를 투명하게 마이그레이션할 수 있습니다.</block>
   <block id="5cf77a6cd1a6546f96141615c376acb2" category="inline-link-macro">VMware HCX 설명서를 검토하십시오</block>
   <block id="317f09ce19b2835b1bdf12dc348b13e6" category="paragraph">자세한 내용은 <block ref="d8d3c9bf824a50b78a380a9590ebdc5e" category="inline-link-macro-rx"></block>을(를) 참조하십시오.</block>
@@ -5521,7 +5513,6 @@
   <block id="cc788b7e72b2a734dd0985bd1e0e9fe3" category="inline-link-macro">Amazon FSx for NetApp ONTAP 설명서</block>
   <block id="2dca7322750e45308224cf132177438c" category="paragraph">FSx for ONTAP 파일 시스템 관리에 대한 자세한 내용은 <block ref="6a6b306e3cf90244d491bc0b8984c080" category="inline-link-macro-rx"></block>로 이동하여 사용 가능한 백업 및 보호 기능을 확인하십시오.</block>
   <block id="c0c3ffedc4190adc07720bcef4541cf4" category="summary">VMware 마이그레이션 어드바이저를 사용하여 Amazon FSx for ONTAP을 외부 NFS 데이터스토어로 활용해 현재 인프라를 Amazon EVS로 마이그레이션하는 작업을 시작하십시오.</block>
-  <block id="97735cf08bc8cd1817cf2dbadd06154d" category="doc">VMware 워크로드 마이그레이션 어드바이저를 사용하여 Amazon EVS로 마이그레이션하는 빠른 시작 가이드</block>
   <block id="546393155194873f3731142e84a340fd" category="inline-link-macro">NetApp Workload Factory에 대한 권한</block>
   <block id="3c32ee37a43b7a6669516fbe2facf360" category="paragraph">시작하기 전에 <block ref="eacf1b6c3c9c77b3898392ba00c514e5" category="inline-link-macro-rx"></block>에 대해 이해해야 합니다.</block>
   <block id="27c19be9febabd1e2fb82d7a39784f2d" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 자격 증명 및 권한 추가</block>
@@ -5548,7 +5539,6 @@
   <block id="849b694f18d5f2f0d81dfe44c89029ea" category="inline-link-macro">잘 설계된 구성을 구현하는 방법을 알아보세요</block>
   <block id="5dc782d436d94215ab9c41482cff8c02" category="paragraph"><block ref="f09015d4a26b2878c118305ce478ca5f" category="inline-link-macro-rx"></block>.</block>
   <block id="2556da08e11585b605626929beefd4ce" category="summary">VMware 마이그레이션 어드바이저를 사용하여 현재 인프라를 Google Cloud NetApp Volumes를 외부 NFS 데이터 저장소로 사용하는 Google Cloud VMware Engine으로 마이그레이션하세요.</block>
-  <block id="9e8284342c75f48a25dde90d2f2d0588" category="doc">VMware 워크로드 마이그레이션 어드바이저를 사용하여 Google Cloud VMware Engine으로 마이그레이션하기 위한 빠른 시작</block>
   <block id="5dd6304d07a3d3656cc0cb1da35717c6" category="inline-link-macro">NetApp Workload Factory용 FSx for ONTAP 권한</block>
   <block id="fc9a3e0a22cf9ed4293cf5b83f0be069" category="paragraph">시작하기 전에 <block ref="0530b59db9b2bb40a8cf989b1aecc30a" category="inline-link-macro-rx"></block>에 대해 이해해야 합니다.</block>
   <block id="b53d94934411cf1f04ae399b5c11817c" category="paragraph">권한을 부여하지 않기로 선택하면 VMware용 Workload Factory를 사용하여 부분적으로 완성된 코드 샘플을 복사할 수 있습니다.</block>
@@ -5556,14 +5546,12 @@
   <block id="175be206f8668945b45511179609ebe3" category="paragraph">VMware 마이그레이션 어드바이저를 실행하고 Google Cloud NetApp Volumes를 외부 NFS 데이터스토어로 사용하여 Google Cloud VMware Engine 인프라에 생성할 VM 환경을 구성합니다.</block>
   <block id="020b682c9f65d6f17439d2cb0cf964bf" category="paragraph"><block ref="e3624573fd74cf60ac70575f2c86dc70" category="inline-link-macro-rx"></block>.</block>
   <block id="e893ba46613a19a9294b7b151c4df83e" category="summary">VMware 마이그레이션 어드바이저를 사용하여 Amazon FSx for ONTAP을 외부 NFS 데이터스토어로 활용해 현재 인프라를 Amazon EC2로 마이그레이션하십시오.</block>
-  <block id="09bf5c9e5640bf75b6e024bb49783cc9" category="doc">VMware 워크로드 마이그레이션 어드바이저를 사용하여 Amazon EC2로 마이그레이션하는 빠른 시작 가이드</block>
   <block id="611dad37557a2cb5ae289c5e019aed4c" category="paragraph">권한을 부여하지 않기로 선택하면 Workload Factory for Databases를 사용하여 부분적으로 완성된 코드 샘플을 복사할 수 있습니다.</block>
   <block id="d5238004bed35bc175e904048ad83ece" category="paragraph">권한을 부여하기로 선택한 경우 데이터베이스 및 AI 등 워크로드 기능을 선택하고 필요한 권한에 대한 IAM 정책을 생성하는 작업이 포함된 <block ref="1019599d15b10a8952c651273f27ed8e" category="inline-link-macro-rx"></block> 해야 합니다.</block>
   <block id="d645e6b9cc715485914696dcaeed7e40" category="paragraph">VMware 마이그레이션 어드바이저를 실행하고 Amazon FSx for ONTAP 파일 시스템을 외부 NFS 데이터스토어로 사용하는 Amazon EC2 인프라로 마이그레이션할 VM을 선택합니다. 계획을 저장하기 전에 일부 수정 작업을 수행할 수 있습니다.</block>
   <block id="362f02ec410356642b41d807749588d9" category="paragraph"><block ref="d6918f6a6163624fe27be3a8b64bdb49" category="inline-link-macro-rx"></block>.</block>
   <block id="65b67cfacaf9f942b7e72202ad4253cf" category="paragraph"><block ref="f440c867abbb2e895fda5fc4c7c4b4d3" category="inline-link-macro-rx"></block>.</block>
   <block id="b7c19b7e4e8df7fa64586112497c63f5" category="summary">VMware 마이그레이션 어드바이저를 시작하여 Amazon FSx for ONTAP을 외부 NFS 데이터스토어로 사용하여 현재 인프라를 VMware Cloud on AWS로 마이그레이션하십시오.</block>
-  <block id="ecdd552e8f9e5da2a61e6db8b8030056" category="doc">VMware 워크로드 마이그레이션 어드바이저를 사용하여 VMware Cloud on AWS로 마이그레이션하기 위한 빠른 시작</block>
   <block id="14f4f353ef5e3c4a3673476c525c538d" category="paragraph">VMware 마이그레이션 어드바이저를 실행하고 Amazon FSx for ONTAP 파일 시스템을 외부 NFS 데이터스토어로 사용하는 새로운 VMware Cloud on AWS 인프라로 마이그레이션할 VM을 선택합니다. 계획을 저장하기 전에 일부 수정 작업을 수행할 수 있습니다.</block>
   <block id="8d7795534dfe29f84396c92c8d0a4dcd" category="paragraph"><block ref="a837f3781560502a9640d7db10536ff7" category="inline-link-macro-rx"></block>.</block>
   <block id="f52c9ba96cd69f0216a683d029eb830e" category="paragraph">VMware Cloud on AWS 인프라에서 VM용 데이터 저장소를 제공할 새로운 FSx for ONTAP 파일 시스템을 배포하십시오.</block>
@@ -5577,7 +5565,6 @@
   <block id="03f4cd7af088de0b86d1c9f3c79648d1" category="inline-link-macro">데이터 마이그레이션에 대해 자세히 알아보세요</block>
   <block id="ed2864ba6212a6975c8039c89029a916" category="paragraph"><block ref="19e3683b716b5e111f0f1f9ccf094dd2" category="inline-link-macro-rx"></block>.</block>
   <block id="01e556e9ed381ddad48f5f248ea8c853" category="summary">Planning Center를 사용하여 현재 VMware 환경에 대한 정보를 업로드할 수 있습니다.</block>
-  <block id="549db19de828407c882fab2f54c0d91b" category="doc">VM 인벤토리 데이터를 NetApp Workload Factory에 업로드합니다.</block>
   <block id="549d0e83e0f77a058ecb115d751ef72a" category="paragraph">마이그레이션 계획을 생성하기 전에 VM 인벤토리 데이터를 업로드해야 합니다.</block>
   <block id="034ce347094f8e8ed94fd4499edd6a02" category="paragraph">계획 센터가 표시됩니다. 계획 센터에서 VM 인벤토리 데이터를 업로드하고, 이전에 업로드한 인벤토리 데이터를 확인하고, VM 인벤토리 데이터 세트를 사용하여 마이그레이션을 계획할 수 있습니다.</block>
   <block id="6c2c52acb8ece2370c8022ea7c978cb0" category="list-text">*VM 인벤토리 업로드*를 선택하십시오.</block>
@@ -6507,10 +6494,6 @@
   <block id="585b016fb4d762098f713d093667d688" category="sidebar">Perforce 통합 기능을 사용하세요</block>
   <block id="38929f60770d1a358e1351986015fff6" category="sidebar">Perforce 통합에 대해 알아보세요</block>
   <block id="94f08ecfe6af387606dd2dac771208c5" category="sidebar">VMware 워크로드에 FSx for ONTAP을 사용하십시오.</block>
-  <block id="e4358de2a09588cec13214adc031a6e1" category="sidebar">Amazon EVS로 마이그레이션하기 위한 빠른 시작 가이드</block>
-  <block id="8ca85249d2f6a1036c376d3281e10cd7" category="sidebar">Amazon EC2로 마이그레이션하기 위한 빠른 시작</block>
-  <block id="aaa94acfa678f349154ecc14f4c48e40" category="sidebar">VMware Cloud on AWS로 마이그레이션하기 위한 빠른 시작</block>
-  <block id="ef1fc06261bcd9214fd9546ba1a3d6f6" category="sidebar">Google Cloud VMware Engine으로 마이그레이션을 위한 빠른 시작</block>
   <block id="93ba13882942e9f41461a4867481e012" category="sidebar">VMware 계획 센터를 사용하십시오</block>
   <block id="b217f7353b9ad5ed58a9d5b9ee531f78" category="sidebar">Amazon Elastic VMware Service로 마이그레이션</block>
   <block id="cd7f9479e1a150985f71ae0c23d536b2" category="sidebar">배포 계획을 수동으로 생성합니다</block>
@@ -6880,7 +6863,6 @@
   <block id="ca232c88bdf38a766c6b82ced2c60df3" category="list-text">*구성 검증*을 선택합니다.</block>
   <block id="5a79cccf92e71cd2b96cbbe67a02e898" category="paragraph">Workload Factory는 연결 성공 여부를 나타내는 알림을 표시합니다</block>
   <block id="43d91f7086bfc8e0d64b9a83a049c1f0" category="list-text">*GenAI 기능 끄기*: 모든 AI 기능을 끕니다.</block>
-  <block id="5853c70be1c7abb4619f6f0a6696316e" category="paragraph"><block ref="5853c70be1c7abb4619f6f0a6696316e" category="inline-link-rx"></block></block>
   <block id="f0ae5dab2d6ea2ffbd20c9563519edf2" category="paragraph">NetApp Workload Factory for Databases를 사용하면 권한 없이 바로 시작할 수 있습니다. Workload Factory를 사용하여 호스트를 검색하고 리소스를 관리하는 등의 작업을 몇 단계만 거치면 시작할 수 있습니다.</block>
   <block id="e8fa42224c1549b42b010324f9a01216" category="inline-link-macro">NetApp Console에 로그인합니다.</block>
   <block id="d230a33ac93525f8dedc1d4d45abbfab" category="paragraph"><block ref="534b2604f29302955349bba67822cd62" category="inline-link-macro-rx"></block>해야 합니다. 계정이 없는 경우 먼저 NetApp Console에 <block ref="65487489906fbce15e307f471fda380c" category="inline-link-macro-rx"></block>한 다음 로그인하십시오.</block>
@@ -6892,4 +6874,21 @@
   <block id="bbd3bc24a9cc71ad8a2822b80bf70ff9" category="paragraph">시작하기 전에 <block ref="64c9dffcd52d81154557ee623279261c" category="inline-link-macro-rx"></block>에 대한 이해가 필요합니다. 또한 NetApp Console에 <block ref="65487489906fbce15e307f471fda380c" category="inline-link-macro-rx"></block>해야 합니다.</block>
   <block id="80655929466b53d4ebd339eb11bdf59d" category="section-title">NetApp Console에서 Workload Factory에 로그인합니다.</block>
   <block id="12f44e4fd5c579fdafc7776b94e934d6" category="list-text"><block ref="9fa63571706fcef6edc9d423212e6d10" category="inline-link-rx"></block>에 로그인합니다.</block>
+  <block id="07f5c2034d44eea983ae24e8a3e62629" category="doc">VMware용 Workload Factory를 사용하여 Amazon EVS 비용 절감 효과를 확인해 보세요.</block>
+  <block id="e1b7641d7064a40c5bbdee2b40540b74" category="doc">Amazon EC2 VM 구성 캡처</block>
+  <block id="7b3bc3990d7543aaf66980f87335767a" category="doc">VMware Cloud on AWS의 VM 구성을 캡처합니다.</block>
+  <block id="b1980e2ec22c1bd0d98ba755ec8c6e01" category="inline-link">VMware Cloud on AWS와 함께 사용하는 Amazon FSx for NetApp ONTAP의 VPC 피어링에 대해 읽어보십시오.</block>
+  <block id="0ced83efbc83d6325bf854e3d9ff902a" category="paragraph"><block ref="0ced83efbc83d6325bf854e3d9ff902a" category="inline-link-rx"></block></block>
+  <block id="3f8584ff413956319742ef138ff950bf" category="doc">Amazon EVS용 FSx for ONTAP 배포</block>
+  <block id="2fbb7c9787ea3032a156a07d1f132418" category="doc">Amazon EC2용 FSx for ONTAP 배포</block>
+  <block id="a559ec50a8770c8e1d80a75962409463" category="doc">VMware Cloud on AWS용 FSx for ONTAP을 배포합니다.</block>
+  <block id="4adccbbed5a316b4a1a113e8e0d5ba4b" category="doc">Google Cloud VMware Engine용 배포 계획을 생성하십시오</block>
+  <block id="138dc8298502101ab4b1dab76473550a" category="doc">Amazon EC2용 배포 계획을 생성하십시오</block>
+  <block id="098db62d0eacef295355b49bfd3f685d" category="doc">VMware Cloud on AWS 배포 계획을 수립하십시오</block>
+  <block id="e139e2a548f33074a05788b33d073ed1" category="doc">VM 데이터를 VMware Cloud on AWS로 마이그레이션합니다</block>
+  <block id="7f2dbecda0f9bd37e40d03689b14c2fa" category="doc">Amazon EVS 마이그레이션 빠른 시작</block>
+  <block id="0fcf95e364a521f58f982192fa0a45e6" category="doc">Google Cloud VMware Engine 마이그레이션 빠른 시작</block>
+  <block id="ea627ccca5e145e4ce43781ebdf2e6f4" category="doc">Amazon EC2 마이그레이션 빠른 시작</block>
+  <block id="38641132a022c702ed8584dd18675ff9" category="doc">VMware Cloud on AWS 마이그레이션 빠른 시작</block>
+  <block id="53d93e9fac55ddfe7c501887d49a96ea" category="doc">VM 인벤토리 데이터를 Workload Factory for VMware에 업로드합니다.</block>
 </blocks>
