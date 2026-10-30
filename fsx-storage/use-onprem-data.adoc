@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/use-onprem-data.html 
 keywords: use, detect, replicate, remove, on-premises, ONTAP cluster, on-premises cluster, ONTAP 
-summary: 온프레미스 ONTAP 데이터를 NetApp Workload Factory에서 검색하고 복제하여 클라우드에서 백업으로 사용할 수 있습니다. 
+summary: NetApp Workload Factory에서 온프레미스 ONTAP 클러스터를 검색, 복제 및 제거하여 볼륨 데이터를 클라우드의 FSx for ONTAP 파일 시스템에 백업할 수 있습니다. 
 ---
 = 온프레미스 ONTAP 클러스터 데이터를 NetApp Workload Factory에 복제합니다
 :allow-uri-read: 
@@ -34,7 +34,7 @@ summary: 온프레미스 ONTAP 데이터를 NetApp Workload Factory에서 검색
 NetApp Workload Factory에서 온프레미스 ONTAP 클러스터를 검색하여 데이터를 Amazon FSx for NetApp ONTAP 파일 시스템으로 복제할 수 있습니다.
 
 .시작하기 전에
-시작하기 전에 다음 사항을 준비했는지 확인하십시오:
+다음 사항을 준비했는지 확인하십시오:
 
 * 복제를 위한 FSx for ONTAP 파일 시스템입니다.
 * 검색된 온프레미스 클러스터와 연결할 링크입니다. 링크가 없으면 link:create-link.html["하나를 생성하십시오"^]해야 합니다.
@@ -85,7 +85,7 @@ image:screenshot-on-prem-connectivity.png["온프레미스 ONTAP 클러스터를
 .시작하기 전에
 * 볼륨 데이터를 복제하려면 온프레미스 ONTAP 클러스터를 검색해야 합니다.
 * 복제 대상이 될 사용 가능한 FSx for ONTAP 파일 시스템이 있어야 합니다.
-* 온프레미스 ONTAP 클러스터와 복제 관계에 사용하는 FSx for ONTAP 파일 시스템 모두에 연결된 링크가 있어야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+* 온프레미스 ONTAP 클러스터와 복제 관계에 사용하는 FSx for ONTAP 파일 시스템 모두에 연결된 링크가 있어야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크를 연결한 후 이 작업으로 돌아오십시오.
 
 
 .단계
@@ -109,13 +109,13 @@ image:screenshot-on-prem-connectivity.png["온프레미스 ONTAP 클러스터를
 일부 계층화 정책에는 볼륨의 사용자 데이터가 "콜드" 상태로 간주되어 용량 풀 스토리지 계층으로 이동되기 위해 비활성 상태로 유지되어야 하는 시간, 즉 _냉각 일수_를 설정하는 최소 냉각 기간이 연결되어 있다는 점에 유의하십시오. 냉각 기간은 데이터가 디스크에 기록될 때 시작됩니다.
 
 +
-볼륨 계층화 정책에 대한 자세한 내용은 AWS FSx for NetApp ONTAP 설명서에서 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["볼륨 스토리지 용량"^]를 참조하십시오.
+볼륨 티어링 정책에 대한 자세한 내용은 AWS FSx for NetApp ONTAP 설명서에서 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-storage-capacity.html#data-tiering-policy["볼륨 스토리지 용량"^]를 참조하십시오.
 
 
 
 .. *최대 전송 속도*: *제한됨*을 선택하고 최대 전송 한도를 MiB/s 단위로 입력하십시오. 또는 *무제한*을 선택하십시오.
 +
-제한이 없으면 네트워크 및 애플리케이션 성능이 저하될 수 있습니다. 대신, 주로 재해 복구에 사용되는 워크로드 등 중요한 워크로드의 경우 FSx for ONTAP 파일 시스템에 대해 무제한 전송 속도를 권장합니다.
+제한이 없으면 네트워크 및 애플리케이션 성능이 저하될 수 있습니다. 하지만 주로 재해 복구에 사용되는 워크로드 등 중요한 워크로드의 경우 FSx for ONTAP 파일 시스템에 대해 무제한 전송 속도를 권장합니다.
 
 
 

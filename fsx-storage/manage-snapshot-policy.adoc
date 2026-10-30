@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/manage-snapshot-policy.html 
 keywords: manage snapshot policy, change snapshot policy, assign snapshot policy, remove snapshot policy, snapshot policies, snapshot schedule, update, snapshot long-term retention, enable long-term retention 
-summary: Workload Factory에서 FSx for ONTAP 볼륨에 대한 스냅샷 정책을 관리하십시오. 스냅샷 정책은 시스템이 볼륨의 스냅샷을 생성하는 방법을 정의합니다. 
+summary: Workload Factory에서 FSx for ONTAP 볼륨에 대한 스냅샷 정책을 할당, 변경, 제거 및 삭제하고, 변경 불가능한 스냅샷과 장기 보존을 활성화할 수 있습니다. 
 ---
 = NetApp Workload Factory에서 볼륨에 대한 스냅샷 정책을 관리합니다.
 :allow-uri-read: 
@@ -27,7 +27,7 @@ FSx for ONTAP 파일 시스템에서 볼륨에 대한 스냅샷 정책을 할당
 단일 볼륨에 스냅샷 정책을 할당하여 해당 볼륨에 대한 예약된 스냅샷을 생성할 수 있습니다.
 
 .시작하기 전에
-스냅샷 정책을 할당하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+스냅샷 정책을 할당하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크를 연결한 후 이 작업으로 돌아오십시오.
 
 .단계
 . link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
@@ -52,10 +52,10 @@ FSx for ONTAP 파일 시스템에서 볼륨에 대한 스냅샷 정책을 할당
 [[change-a-snapshot-policy]]
 == 스냅샷 정책 변경
 
-스냅샷 정책 이름, 일정, 보존할 복사본 수를 변경하고, 변경 불가능한 스냅샷을 활성화 또는 비활성화할 수 있습니다. 스토리지 VM 간의 정책 공유는 활성화 또는 비활성화할 수 없습니다. 이 옵션은 스냅샷 정책 생성 시에만 사용할 수 있습니다.
+스냅샷 정책 이름, 일정, 보존할 복사본 수를 변경하고, 변경 불가능한 스냅샷을 활성화 또는 비활성화할 수 있습니다. 스토리지 VM 간의 정책 공유는 활성화 또는 비활성화할 수 없습니다. 이 옵션은 스냅샷 정책을 생성할 때만 설정할 수 있습니다.
 
 .시작하기 전에
-기존 스냅샷 정책을 표시하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+기존 스냅샷 정책을 표시하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크를 연결한 후 이 작업으로 돌아오십시오.
 
 .단계
 . link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
@@ -80,7 +80,7 @@ FSx for ONTAP 파일 시스템에서 볼륨에 대한 스냅샷 정책을 할당
 보존 기간 동안 삭제되지 않도록 스냅샷을 잠급니다.
 
 .시작하기 전에
-변경 불가능한 스냅샷을 활성화하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+변경 불가능한 스냅샷을 활성화하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크를 연결한 후 이 작업으로 돌아오십시오.
 
 .단계
 . link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.
@@ -148,7 +148,7 @@ NOTE: 스토리지 VM 데이터 및 구성 설정을 복제할 때는 장기 보
 더 이상 해당 볼륨의 스냅샷을 원하지 않거나 여러 볼륨에 할당된 스냅샷 정책을 삭제하려는 경우 볼륨에서 스냅샷 정책을 제거하십시오. 둘 이상의 볼륨에 할당된 <<스냅샷 정책 삭제,스냅샷 정책 삭제>>을(를) 수행하려면 모든 볼륨에서 수동으로 제거해야 합니다.
 
 .시작하기 전에
-스냅샷 정책을 제거하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크가 연결되면 이 작업으로 돌아오십시오.
+스냅샷 정책을 제거하려면 링크를 연결해야 합니다. link:create-link.html["기존 링크를 연결하는 방법 또는 새 링크를 생성하고 연결하는 방법을 알아보십시오"^]. 링크를 연결한 후 이 작업으로 돌아오십시오.
 
 .단계
 . link:https://console.netapp.com["NetApp Console"^]에 로그인하십시오.

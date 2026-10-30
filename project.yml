@@ -130,7 +130,7 @@ sidebar:
           - title: S3 액세스 포인트 생성 및 연결
             url: "/fsx-storage/create-s3-access-points.html"
           - title: S3 액세스 포인트 관리
-            url: "/fsx-storage/manage-s3-access-points.html"
+            url: "/fsx-storage/edit-s3-access-points.html"
           - title: 저널 테이블 인프라를 설정합니다
             url: "/fsx-storage/setup-journal-table.html"
         - title: 복제된 볼륨 분할

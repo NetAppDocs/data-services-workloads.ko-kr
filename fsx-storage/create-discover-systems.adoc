@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: fsx-storage/create-discover-systems.html 
 keywords: Amazon FSx for NetApp ONTAP, fsx, volumes, create system, delete system, access key, secret key, region, availability zones, discover, storage capacity, iops, throughput, security group, security, NetApp Console 
-summary: NetApp Console에서 클라우드 스토리지 시스템을 생성하거나 검색하여 볼륨 및 추가 데이터 서비스를 추가하고 관리할 수 있습니다. 
+summary: NetApp Console에서 볼륨 및 추가 데이터 서비스를 추가하고 관리하려면 FSx for ONTAP 파일 시스템을 생성하거나 탐색하십시오. 
 ---
 = NetApp Console에서 클라우드 스토리지 시스템을 생성하거나 검색합니다.
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: NetApp Console에서 클라우드 스토리지 시스템을 생성하�
 
 
 [role="lead"]
-NetApp Console에서 클라우드 스토리지 시스템을 생성하거나 검색하여 볼륨 및 추가 데이터 서비스를 추가하고 관리할 수 있습니다.
+NetApp Console에서 볼륨 및 추가 데이터 서비스를 추가하고 관리하려면 1세대 및 2세대 FSx for ONTAP 파일 시스템을 생성하거나 탐색하십시오.
 
 
 
@@ -27,7 +27,7 @@ NetApp Console에서 클라우드 스토리지 시스템을 생성하거나 검�
 파일 시스템을 생성할 때 스토리지 VM이 생성됩니다.
 
 .시작하기 전에
-FSx for ONTAP 파일 시스템을 생성하기 전에 다음이 필요합니다.
+FSx for ONTAP 파일 시스템을 생성하기 전에 다음 사항을 준비해야 합니다.
 
 * Workload Factory에 FSx for ONTAP 파일 시스템을 생성하는 데 필요한 권한을 부여하는 IAM 역할의 ARN입니다. link:permissions-reference-fsx.html["AWS 계정에 권한을 부여하는 방법을 알아보십시오"^].
 * FSx for ONTAP 인스턴스를 생성할 리전 및 VPC 정보입니다.
@@ -116,7 +116,7 @@ AWS Managed Microsoft AD를 사용하는 경우, AWS Delegated FSx Administrator
 
 
 .결과
-파일 시스템을 생성한 경우, 새로운 FSx for ONTAP 구성이 시스템 페이지에 나타납니다.
+파일 시스템을 생성한 후에는 시스템 페이지에서 확인할 수 있습니다.
 
 FSx for ONTAP 파일 시스템은 NetApp Console의 워크로드, ONTAP 시스템 관리자, AWS CloudFormation을 사용하는 등 여러 가지 방법으로 관리할 수 있습니다.
 
@@ -174,8 +174,8 @@ FSx for ONTAP 파일 시스템은 NetApp Console의 워크로드, ONTAP 시스�
 .. *HA 쌍당 처리량 용량*: HA 쌍 개수당 처리량 용량을 선택하십시오. 1세대 파일 시스템은 하나의 HA 쌍만 지원합니다.
 .. *프로비저닝된 IOPS*: 다음 옵션 중 하나를 선택하십시오:
 +
-*** *자동*: 자동 모드의 경우, 생성되는 1GiB당 3 IOPS가 추가됩니다.
-*** *사용자 프로비저닝*: 사용자 프로비저닝의 경우 IOPS 값을 입력하십시오.
+*** *자동*: 생성되는 1GiB당 3 IOPS가 추가됩니다.
+*** *사용자 프로비저닝*: IOPS 값을 입력하십시오.
 
 
 .. *ONTAP 자격 증명*: 선택 사항입니다. ONTAP 사용자 이름과 비밀번호를 입력하십시오. 비밀번호는 지금 또는 나중에 설정할 수 있습니다.
@@ -237,7 +237,7 @@ AWS Managed Microsoft AD를 사용하는 경우, AWS Delegated FSx Administrator
 
 
 .결과
-파일 시스템을 생성한 경우, 새로운 FSx for ONTAP 구성이 시스템 페이지에 나타납니다.
+파일 시스템을 생성한 후에는 시스템 페이지에서 확인할 수 있습니다.
 
 FSx for ONTAP 파일 시스템은 NetApp Console의 워크로드, ONTAP 시스템 관리자, AWS CloudFormation을 사용하는 등 여러 가지 방법으로 관리할 수 있습니다.
 
@@ -245,27 +245,27 @@ FSx for ONTAP 파일 시스템은 NetApp Console의 워크로드, ONTAP 시스�
 ====
 
 
-[[discover-an-existing-cloud-storage-system]]
-== 기존 클라우드 스토리지 시스템 검색
+[[discover-an-existing-fsx-for-ontap-file-system]]
+== 기존 FSx for ONTAP 파일 시스템 탐색
 
-이전에 Workload Factory에 클라우드 스토리지 제공업체의 자격 증명을 입력한 경우, Discoverable systems 페이지에서 스토리지 시스템을 자동으로 검색할 수 있습니다. 또한 사용 가능한 데이터 서비스를 검토할 수도 있습니다.
+이전에 Workload Factory에 클라우드 스토리지 공급자 자격 증명을 제공한 경우 Discoverable systems 페이지에서 FSx for ONTAP 파일 시스템을 자동으로 탐색할 수 있습니다. 또한 사용 가능한 데이터 서비스를 검토할 수도 있습니다.
 
 .이 작업 정보
-계정 내에서 클라우드 스토리지 시스템을 한 번만 검색하여 하나의 워크스페이스에 연결할 수 있습니다. 스토리지 시스템은 나중에 제거하고 다른 워크스페이스에 다시 연결할 수 있습니다.
+FSx for ONTAP 파일 시스템은 계정 내에서 한 번만 탐색하여 하나의 작업 공간에 연결할 수 있습니다. 파일 시스템은 나중에 제거하고 다른 작업 공간에 다시 연결할 수 있습니다.
 
 .단계
 . NetApp Console 메뉴에서 *스토리지*, *관리*, 그리고 *Discoverable systems*를 차례로 선택합니다.
-. 검색된 클라우드 스토리지 시스템의 개수가 표시됩니다. *검색*을 선택합니다.
+. 탐색된 FSx for ONTAP 파일 시스템 개수가 표시됩니다. *탐색*을 선택합니다.
 . 하나 이상의 스토리지 시스템을 선택하고 *검색*을 선택하여 시스템 페이지에 추가하십시오.
 
 
 [NOTE]
 ====
-* 이름이 지정되지 않은 스토리지 시스템을 선택하면 시스템 이름을 입력하라는 메시지가 표시됩니다.
-* 콘솔에서 관리하는 데 필요한 자격 증명이 없는 스토리지 시스템을 선택하면 필요한 권한이 있는 자격 증명을 선택하라는 메시지가 표시됩니다.
+* 이름이 지정되지 않은 파일 시스템을 선택하면 시스템 이름을 입력하라는 메시지가 표시됩니다.
+* 콘솔에서 관리하는 데 필요한 자격 증명이 없는 파일 시스템을 선택하면 필요한 권한이 있는 자격 증명을 선택하라는 메시지가 표시됩니다.
 * 다음 지역은 검색이 지원되지 않습니다: 중국 지역, GovCloud (미국) 지역, Secret Cloud 및 Top Secret Cloud.
 
 
 ====
 .결과
-콘솔은 시스템 페이지에 검색된 시스템을 표시합니다. NetApp Console의 워크로드, ONTAP 시스템 관리자 사용 또는 클라우드 공급자의 스토리지 관리 툴 사용 등 여러 가지 방법으로 스토리지 시스템을 관리할 수 있습니다.
+콘솔의 시스템 페이지에 탐색된 파일 시스템이 표시됩니다. NetApp Console의 워크로드, ONTAP 시스템 관리자, 클라우드 공급자의 스토리지 관리 툴 등 여러 가지 방법으로 파일 시스템을 관리할 수 있습니다.

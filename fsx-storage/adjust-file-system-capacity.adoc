@@ -50,7 +50,7 @@ SSD 스토리지 용량 제한에 대해서는 AWS FSx for NetApp ONTAP 설명�
 [[enable-automatic-capacity-and-inode-management]]
 == 자동 용량 및 inode 관리 활성화
 
-용량 및 inode 관리를 활성화하면 NetApp Workload Factory가 시간 경과에 따른 용량 요구 사항 변화에 따라 FSx for ONTAP 파일 시스템에 증분 스토리지 및 inode(파일)를 볼륨에 자동으로 추가할 수 있습니다. 이러한 기능을 통해 용량 및 inode를 수동으로 모니터링할 필요가 없어집니다.
+용량 및 inode 관리를 활성화하면 시간 경과에 따른 용량 요구 사항 변화에 따라 NetApp Workload Factory가 FSx for ONTAP 파일 시스템에 증분 스토리지를 자동으로 추가하고 볼륨에 inode(파일)를 추가할 수 있습니다. 이러한 기능을 통해 용량 및 inode를 수동으로 모니터링할 필요가 없어집니다.
 
 하나의 계정으로만 이러한 기능을 관리할 수 있습니다.
 
