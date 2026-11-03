@@ -307,6 +307,8 @@ sidebar:
       url: "/gcnv/add-roles.html"
     - title: Google Cloud NetApp Volumes 자격 증명을 추가합니다
       url: "/gcnv/add-credentials.html"
+    - title: Google Cloud NetApp Volumes 스토리지 풀 보기
+      url: "/gcnv/view-storage-pools.html"
     - title: Google Cloud NetApp Volumes에 대한 구성 분석
       url: "/gcnv/configuration-analysis.html"
     - title: 스토리지 풀 구성 개선
@@ -323,6 +325,10 @@ sidebar:
       url: "/oci/create-discover-systems.html"
     - title: OCI 스토리지 시스템에 연결합니다
       url: "/oci/create-link.html"
+    - title: OCI NetApp 스토리지 서비스에 대한 구성 분석
+      url: "/oci/configuration-analysis.html"
+    - title: OCI NetApp 스토리지 서비스 구성을 개선하십시오
+      url: "/oci/improve-configurations.html"
     - title: OCI NetApp 스토리지 서비스에 대한 권한 참조
       url: "/oci/permissions-oci.html"
   - title: Workload Factory 관리

@@ -7,7 +7,7 @@ summary: FSx for ONTAP의 볼륨에 대한 S3 액세스 포인트 세부 정보�
 = NetApp Console에서 FSx for ONTAP 볼륨의 S3 액세스 포인트를 편집합니다.
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
