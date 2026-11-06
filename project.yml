@@ -293,6 +293,8 @@ sidebar:
       entries:
       - title: FSx for ONTAP 성능
         url: "/fsx-storage/performance-reference.html"
+      - title: FSx for ONTAP 권한
+        url: "/fsx-storage/permissions-reference-fsx.html"
       - title: FSx for ONTAP 보안
         url: "/fsx-storage/security-reference.html"
   - title: Google Cloud NetApp Volumes
@@ -315,22 +317,32 @@ sidebar:
       url: "/gcnv/improve-configurations.html"
   - title: OCI NetApp 스토리지 서비스
     entries:
-    - title: OCI NetApp 스토리지 서비스에 대해 알아보십시오
-      url: "/oci/learn-about-oci.html"
-    - title: OCI NetApp 스토리지 서비스 빠른 시작
-      url: "/oci/quick-start-oci.html"
-    - title: OCI 자격 증명 추가
-      url: "/oci/add-credentials-oci.html"
-    - title: OCI 스토리지 시스템 검색
-      url: "/oci/create-discover-systems.html"
-    - title: OCI 스토리지 시스템에 연결합니다
-      url: "/oci/create-link.html"
-    - title: OCI NetApp 스토리지 서비스에 대한 구성 분석
-      url: "/oci/configuration-analysis.html"
-    - title: OCI NetApp 스토리지 서비스 구성을 개선하십시오
-      url: "/oci/improve-configurations.html"
-    - title: OCI NetApp 스토리지 서비스에 대한 권한 참조
-      url: "/oci/permissions-oci.html"
+    - title: Workload Factory에서 OCI NetApp 스토리지 서비스를 사용하십시오
+      entries:
+      - title: OCI NetApp 스토리지 서비스에 대해 알아보십시오
+        url: "/oci/learn-about-oci.html"
+      - title: OCI NetApp 스토리지 서비스 빠른 시작
+        url: "/oci/quick-start-oci.html"
+      - title: OCI 자격 증명 추가
+        url: "/oci/add-credentials-oci.html"
+      - title: OCI 스토리지 시스템 검색
+        url: "/oci/create-discover-systems.html"
+      - title: OCI 스토리지 시스템에 연결합니다
+        url: "/oci/create-link.html"
+    - title: 데이터 보호
+      entries:
+      - title: 데이터를 보호하기 위한 사이버 볼트 생성
+        url: "/oci/create-cyber-vault.html"
+    - title: OCI NetApp 스토리지 서비스 리소스를 관리합니다.
+      entries:
+      - title: OCI NetApp 스토리지 서비스에 대한 구성 분석
+        url: "/oci/configuration-analysis.html"
+      - title: OCI NetApp 스토리지 서비스 구성을 개선하십시오
+        url: "/oci/improve-configurations.html"
+    - title: 참조
+      entries:
+      - title: OCI NetApp 스토리지 서비스에 대한 권한 참조
+        url: "/oci/permissions-oci.html"
   - title: Workload Factory 관리
     entries:
     - title: 잘 설계된 워크로드를 구축하고 운영합니다
