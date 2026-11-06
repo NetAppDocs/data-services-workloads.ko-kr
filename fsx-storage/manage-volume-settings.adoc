@@ -114,5 +114,5 @@ link:create-volume.html["볼륨 생성"] 중에만 변경 불가능한 파일을
 * link:create-volume.html["Workload Factory에서 볼륨 생성"]
 * link:manage-volume-capacity.html["Workload Factory에서 볼륨 용량 관리"]
 * link:change-tiering-policy.html["Workload Factory에서 볼륨 티어링 정책 변경"]
-* link:manage-s3-access-points.html["Workload Factory에서 S3 액세스 포인트 관리"]
+* link:edit-s3-access-points.html["Workload Factory에서 S3 액세스 포인트 관리"]
 

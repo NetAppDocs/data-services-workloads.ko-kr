@@ -61,7 +61,7 @@ Amazon FSx for ONTAP 볼륨 액세스 포인트 전반에 걸쳐 사용자 액�
 Journal 테이블 기능을 활성화하려면 다음 단계를 완료하십시오.
 
 * S3 액세스 포인트가 있는 기존 볼륨이 있습니다.link:create-volume.html["S3 액세스 포인트를 사용하여 볼륨 생성"]
-* S3 액세스 포인트의 네트워크 구성을 *Internet*으로 설정합니다. link:manage-s3-access-points.html["S3 액세스 포인트의 네트워크 구성을 편집합니다"].
+* S3 액세스 포인트의 네트워크 구성을 *Internet*으로 설정합니다. link:edit-s3-access-points.html["S3 액세스 포인트의 네트워크 구성을 편집합니다"].
 * link:add-credentials.html["_작업 및 복구_ 권한을 부여하십시오."^] Workload Factory 자격 증명으로 이동합니다.
 * 저널 테이블을 설정하기 위해 CloudFormation 배포를 실행하는 데 사용하는 AWS 계정에 다음 IAM 정책 권한을 추가하십시오.
 +

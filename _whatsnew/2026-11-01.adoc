@@ -19,7 +19,7 @@
 
 *데이터 새로 고침*과 *지금 불러오기* 모두 Tracker에서 데이터 수집 이벤트를 생성합니다.
 
-link:admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["사용자 지정 대시보드 데이터를 새로 고치는 방법을 알아보십시오."]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["사용자 지정 대시보드 데이터를 새로 고치는 방법을 알아보십시오."]
 
 
 
@@ -27,7 +27,7 @@ link:admin/manage-custom-dashboards-fsx.html#refresh-dashboard-data["사용자 �
 
 이제 맞춤형 대시보드는 요청에 지역이 포함되지 않은 경우 하나 이상의 지역을 선택하도록 요청합니다. 대시보드 데이터는 사용자가 선택한 지역으로 제한됩니다.
 
-link:admin/create-custom-dashboard-fsx.html["맞춤형 대시보드를 생성하는 방법 알아보기"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/create-custom-dashboard-fsx.html["맞춤형 대시보드를 생성하는 방법 알아보기"]
 
 
 
@@ -35,7 +35,7 @@ link:admin/create-custom-dashboard-fsx.html["맞춤형 대시보드를 생성하
 
 이제 링크 생성을 위한 CloudFormation 템플릿과 Terraform 코드는 인라인 Lambda 권한 대신 IAM 정책을 사용합니다.
 
-link:fsx-storage/create-link.html["링크를 만드는 방법을 알아보세요"]
+link:https://docs.netapp.com/us-en/data-services-workloads/fsx-storage/create-link.html["링크를 만드는 방법을 알아보세요"]
 
 
 
@@ -45,7 +45,7 @@ link:fsx-storage/create-link.html["링크를 만드는 방법을 알아보세요
 
 Workload Factory API를 통해 이루어진 리소스 변경 사항은 해당 작업을 수행하는 Workload Factory 서비스에 기록됩니다.
 
-link:admin/learn-agent.html#audit-and-tracking-for-agent-actions["에이전트 작업에 대한 감사 및 추적에 대해 알아보십시오"]
+link:https://docs.netapp.com/us-en/data-services-workloads/admin/learn-agent.html["에이전트 작업에 대한 감사 및 추적에 대해 알아보십시오"]
 
 
 
@@ -213,4 +213,4 @@ OCI 웰 아키텍처 프레임워크의 다음 핵심 요소에 대한 구성 �
 * 비용 최적화: 콜드 데이터 계층화, 스냅샷 정리 및 스토리지 효율성
 
 
-link:oci/configuration-analysis.html["OCI NSS 시스템에 대한 잘 설계된 분석"] 및 link:oci/improve-configurations.html["잘 설계된 구성 구현"]에 대해 자세히 알아보십시오.
+link:https://docs.netapp.com/us-en/data-services-workloads/oci/add-credentials-oci.html["OCI NSS 시스템에 대한 잘 설계된 분석"] 및 link:https://docs.netapp.com/us-en/data-services-workloads/oci/improve-configurations.html["잘 설계된 구성 구현"]에 대해 자세히 알아보십시오.

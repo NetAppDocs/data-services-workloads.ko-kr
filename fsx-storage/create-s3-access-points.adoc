@@ -52,4 +52,4 @@ S3 액세스 포인트를 연결하면 AWS Management Console에 고유한 별�
 
 기타 관련 주제:
 
-link:manage-s3-access-points.html["NetApp Workload Factory에서 볼륨의 S3 액세스 포인트를 편집하거나 삭제합니다."]
+link:edit-s3-access-points.html["NetApp Workload Factory에서 볼륨의 S3 액세스 포인트를 편집하거나 삭제합니다."]

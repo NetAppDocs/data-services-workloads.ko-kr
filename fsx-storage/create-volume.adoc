@@ -254,5 +254,5 @@ Workload Factory 콘솔을 사용하여 볼륨을 생성할 때 기본 티어링
 .관련 정보
 * link:manage-volume-capacity.html["Workload Factory에서 볼륨 용량 조정"]
 * link:change-tiering-policy.html["Workload Factory에서 볼륨 티어링 정책 변경"]
-* link:manage-s3-access-points.html["Workload Factory에서 S3 액세스 포인트 관리"]
+* link:edit-s3-access-points.html["Workload Factory에서 S3 액세스 포인트 관리"]
 
